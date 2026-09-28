@@ -1,14 +1,7 @@
-<div class="well news-band">
-  <div class="news-head">
-    <h4>Haberler</h4>
-    <a href="{{ site.url }}{{ site.baseurl }}/haberler/">Tüm Haberler</a>
-  </div>
-  <div class="row">
-  {% for article in site.data.news limit:3 %}
-    <div class="col-sm-4 news-item">
-      {% if article.date %}<p class="news-date">{{ article.date }}</p>{% endif %}
-      {{ article.headline | markdownify }}
-    </div>
-  {% endfor %}
-  </div>
+<div class="well">
+<h4 class="haber-baslik">Haberler</h4>
+{% for article in site.data.news limit:9 %}
+<div class="haber">{% if article.date %}<p class="news-date">{{ article.date }}</p>{% endif %}{{ article.headline | markdownify }}</div>
+{% endfor %}
+<p><a href="{{ site.url }}{{ site.baseurl }}/haberler/">Tüm Haberler</a></p>
 </div>
