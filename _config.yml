@@ -10,7 +10,7 @@ title: "İstanbul Teknik Üniversitesi Maden Fakültesi Mühendislik Jeolojisi-K
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   İstanbul Teknik Üniversitesi Maden Fakültesi Mühendislik Jeolojisi-Kaya Mekaniği-Hidrojeoloji (MJKMH) Çalışma Grubu
-baseurl: "/mjkmh" # geçici: eneszengin.github.io/mjkmh; mjkmh.itu.edu.tr bağlanınca "" olacak
+baseurl: "" # site mjkmh.github.io kökünde (mjkmh organizasyonu)
 url: ""
 
 # Kişiler sayfasında eğitim satırlarında bölüm adı ve yıllar gösterilsin mi
