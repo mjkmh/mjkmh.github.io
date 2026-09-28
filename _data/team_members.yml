@@ -157,18 +157,6 @@
       university: "Akdeniz Üniversitesi"
       department: "Jeoloji Mühendisliği"
 
-- name: Mehmet Mert
-  surname: DOĞU
-  photo: mehmet-mert-dogu.png
-  info: Arş. Gör.
-  education:
-    - level: Yüksek Lisans
-      university: "İstanbul Teknik Üniversitesi"
-      department: "Jeoloji Mühendisliği"
-    - level: Lisans
-      university: "İstanbul Teknik Üniversitesi"
-      department: "Jeoloji Mühendisliği ve Jeofizik Mühendisliği (ÇAP)"
-
 - name: Gökhan
   surname: ŞANS
   photo: gokhan-sans.png
@@ -196,6 +184,18 @@
       university: "Hacettepe Üniversitesi"
       department: "Jeoloji Mühendisliği"
       years: "2008–2013"
+
+- name: Mehmet Mert
+  surname: DOĞU
+  photo: mehmet-mert-dogu.png
+  info: Arş. Gör.
+  education:
+    - level: Yüksek Lisans
+      university: "İstanbul Teknik Üniversitesi"
+      department: "Jeoloji Mühendisliği"
+    - level: Lisans
+      university: "İstanbul Teknik Üniversitesi"
+      department: "Jeoloji Mühendisliği ve Jeofizik Mühendisliği (ÇAP)"
 
 - name: Yüksel
   surname: ILGAR
