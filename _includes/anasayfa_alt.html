@@ -1,16 +1,11 @@
 {% assign makaleler = site.data.yayinlar | where_exp: "y", "y.type != 'Bildiri'" %}
-{% assign bildiriler = site.data.yayinlar | where: "type", "Bildiri" %}
 <div class="row son-uclu">
-<div class="col-md-4">
+<div class="col-md-6">
 <h4>Son Yayınlar</h4>
 <ul>{% include son_liste.html items=makaleler %}</ul>
 <p class="son-tumu"><a href="{{ site.url }}{{ site.baseurl }}/yayinlar/">Tüm yayınlar</a></p>
 </div>
-<div class="col-md-4">
-<h4>Son Bildiriler</h4>
-<ul>{% include son_liste.html items=bildiriler %}</ul>
-</div>
-<div class="col-md-4">
+<div class="col-md-6">
 <h4>Son Projeler</h4>
 {% if site.data.projeler.size > 0 %}<ul>{% for p in site.data.projeler limit: 3 %}<li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}<br><span class="son-kaynak">{{ p.funder }}{% if p.years %}, {{ p.years }}{% endif %}</span></li>{% endfor %}</ul>{% else %}<p class="son-kaynak">Henüz proje eklenmedi.</p>{% endif %}
 <p class="son-tumu"><a href="{{ site.url }}{{ site.baseurl }}/projeler/">Tüm projeler</a></p>
