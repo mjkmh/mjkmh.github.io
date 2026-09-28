@@ -1,13 +1,16 @@
 # Projeler sayfası ve ana sayfadaki "Son Projeler" (en yeni en üstte)
+# group: TÜBİTAK | Avrupa Birliği | BAP (sayfadaki gruplar bu sırayla)
 # title, funder, code (isteğe bağlı), start / end (GG.AA.YYYY, isteğe bağlı), url (isteğe bağlı),
 # status: Devam Ediyor | Tamamlandı, people (isteğe bağlı), url (isteğe bağlı)
 
 - title: "İstanbul'un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi"
+  group: TÜBİTAK
   funder: TÜBİTAK 1001
   status: Devam Ediyor
   announcement: "Proje kapsamında doktora, yüksek lisans ve lisans bursiyeri alınacaktır."
 
 - title: "Sedimanter Kaya Malzemelerinde Çatlak Başlangıcı Gerilmesinin Parçacık Tabanlı Sayısal Modellemesinde Bağ Modellerinin Karşılaştırmalı Analizi"
+  group: BAP
   funder: İTÜ BAP – Hızlı Destek (HIZDEP)
   code: FHD-2026-48522
   start: 15.06.2026
@@ -16,6 +19,7 @@
   team: "Doç. Dr. Enes Zengin (Yürütücü)"
 
 - title: "İstanbul Kilinin Makaslama Parametrelerine Katkı Malzemelerinin Etkisinin Araştırılması"
+  group: BAP
   funder: İTÜ BAP – Hızlı Destek (HIZDEP)
   code: FHD-2025-47837
   start: 26.12.2025
@@ -24,6 +28,7 @@
   team: "Doç. Dr. Enes Zengin (Yürütücü)"
 
 - title: "D-650 Karayolunun Arifiye-Bozüyük Kesimindeki Heyelan Tehlikesinin AHP ve CBS Tabanlı Yöntemlerle Değerlendirilmesi"
+  group: BAP
   funder: İTÜ BAP – Araştırmaya Başlangıç
   code: MAB-2025-47218
   start: 06.08.2025
