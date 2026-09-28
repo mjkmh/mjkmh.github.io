@@ -24,6 +24,8 @@
   quartile: "(Q2 - Scopus)"
   doi: "10.31643/2028/6445.26"
   abstract: "This paper presents the results of a comprehensive mineralogical study of oxidized copper-porphyry ore from the Koktashal deposit. Optical microscopy, silicate analysis, and quantitative phase analysis were used to characterize the mineral composition and forms of copper occurrence in the oxidation zone. The ore contains 0.735% total copper, of which 89.8% occurs in oxidized form, 6.39% in primary sulfides, 2.72% in secondary sulfides, and 1.09% in water-soluble form. The principal ore minerals are malachite (1.5–2.0%) and azurite (0.3–0.4%), accompanied by hematite with magnetite (0.5%), goethite (0.2%), and pyrite (0.2%), whereas copper sulfides and native copper occur only in trace amounts. The integration of classical mineralogical methods with quantitative phase analysis provides new insights into the distribution of copper occurrence forms and their relationship to oxidation processes. Malachite and azurite occur as well-crystallized vein and nest aggregates as well as colloform earthy masses developed along microcracks in association with iron hydroxides. Their close association with iron hydroxides and the near absence of copper sulfides represent a diagnostic feature of the oxidation zone in copper-porphyry systems. These findings improve the assessment of supergene alteration during exploration and support the classification of oxidation-zone ores as a distinct geological and industrial type for reserve estimation, ore body delineation, and processing scheme selection."
+  image: zengin-2026-koktaszhal.jpg
+  image_credit: "Jeolojik harita, CC BY-SA 4.0"
 
 - year: 2026
   date: "2026-08-30"
@@ -62,6 +64,8 @@
   quartile: "(Q1 - Scopus)"
   doi: "10.1007/s41976-026-00287-y"
   abstract: "Istanbul, situated in one of the world’s most seismically active regions, faces urgent challenges in disaster preparedness due to its dense urban environment and large population. Urban green spaces are vital for enhancing disaster resilience, serving as essential evacuation zones, emergency shelters, and relief hubs. This study highlights the critical importance of accessible green spaces on the Anatolian side of Istanbul, using advanced GIS tools to evaluate their accessibility, size, and distribution. The findings expose stark spatial disparities among neighborhoods: while 53% of residents are within a five-minute walk of green spaces, this number rises to only 84% at ten minutes and 90% at fifteen minutes, leaving approximately 9% of the population beyond a fifteen-minute walk—an urgent gap that must be addressed. These results compellingly demonstrate the need for targeted urban planning strategies to expand green spaces in underserved areas, integrating disaster resilience into the core of urban development."
+  image: zengin-2026-yesil-alan.jpg
+  image_credit: "Temsili görsel"
 
 - year: 2026
   date: "2026-04-11"
@@ -123,6 +127,8 @@
   quartile: "(Q2 - Scopus)"
   doi: "10.1007/s42990-025-00214-1"
   abstract: "In rock mechanics and rock engineering, numerical methods are routinely employed to evaluate tunnel behavior in heterogeneous sedimentary rocks where variable strength and mixed-mode failure are common. To better understand the mechanical response of these rocks under tunnel stress conditions, three bonded-particle models—the Parallel-Bonded Model (PBM), Soft-Bonded Model (SBM), and Flat-Jointed Model (FJM)—were evaluated under different confinement levels using the Particle Flow Code (PFC). Laboratory test data on siltstone specimens from Istanbul, Türkiye, were used to calibrate the models, which were then subjected to triaxial loading at confining pressures of 1, 3, and 5 MPa before being upscaled to tunnel-scale analyses. Results indicate that PBM effectively captures brittle failure and localized shear bands; SBM yields lower strengths with diffuse cracking, typical of weak rock masses; and FJM reproduces mixed tensile–shear failure with ductile-like post-peak behavior. Rock behavior is strongly dependent on the selected contact model. The tunnel geometry served solely as a controlled testbed, and the results guide the selection of models for sedimentary rocks under confinement."
+  image: undul-2026-bonded-particle.jpg
+  image_credit: "Temsili görsel"
 
 - year: 2025
   date: "2025-12-06"
