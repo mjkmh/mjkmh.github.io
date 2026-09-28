@@ -128,7 +128,7 @@
   doi: "10.1007/s42990-025-00214-1"
   abstract: "In rock mechanics and rock engineering, numerical methods are routinely employed to evaluate tunnel behavior in heterogeneous sedimentary rocks where variable strength and mixed-mode failure are common. To better understand the mechanical response of these rocks under tunnel stress conditions, three bonded-particle models—the Parallel-Bonded Model (PBM), Soft-Bonded Model (SBM), and Flat-Jointed Model (FJM)—were evaluated under different confinement levels using the Particle Flow Code (PFC). Laboratory test data on siltstone specimens from Istanbul, Türkiye, were used to calibrate the models, which were then subjected to triaxial loading at confining pressures of 1, 3, and 5 MPa before being upscaled to tunnel-scale analyses. Results indicate that PBM effectively captures brittle failure and localized shear bands; SBM yields lower strengths with diffuse cracking, typical of weak rock masses; and FJM reproduces mixed tensile–shear failure with ductile-like post-peak behavior. Rock behavior is strongly dependent on the selected contact model. The tunnel geometry served solely as a controlled testbed, and the results guide the selection of models for sedimentary rocks under confinement."
   image: undul-2026-bonded-particle.jpg
-  image_credit: "Temsili görsel"
+  image_credit: "Makaledeki şekil"
 
 - year: 2025
   date: "2025-12-06"
