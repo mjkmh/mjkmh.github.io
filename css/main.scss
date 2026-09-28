@@ -87,6 +87,23 @@ firstp {
 .team-member h4 { font-size: 18px; }
 .team-member li { font-size: 14px; }
 .kisi-bolum { font-weight: bold; }
+/* Ana sayfa */
+.anasayfa-bolum { margin-top: 34px; }
+.bolum-baslik { font-size: 24px; font-weight: bold; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 18px; }
+.bolum-link { float: right; font-size: 14px; font-weight: normal; margin-top: 8px; }
+.kart { margin-bottom: 22px; }
+.kart-resim { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; box-shadow: 1px 1px 4px #aaa; margin: 0 0 10px 0 !important; }
+.kart-baslik { font-size: 18px; font-weight: bold; margin: 4px 0 6px 0; }
+.kart-metin { font-size: 15px; }
+.kart-yayin-baslik { font-weight: bold; font-size: 15px; margin-bottom: 4px; }
+.kart-kaynak { font-size: 14px; color: #666; }
+.rakamlar { background: #f6f6f6; border-radius: 6px; padding: 18px 10px; text-align: center; }
+.rakam .sayi { display: block; font-size: 34px; font-weight: bold; color: #C00000; line-height: 1.2; }
+.rakam .etiket { display: block; font-size: 14px; color: #555; }
+.projeler { padding-left: 18px; }
+.projeler li { margin-bottom: 10px; }
+#carousel .item img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
+
 .footer-iletisim { text-align: center; font-size: 13px; color: #555; }
 .ogrenci h4 { font-size: 16px; }
 .danisman { font-size: 14px; color: #666; }

@@ -1,0 +1,14 @@
+# Ana sayfadaki araştırma alanı kartları
+# text: kısa açıklama (Markdown, isteğe bağlı); image: images/anasayfa/ içindeki dosya (yoksa gri çerçeve)
+
+- name: Mühendislik Jeolojisi
+  text:
+  image:
+
+- name: Kaya Mekaniği
+  text:
+  image:
+
+- name: Hidrojeoloji
+  text:
+  image:

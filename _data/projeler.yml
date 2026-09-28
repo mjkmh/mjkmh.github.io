@@ -1,0 +1,10 @@
+# Ana sayfadaki Projeler bölümü (boşsa bölüm gösterilmez)
+# Her proje için: title, funder (ör. TÜBİTAK 1001), years (ör. 2026–2028), role (isteğe bağlı), people (isteğe bağlı)
+# Örnek:
+#   - title: Proje adı
+#     funder: TÜBİTAK 1001
+#     years: 2026–2028
+#     role: Yürütücü
+#     people: Doç. Dr. Enes Zengin
+
+[]

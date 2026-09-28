@@ -1,0 +1,7 @@
+# Ana sayfadaki kayan fotoğraflar (boşsa slider gösterilmez)
+# image: images/slider/ içindeki dosya adı; caption: isteğe bağlı alt yazı
+# Örnek:
+#   - image: arazi-2025.jpg
+#     caption: Arazi çalışması, 2025
+
+[]

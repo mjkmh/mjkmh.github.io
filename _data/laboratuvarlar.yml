@@ -1,0 +1,14 @@
+# Ana sayfadaki laboratuvar kartları
+# text: kısa bilgi / cihazlar (Markdown, isteğe bağlı); image: images/anasayfa/ içindeki dosya (yoksa gri çerçeve)
+
+- name: Kaya Mekaniği Laboratuvarı
+  text:
+  image:
+
+- name: İndeks Özellikler Laboratuvarı
+  text:
+  image:
+
+- name: Hidrojeoloji Laboratuvarı
+  text:
+  image:

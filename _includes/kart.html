@@ -1,0 +1,5 @@
+<div class="col-sm-4 kart">
+<img src="{{ site.url }}{{ site.baseurl }}/images/{% if include.image %}anasayfa/{{ include.image }}{% else %}kisiler/fotograf-yok.png{% endif %}" class="kart-resim" alt="" />
+<h3 class="kart-baslik">{{ include.name }}</h3>
+{% if include.text %}<div class="kart-metin">{{ include.text | markdownify }}</div>{% endif %}
+</div>
