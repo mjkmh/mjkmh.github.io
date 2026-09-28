@@ -1,5 +1,5 @@
 # Projeler sayfası ve ana sayfadaki "Son Projeler" (en yeni en üstte)
-# title, funder, code (isteğe bağlı), start / end (GG.AA.YYYY, isteğe bağlı),
+# title, funder, code (isteğe bağlı), start / end (GG.AA.YYYY, isteğe bağlı), url (isteğe bağlı),
 # status: Devam Ediyor | Tamamlandı, people (isteğe bağlı), url (isteğe bağlı)
 
 - title: "İstanbul'un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi"
@@ -13,7 +13,7 @@
   start: 15.06.2026
   end: 15.12.2026
   status: Devam Ediyor
-  people: "Yürütücü: Doç. Dr. Enes Zengin"
+  team: "Doç. Dr. Enes Zengin (Yürütücü)"
 
 - title: "İstanbul Kilinin Makaslama Parametrelerine Katkı Malzemelerinin Etkisinin Araştırılması"
   funder: İTÜ BAP – Hızlı Destek (HIZDEP)
@@ -21,7 +21,7 @@
   start: 26.12.2025
   end: 14.04.2026
   status: Tamamlandı
-  people: "Yürütücü: Doç. Dr. Enes Zengin"
+  team: "Doç. Dr. Enes Zengin (Yürütücü)"
 
 - title: "D-650 Karayolunun Arifiye-Bozüyük Kesimindeki Heyelan Tehlikesinin AHP ve CBS Tabanlı Yöntemlerle Değerlendirilmesi"
   funder: İTÜ BAP – Araştırmaya Başlangıç
@@ -29,4 +29,4 @@
   start: 06.08.2025
   end: 06.08.2027
   status: Devam Ediyor
-  people: "Yürütücü: Doç. Dr. Enes Zengin"
+  team: "Doç. Dr. Enes Zengin (Yürütücü)"
