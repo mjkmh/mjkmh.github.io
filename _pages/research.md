@@ -11,6 +11,9 @@ permalink: /projeler/
 {% assign yazilan = 0 %}
 {% for g in gruplar %}
 {% assign liste = site.data.projeler | where: "group", g %}
+{% assign devam = liste | where_exp: "p", "p.status != 'Tamamlandı'" %}
+{% assign biten = liste | where: "status", "Tamamlandı" %}
+{% assign liste = devam | concat: biten %}
 {% if liste.size > 0 %}
 {% if yazilan > 0 %}<hr>{% endif %}
 <h2 markdown="0" class="kisi-bolum">{{ g }} Projeleri</h2>
