@@ -94,7 +94,7 @@ firstp {
 .yayinlar { padding-left: 18px; }
 .yayinlar li { margin-bottom: 12px; font-size: 15px; }
 .yayin-detay { margin-bottom: 26px; font-size: 15px; }
-.yayin-detay .yayin-resim { width: 100%; margin: 4px 0 10px 0 !important; }
+.yayin-detay .yayin-resim { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin: 4px 0 10px 0 !important; }
 .yayin-detay p { margin-bottom: 6px; }
 .yayin-baslik { font-size: 17px; }
 .ozet { line-height: 1.5; text-align: justify; }
