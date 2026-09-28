@@ -1,17 +1,18 @@
 # Projeler sayfası ve ana sayfadaki "Son Projeler" (en yeni en üstte)
 # title, funder, code (isteğe bağlı), start / end (GG.AA.YYYY, isteğe bağlı),
-# status: Yürüyen | Tamamlandı, people (isteğe bağlı), url (isteğe bağlı)
+# status: Devam Ediyor | Tamamlandı, people (isteğe bağlı), url (isteğe bağlı)
 
 - title: "İstanbul'un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi"
   funder: TÜBİTAK 1001
-  status: Yürüyen
+  status: Devam Ediyor
+  announcement: "Proje kapsamında doktora, yüksek lisans ve lisans bursiyeri alınacaktır."
 
 - title: "Sedimanter Kaya Malzemelerinde Çatlak Başlangıcı Gerilmesinin Parçacık Tabanlı Sayısal Modellemesinde Bağ Modellerinin Karşılaştırmalı Analizi"
   funder: İTÜ BAP – Hızlı Destek (HIZDEP)
   code: FHD-2026-48522
   start: 15.06.2026
   end: 15.12.2026
-  status: Yürüyen
+  status: Devam Ediyor
   people: "Yürütücü: Doç. Dr. Enes Zengin"
 
 - title: "İstanbul Kilinin Makaslama Parametrelerine Katkı Malzemelerinin Etkisinin Araştırılması"
@@ -27,5 +28,5 @@
   code: MAB-2025-47218
   start: 06.08.2025
   end: 06.08.2027
-  status: Yürüyen
+  status: Devam Ediyor
   people: "Yürütücü: Doç. Dr. Enes Zengin"
