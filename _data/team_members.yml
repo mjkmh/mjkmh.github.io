@@ -183,6 +183,20 @@
       department: "Jeoloji Mühendisliği"
       years: "1997–2002"
 
+- name: Dilek
+  surname: KARAPINAR
+  photo:
+  info: Arş. Gör.
+  education:
+    - level: Yüksek Lisans
+      university: "Hacettepe Üniversitesi"
+      department: "Fen Bilimleri Enstitüsü"
+      years: "2013–2017"
+    - level: Lisans
+      university: "Hacettepe Üniversitesi"
+      department: "Jeoloji Mühendisliği"
+      years: "2008–2013"
+
 - name: Yüksel
   surname: ILGAR
   photo:
