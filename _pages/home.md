@@ -60,6 +60,6 @@ permalink: /
 
 
 <figure class="fifth logolar">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/logopic/dynamica-muhendislik.png" alt="Dynamica Mühendislik">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/logopic/dynamica-muhendislik.png" alt="Dynamica Mühendislik" class="logo-kucuk">
   <img src="{{ site.url }}{{ site.baseurl }}/images/logopic/kologlu-holding.png" alt="Koloğlu Holding">
 </figure>
