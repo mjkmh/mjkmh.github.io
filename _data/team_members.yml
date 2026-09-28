@@ -124,7 +124,7 @@
 
 - name: Kayhan
   surname: DEVELİ
-  photo:
+  photo: kayhan-develi.png
   info: Dr. Öğr. Üyesi
   education:
     - level: Doktora
@@ -171,7 +171,7 @@
 
 - name: Gökhan
   surname: ŞANS
-  photo:
+  photo: gokhan-sans.png
   info: Arş. Gör.
   education:
     - level: Yüksek Lisans
@@ -185,7 +185,7 @@
 
 - name: Dilek
   surname: KARAPINAR
-  photo:
+  photo: dilek-karapinar.png
   info: Arş. Gör.
   education:
     - level: Yüksek Lisans
