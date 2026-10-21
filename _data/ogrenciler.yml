@@ -1,15 +1,16 @@
 # Kişiler sayfasındaki öğrenci ve misafir bölümleri (ada göre Türk alfabesiyle sıralı)
 # Her kişi için: name, surname (büyük harfle), isteğe bağlı info (adın yanında), institution (kurum, alt satır), advisor (danışman), photo
 
-lisansustu: []
+lisansustu:
+  - name: Zeynep Duru
+    surname: VURMUŞ
+    info: Yüksek Lisans
+    advisor: Doç. Dr. Ömer Ündül
 
 lisans:
   - name: Batuhan
     surname: AKTEMUR
     advisor: Doç. Dr. Enes Zengin
-  - name: Elif
-    surname: ALTINÇEKİÇ
-    advisor: Doç. Dr. Ömer Ündül
   - name: Elif Yaren
     surname: CÜRUL
     advisor: Doç. Dr. Enes Zengin

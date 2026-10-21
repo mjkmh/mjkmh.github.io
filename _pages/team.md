@@ -8,7 +8,8 @@ permalink: /kisiler/
 # Kişiler
 
 {% assign number_printed = 0 %}
-{% for member in site.data.team_members %}
+{% assign aktif_uyeler = site.data.team_members | where_exp: "m", "m.pasif != true" %}
+{% for member in aktif_uyeler %}
 
 {% assign even_odd = number_printed | modulo: 2 %}
 

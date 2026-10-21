@@ -1,4 +1,5 @@
 # Çalışma grubu üyeleri (sayfadaki sıra bu dosyadaki sıradır)
+# pasif: true → kişi sayfada gösterilmez (veri silinmez)
 # surname: büyük harfle (Türkçe İ elle yazılır); photo: images/kisiler/ içindeki dosya adı
 # education: yukarıdan aşağı Post Doktora, Doktora, Doktora Sırası, Yüksek Lisans, Lisans; yalnızca yapılan aşamalar
 #   level, university zorunlu; department ve years isteğe bağlı
@@ -125,6 +126,7 @@
 - name: Kayhan
   surname: DEVELİ
   photo: kayhan-develi.png
+  pasif: true
   info: Dr. Öğr. Üyesi
   education:
     - level: Doktora
@@ -160,6 +162,7 @@
 - name: Gökhan
   surname: ŞANS
   photo: gokhan-sans.png
+  pasif: true
   info: Arş. Gör.
   education:
     - level: Yüksek Lisans
@@ -174,6 +177,7 @@
 - name: Dilek
   surname: KARAPINAR
   photo: dilek-karapinar.png
+  pasif: true
   info: Arş. Gör.
   education:
     - level: Yüksek Lisans
