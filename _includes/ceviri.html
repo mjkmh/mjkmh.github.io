@@ -1,0 +1,20 @@
+{%- comment -%}
+  Bir metni sayfanın diline çevirir. Kullanım:
+    {% include ceviri.html metin=edu.level %}             → terms sözlüğü
+    {% include ceviri.html metin=kisi.info tur="ogrenci" %} → önce ogrenci_info, sonra terms
+    {% include ceviri.html metin=kisi.advisor tur="danisman" %} → yalnızca unvanı çevirir
+  Türkçe sayfada metni olduğu gibi döndürür.
+{%- endcomment -%}
+{%- assign c_metin = include.metin -%}
+{%- if page.lang == "en" and c_metin -%}
+  {%- if include.tur == "danisman" -%}
+    {%- for u in site.data.en.danisman_unvan -%}
+      {%- assign c_metin = c_metin | replace: u[0], u[1] -%}
+    {%- endfor -%}
+  {%- elsif include.tur == "ogrenci" and site.data.en.ogrenci_info[c_metin] -%}
+    {%- assign c_metin = site.data.en.ogrenci_info[c_metin] -%}
+  {%- elsif site.data.en.terms[c_metin] -%}
+    {%- assign c_metin = site.data.en.terms[c_metin] -%}
+  {%- endif -%}
+{%- endif -%}
+{{- c_metin -}}

@@ -1,0 +1,82 @@
+{%- comment -%}
+  Kişiler sayfasının gövdesi — Türkçe (/kisiler/) ve İngilizce (/en/people/) sayfalar bunu ortak kullanır.
+  Dil, sayfanın "lang" alanından gelir; metinler _data/arayuz.yml, çeviriler _data/en.yml içindedir.
+{%- endcomment -%}
+{% assign dil = page.lang | default: "tr" %}
+{% assign t = site.data.arayuz[dil] %}
+
+<h1>{{ t.kisiler }}</h1>
+
+{% assign number_printed = 0 %}
+{% assign aktif_uyeler = site.data.team_members | where_exp: "m", "m.pasif != true" %}
+{% for member in aktif_uyeler %}
+
+{% assign even_odd = number_printed | modulo: 2 %}
+
+{% if even_odd == 0 %}
+<div class="row">
+{% endif %}
+
+<div class="col-sm-6 clearfix team-member">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/kisiler/{{ member.photo | default: 'fotograf-yok.png' }}" class="img-responsive" width="25%" style="float: left" />
+  <h4>{{ member.name }} {{ member.surname }}, {% include ceviri.html metin=member.info %}</h4>
+  <ul style="overflow: hidden">
+  {% for edu in member.education %}
+  <li>{% include ceviri.html metin=edu.level %}: {% include ceviri.html metin=edu.university %}{% if site.team_show_department and edu.department %}, {% include ceviri.html metin=edu.department %}{% endif %}{% if site.team_show_years and edu.years %}, {{ edu.years }}{% endif %}</li>
+  {% endfor %}
+  </ul>
+</div>
+
+{% assign number_printed = number_printed | plus: 1 %}
+
+{% if even_odd == 1 %}
+</div>
+{% endif %}
+
+{% endfor %}
+
+{% assign even_odd = number_printed | modulo: 2 %}
+{% if even_odd == 1 %}
+</div>
+{% endif %}
+
+<hr>
+
+{% assign bolumler = "misafir,lisansustu,lisans" | split: "," %}
+{% for anahtar in bolumler %}
+<h2 class="kisi-bolum">{{ t[anahtar] }}</h2>
+<div class="row">
+{% for kisi in site.data.ogrenciler[anahtar] %}
+<div class="col-sm-6 clearfix team-member{% if anahtar != 'misafir' %} ogrenci{% endif %}">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/kisiler/{{ kisi.photo | default: 'fotograf-yok.png' }}" class="img-responsive" width="{% if anahtar == 'misafir' %}25%{% else %}18%{% endif %}" style="float: left" />
+  <h4>{{ kisi.name }} {{ kisi.surname }}{% if kisi.info %}, {% include ceviri.html metin=kisi.info tur="ogrenci" %}{% endif %}</h4>
+  {% if kisi.institution %}<ul style="overflow: hidden"><li>{% include ceviri.html metin=kisi.institution %}</li></ul>{% endif %}
+  {% if kisi.advisor %}<p class="danisman">{{ t.danisman }}: {% include ceviri.html metin=kisi.advisor tur="danisman" %}</p>{% endif %}
+</div>
+{% endfor %}
+</div>
+<hr>
+{% endfor %}
+
+<h2 class="kisi-bolum" id="mezunlar">{{ t.mezunlar }}</h2>
+
+{% assign lisans = site.data.mezunlar.lisans %}
+{% assign yarim = lisans.size | plus: 1 | divided_by: 2 %}
+<div class="row mezunlar">
+<div class="col-sm-3">
+<h3 class="kisi-bolum">{{ t.doktora }}</h3>
+<ul>{% for kisi in site.data.mezunlar.doktora %}<li>{{ kisi.name }} {{ kisi.surname }}{% if kisi.year %}, {{ kisi.year }}{% endif %}{% if kisi.advisor %}<br><span class="danisman">{{ t.danisman }}: {% include ceviri.html metin=kisi.advisor tur="danisman" %}</span>{% endif %}</li>{% endfor %}</ul>
+</div>
+<div class="col-sm-3">
+<h3 class="kisi-bolum">{{ t.yuksek_lisans }}</h3>
+<ul>{% for kisi in site.data.mezunlar.yuksek_lisans %}<li>{{ kisi.name }} {{ kisi.surname }}{% if kisi.year %}, {{ kisi.year }}{% endif %}{% if kisi.advisor %}<br><span class="danisman">{{ t.danisman }}: {% include ceviri.html metin=kisi.advisor tur="danisman" %}</span>{% endif %}</li>{% endfor %}</ul>
+</div>
+<div class="col-sm-3">
+<h3 class="kisi-bolum">{{ t.lisans_kisa }}</h3>
+<ul>{% for kisi in lisans limit: yarim %}<li>{{ kisi.name }} {{ kisi.surname }}{% if kisi.year %}, {{ kisi.year }}{% endif %}{% if kisi.advisor %}<br><span class="danisman">{{ t.danisman }}: {% include ceviri.html metin=kisi.advisor tur="danisman" %}</span>{% endif %}</li>{% endfor %}</ul>
+</div>
+<div class="col-sm-3">
+<h3 class="kisi-bolum mezun-bos-baslik">&nbsp;</h3>
+<ul>{% for kisi in lisans offset: yarim %}<li>{{ kisi.name }} {{ kisi.surname }}{% if kisi.year %}, {{ kisi.year }}{% endif %}{% if kisi.advisor %}<br><span class="danisman">{{ t.danisman }}: {% include ceviri.html metin=kisi.advisor tur="danisman" %}</span>{% endif %}</li>{% endfor %}</ul>
+</div>
+</div>

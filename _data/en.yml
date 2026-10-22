@@ -1,0 +1,42 @@
+# İngilizce sürüm için çeviri sözlüğü.
+# Veri dosyalarındaki (team_members.yml, ogrenciler.yml, mezunlar.yml) Türkçe ifadeler
+# İngilizce sayfalarda burada karşılığı varsa çevrilir; yoksa olduğu gibi gösterilir.
+# Yeni bir üniversite, bölüm veya unvan eklenirse buraya karşılığını yazmak yeterli.
+
+# Unvanlar ve eğitim düzeyleri, üniversiteler, bölümler
+terms:
+  "Prof. Dr.": "Prof. Dr."
+  "Doç. Dr.": "Assoc. Prof. Dr."
+  "Dr. Öğr. Üyesi": "Asst. Prof. Dr."
+  "Arş. Gör. Dr.": "Research Assistant Dr."
+  "Arş. Gör.": "Research Assistant"
+  "Teknisyen": "Technician"
+  "Lisans": "B.Sc."
+  "Yüksek Lisans": "M.Sc."
+  "Doktora": "Ph.D."
+  "Post Doktora": "Postdoctoral Research"
+  "Doktora Sırası": "Visiting Ph.D. Research"
+  "İstanbul Teknik Üniversitesi": "Istanbul Technical University"
+  "İstanbul Üniversitesi": "Istanbul University"
+  "Hacettepe Üniversitesi": "Hacettepe University"
+  "Kütahya Dumlupınar Üniversitesi": "Kütahya Dumlupınar University"
+  "Çanakkale Onsekiz Mart Üniversitesi": "Çanakkale Onsekiz Mart University"
+  "Kocaeli Üniversitesi": "Kocaeli University"
+  "Karadeniz Teknik Üniversitesi": "Karadeniz Technical University"
+  "Akdeniz Üniversitesi": "Akdeniz University"
+  "Jeoloji Mühendisliği": "Geological Engineering"
+  "Mühendislik Jeolojisi": "Engineering Geology"
+  "Fen Bilimleri Enstitüsü": "Graduate School of Natural and Applied Sciences"
+  "Jeoloji Mühendisliği ve Jeofizik Mühendisliği (ÇAP)": "Geological Engineering and Geophysical Engineering (Double Major)"
+
+# Öğrencilerin adının yanındaki bilgi (ör. "Yüksek Lisans" → öğrencisi)
+ogrenci_info:
+  "Yüksek Lisans": "M.Sc. Student"
+  "Doktora": "Ph.D. Student"
+  "Lisans": "B.Sc. Student"
+
+# Danışman adlarındaki unvanlar (sırası önemli: uzun olan önce)
+danisman_unvan:
+  - ["Dr. Öğr. Üyesi", "Asst. Prof. Dr."]
+  - ["Doç. Dr.", "Assoc. Prof. Dr."]
+  - ["Arş. Gör. Dr.", "Research Assistant Dr."]

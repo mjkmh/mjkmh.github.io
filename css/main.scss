@@ -149,3 +149,9 @@ iframe { max-width: 100%; }
     margin-right: 30px;
 }
 
+
+/* Dil seçimi (TR | EN) — menünün en sağında, ince bir çizgiyle ayrılır */
+.navbar-nav > li.dil-secimi > a { font-weight: bold; }
+@media (min-width: 768px) {
+  .navbar-nav > li.dil-secimi { border-left: 1px solid #ccc; margin-left: 6px; }
+}

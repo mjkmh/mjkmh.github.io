@@ -1,0 +1,39 @@
+# Site arayüzündeki sabit metinler (menü, başlıklar, alt bilgi) — Türkçe ve İngilizce
+# Menüde url_en boşsa o sayfanın İngilizcesi henüz yok; İngilizce menü Türkçe sayfaya gider.
+
+menu:
+  - {tr: "Ana Sayfa",      en: "Home",         url_tr: "/",                url_en: ""}
+  - {tr: "Kişiler",        en: "People",       url_tr: "/kisiler/",        url_en: "/en/people/"}
+  - {tr: "Hocalarımız",    en: "Our Mentors",  url_tr: "/hocalarimiz/",    url_en: ""}
+  - {tr: "Laboratuvarlar", en: "Laboratories", url_tr: "/laboratuvarlar/", url_en: ""}
+  - {tr: "Yayınlar",       en: "Publications", url_tr: "/yayinlar/",       url_en: ""}
+  - {tr: "Projeler",       en: "Projects",     url_tr: "/projeler/",       url_en: ""}
+  - {tr: "Dersler",        en: "Courses",      url_tr: "/dersler/",        url_en: ""}
+
+tr:
+  marka: "İTÜ MJKMH Çalışma Grubu"
+  menu_ac: "Menüyü aç/kapat"
+  adres: "İTÜ Ayazağa Kampüsü Maden Fakültesi Jeoloji Mühendisliği Bölümü, Maslak/Sarıyer/İstanbul, Türkiye"
+  kisiler: "Kişiler"
+  misafir: "Misafir Araştırmacılar"
+  lisansustu: "Doktora ve Yüksek Lisans Öğrencileri"
+  lisans: "Lisans Öğrencileri"
+  mezunlar: "Mezunlar"
+  doktora: "Doktora"
+  yuksek_lisans: "Yüksek Lisans"
+  lisans_kisa: "Lisans"
+  danisman: "Danışman"
+
+en:
+  marka: "ITU MJKMH Research Group"
+  menu_ac: "Toggle navigation"
+  adres: "ITU Ayazağa Campus, Faculty of Mines, Department of Geological Engineering, Maslak/Sarıyer/İstanbul, Türkiye"
+  kisiler: "People"
+  misafir: "Visiting Researchers"
+  lisansustu: "Ph.D. and M.Sc. Students"
+  lisans: "Undergraduate Students"
+  mezunlar: "Alumni"
+  doktora: "Ph.D."
+  yuksek_lisans: "M.Sc."
+  lisans_kisa: "B.Sc."
+  danisman: "Advisor"

@@ -1,25 +1,29 @@
+{%- assign dil = page.lang | default: "tr" -%}
+{%- assign t = site.data.arayuz[dil] -%}
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
 	<div class="navbar-header">
 	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		<span class="sr-only">Menüyü aç/kapat</span>
+		<span class="sr-only">{{ t.menu_ac }}</span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	  </button>
-	
-    <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">İTÜ MJKMH Çalışma Grubu</a>
+
+    <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">{{ t.marka }}</a>
 	</div>
 	<div class="collapse navbar-collapse" id="navbar-collapse-1">
 	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="{{ site.url }}{{ site.baseurl }}/">Ana Sayfa</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/kisiler/">Kişiler</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/hocalarimiz/">Hocalarımız</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/laboratuvarlar/">Laboratuvarlar</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/yayinlar/">Yayınlar</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/projeler/">Projeler</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/dersler/">Dersler</a></li>
-	<!-- li><a href="{{ site.url }}{{ site.baseurl }}/fotograflar/">Fotoğraflar</a></li> -->	
+		{%- for m in site.data.arayuz.menu %}
+		{%- if dil == "en" and m.url_en != "" %}{% assign m_url = m.url_en %}{% else %}{% assign m_url = m.url_tr %}{% endif %}
+		<li><a href="{{ site.url }}{{ site.baseurl }}{{ m_url }}">{{ m[dil] }}</a></li>
+		{%- endfor %}
+		{%- if dil == "en" %}
+		<li class="dil-secimi"><a href="{{ site.url }}{{ site.baseurl }}{{ page.tr_url | default: '/' }}" lang="tr" title="Türkçe">TR</a></li>
+		{%- elsif page.en_url %}
+		<li class="dil-secimi"><a href="{{ site.url }}{{ site.baseurl }}{{ page.en_url }}" lang="en" title="English">EN</a></li>
+		{%- endif %}
+	<!-- li><a href="{{ site.url }}{{ site.baseurl }}/fotograflar/">Fotoğraflar</a></li> -->
 	  </ul>
 	</div>
   </div>
