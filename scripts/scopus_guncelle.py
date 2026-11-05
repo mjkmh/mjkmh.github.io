@@ -97,6 +97,37 @@ def temiz_issn(v):
     return v[0] if v else None
 
 
+def scopus_ara(sid, anahtar, token=None):
+    """Scopus Search API ile bir yazarın yayınlarını çeker (kurum dışı erişimde 25'erli sayfalar)."""
+    from types import SimpleNamespace
+    if not anahtar:
+        import pybliometrics.utils as pu
+        anahtar = pu.config["Authentication"]["APIKey"].split(",")[0].strip()
+    bas, sonuc = 0, []
+    while True:
+        url = ("https://api.elsevier.com/content/search/scopus?view=STANDARD&count=25"
+               f"&start={bas}&query=AU-ID({sid})")
+        bas_lik = {"X-ELS-APIKey": anahtar, "Accept": "application/json"}
+        if token:
+            bas_lik["X-ELS-Insttoken"] = token
+        veri = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=bas_lik), timeout=30))
+        sr = veri["search-results"]
+        girdiler = [e for e in sr.get("entry") or [] if "error" not in e]
+        for e in girdiler:
+            sonuc.append(SimpleNamespace(
+                eid=e.get("eid"), doi=e.get("prism:doi"), title=e.get("dc:title"),
+                coverDate=e.get("prism:coverDate"), subtypeDescription=e.get("subtypeDescription"),
+                publicationName=e.get("prism:publicationName"),
+                issn=e.get("prism:issn") or e.get("prism:eIssn"),
+                volume=e.get("prism:volume"), issueIdentifier=e.get("prism:issueIdentifier"),
+                pageRange=e.get("prism:pageRange"), article_number=e.get("article-number"),
+                author_names=None, author_ids=None, description=None))
+        bas += 25
+        if not girdiler or bas >= int(sr.get("opensearch:totalResults", 0)):
+            return sonuc
+        time.sleep(0.3)
+
+
 def crossref_yazarlar(k):
     """Yazar listesi Scopus'tan alınamazsa DOI üzerinden Crossref'ten alır (yazar ID'si olmadan)."""
     if not k.get("doi"):
@@ -121,7 +152,7 @@ def crossref_yazarlar(k):
 def api_ile_topla(uyeler):
     import os
     import pybliometrics
-    from pybliometrics.scopus import AbstractRetrieval, AuthorRetrieval, ScopusSearch, SerialTitleISSN
+    from pybliometrics.scopus import AbstractRetrieval, AuthorRetrieval, SerialTitleISSN
 
     # GitHub Actions'ta anahtar ortam değişkeninden gelir; kendi bilgisayarınızda ayar dosyasından okunur.
     anahtar = os.environ.get("SCOPUS_API_KEY")
@@ -143,7 +174,7 @@ def api_ile_topla(uyeler):
                 yol = "yazar profili"
             except Exception:
                 # Kurum ağı dışında (ör. GitHub) yazar profili kapalıdır; Scopus Search açıktır.
-                docs = ScopusSearch(f"AU-ID({sid})", view="STANDARD", subscriber=False, count=25, refresh=True).results or []
+                docs = scopus_ara(sid, anahtar, token)
                 yol = "Scopus Search"
             print(f"  {u['ad']:<16} {len(docs)} yayın ({yol})")
             for d in docs:
