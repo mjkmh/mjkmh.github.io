@@ -27,7 +27,7 @@ def giris():
 <td style="width:55%;vertical-align:middle;padding:0 28px 0 0;">
 <p style="margin:0 0 6px 0;font-size:13px;letter-spacing:1px;color:#777;">İTÜ MADEN FAKÜLTESİ · JEOLOJİ MÜHENDİSLİĞİ BÖLÜMÜ</p>
 <p style="margin:0 0 16px 0;font-size:30px;line-height:1.2;font-weight:bold;color:{LACIVERT};">Mühendislik Jeolojisi – Kaya Mekaniği – Hidrojeoloji Çalışma Grubu</p>
-<p style="margin:0 0 14px 0;font-size:16px;line-height:1.65;color:#333;text-align:justify;">Kökleri İTÜ’de yerbilimleri eğitiminin kurulduğu yıllara uzanan grubumuz; kaya ve zeminlerin mühendislik davranışı, şev ve heyelan tehlikesi, yeraltı suyu ve kültürel miras yapı taşları üzerine deneysel, sayısal ve saha tabanlı araştırmalar yürütmektedir.</p>
+<p style="margin:0 0 14px 0;font-size:16px;line-height:1.65;color:#333;text-align:justify;">Kökleri İTÜ’de yerbilimleri eğitiminin kurulduğu yıllara uzanan grubumuz, kaya ve zeminlerin mühendislik davranışı, şev ve heyelan tehlikesi, yeraltı suyu ve kültürel miras yapı taşları üzerine deneysel, sayısal ve saha tabanlı araştırmalar yürütmektedir.</p>
 <p style="margin:0;"><a href="/hakkimizda" style="display:inline-block;padding:8px 18px;background:{LACIVERT};color:#fff;text-decoration:none;border-radius:4px;margin:0 8px 8px 0;">Dünden Bugüne MJKMH</a><a href="/kisiler" style="display:inline-block;padding:7px 17px;border:1px solid {LACIVERT};color:{LACIVERT};text-decoration:none;border-radius:4px;margin:0 0 8px 0;">Kişiler</a></p>
 </td>
 <td style="vertical-align:middle;padding:0;"><img src="{GORSEL}" alt="Kaya şevi" style="width:100%;height:auto;display:block;border-radius:6px;" /></td>
@@ -50,18 +50,19 @@ def rakamlar(say, toplam):
 
 IMG = "https://mjkmh.github.io/images/yayinlar/"
 ALANLAR = [
-    ("Mühendislik Jeolojisi", ("https://upload.wikimedia.org/wikipedia/commons/7/72/Landslide_on_Karakoram_Highway_in_Pakistan.jpg", "Wikimedia Commons, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Landslide_on_Karakoram_Highway_in_Pakistan.jpg"), "Heyelan ve kaya düşmesi tehlikesi, CBS tabanlı tehlike haritalaması, zemin iyileştirme ve altyapı projelerinde jeolojik değerlendirme."),
-    ("Kaya Mekaniği", ("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jointed_turbidite_outcrop_at_Randa%2C_Mallorca.jpg/960px-Jointed_turbidite_outcrop_at_Randa%2C_Mallorca.jpg", "Graeme Churchard, CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Jointed_turbidite_outcrop_at_Randa,_Mallorca.jpg"), "Kayaçların dayanım ve deformasyon davranışı, çatlak başlangıcı, parçacık tabanlı sayısal modelleme, tünel ve şev stabilitesi."),
-    ("Hidrojeoloji", ("https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg/960px-Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg", "Günter Herrmann, CC BY-SA 3.0 de", "https://commons.wikimedia.org/wiki/File:Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg"), "Yeraltı suyu akımı ve kalitesi, kirletici taşınımı, akifer karakterizasyonu ve su–kaya etkileşimi."),
+    ("Mühendislik Jeolojisi", ("/images/librariesprovider187/default-album/alan-muhendislik-jeolojisi.jpg", "Wikimedia Commons, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Landslide_on_Karakoram_Highway_in_Pakistan.jpg"), "Heyelan ve kaya düşmesi tehlikesi, CBS tabanlı tehlike haritalaması, zemin iyileştirme ve altyapı projelerinde jeolojik değerlendirme."),
+    ("Kaya Mekaniği", ("/images/librariesprovider187/default-album/alan-kaya-mekanigi.jpg", "Graeme Churchard, CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Jointed_turbidite_outcrop_at_Randa,_Mallorca.jpg"), "Kayaçların dayanım ve deformasyon davranışı, çatlak başlangıcı, parçacık tabanlı sayısal modelleme, tünel ve şev stabilitesi."),
+    ("Hidrojeoloji", ("/images/librariesprovider187/default-album/alan-hidrojeoloji.jpg", "Günter Herrmann, CC BY-SA 3.0 de", "https://commons.wikimedia.org/wiki/File:Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg"), "Yeraltı suyu akımı ve kalitesi, kirletici taşınımı, akifer karakterizasyonu ve su–kaya etkileşimi."),
 ]
 
 
-def gorsel_html(g, yukseklik, link=None):
+def gorsel_html(g, yukseklik=None, link=None):
+    """Görseller önceden 4:3 kırpılıp kütüphaneye yüklendi; doğal oranında gösterilir, sündürülmez."""
     url, kredi, kaynak = g
-    ac, kapa = (f'<a href="{link}">', "</a>") if link else ("", "")
-    return (ac + f'<div style="height:{yukseklik}px;overflow:hidden;background:#e9edf2;">'
-            f'<img src="{url}" alt="" style="display:block;width:100%;height:{yukseklik}px;object-fit:cover;object-position:center;" /></div>' + kapa +
-            f'<p style="margin:3px 8px 10px 0;text-align:right;font-size:10px;line-height:1.2;color:#999;">'
+    img = f'<img src="{url}" alt="" style="display:block;width:100%;height:auto;" />'
+    if link:
+        img = f'<a href="{link}">{img}</a>'
+    return (img + f'<p style="margin:3px 8px 10px 0;text-align:right;font-size:10px;line-height:1.2;color:#999;">'
             f'Görsel: <a href="{kaynak}" target="_blank" style="color:#999;">{e(kredi)}</a></p>')
 
 
@@ -119,9 +120,9 @@ def son_yayinlar(girdiler, n=4):
 
 
 HABERLER = [
-    (("https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/GeologyGarda4.jpg/960px-GeologyGarda4.jpg", "Silvia Forti, CC0", "https://commons.wikimedia.org/wiki/File:GeologyGarda4.jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-tübi-tak-1001-projemiz-için-bursiyer-alımı-başladı", "[Örnek] TÜBİTAK 1001 projemiz için bursiyer alımı başladı", "Kültürel miras yapı taşları projemizde görev alacak lisans, yüksek lisans ve doktora bursiyerleri aranıyor."),
-    (("https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Judson_Locality_%28GeoDIL_number_-_1947%29.jpg/960px-Judson_Locality_%28GeoDIL_number_-_1947%29.jpg", "Joseph H. Hartman, CC0", "https://commons.wikimedia.org/wiki/File:Judson_Locality_(GeoDIL_number_-_1947).jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-arazi-çalışması-i-stanbul-kazı-şevlerinde-ölçümler", "[Örnek] Arazi çalışması: İstanbul kazı şevlerinde ölçümler", "Ekibimiz İstanbul’daki derin kazılarda süreksizlik ölçümleri ve numune alımı gerçekleştirdi."),
-    (("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg/960px-Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg", "Julian Nyča, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skopje_%E2%80%93_Vardar_Bridge_(2017).jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-eurock-2026-da-iki-bildiri-sunduk", "[Örnek] EUROCK 2026’da iki bildiri sunduk", "Üsküp’te düzenlenen sempozyumda grubumuzun çalışmaları sözlü ve poster olarak sunuldu."),
+    (("/images/librariesprovider187/default-album/haber-bursiyer-4x3.jpg", "Silvia Forti, CC0", "https://commons.wikimedia.org/wiki/File:GeologyGarda4.jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-tübi-tak-1001-projemiz-için-bursiyer-alımı-başladı", "[Örnek] TÜBİTAK 1001 projemiz için bursiyer alımı başladı", "Kültürel miras yapı taşları projemizde görev alacak lisans, yüksek lisans ve doktora bursiyerleri aranıyor."),
+    (("/images/librariesprovider187/default-album/haber-arazi-4x3.jpg", "Joseph H. Hartman, CC0", "https://commons.wikimedia.org/wiki/File:Judson_Locality_(GeoDIL_number_-_1947).jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-arazi-çalışması-i-stanbul-kazı-şevlerinde-ölçümler", "[Örnek] Arazi çalışması: İstanbul kazı şevlerinde ölçümler", "Ekibimiz İstanbul’daki derin kazılarda süreksizlik ölçümleri ve numune alımı gerçekleştirdi."),
+    (("/images/librariesprovider187/default-album/haber-eurock-4x3.jpg", "Julian Nyča, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skopje_%E2%80%93_Vardar_Bridge_(2017).jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-eurock-2026-da-iki-bildiri-sunduk", "[Örnek] EUROCK 2026’da iki bildiri sunduk", "Üsküp’te düzenlenen sempozyumda grubumuzun çalışmaları sözlü ve poster olarak sunuldu."),
 ]
 
 
