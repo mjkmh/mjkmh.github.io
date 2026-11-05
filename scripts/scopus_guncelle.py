@@ -500,7 +500,7 @@ def etiket(metin_, renk):
 
 def istatistik(girdiler):
     """Yalnızca Q değeri olan makaleler ve bildiriler sayılır; derlemeler ve Q'suz makaleler katılmaz."""
-    say = {"makale": 0, "Q1": 0, "Q2": 0, "Q3": 0, "Q4": 0, "bildiri": 0, "ilk10": 0}
+    say = {"makale": 0, "ilk1": 0, "ilk10": 0, "Q1": 0, "Q2": 0, "Q3": 0, "Q4": 0, "bildiri": 0}
     for g in girdiler:
         if g.get("type") == "Bildiri":
             say["bildiri"] += 1
@@ -512,13 +512,16 @@ def istatistik(girdiler):
             say[q.group(0)] += 1
             if g.get("top_percent") and int(g["top_percent"]) <= 10:
                 say["ilk10"] += 1
+            if g.get("top_percent") and int(g["top_percent"]) <= 1:
+                say["ilk1"] += 1
     return say
 
 
 def istatistik_kutulari(say):
-    kutular = [("Makale", say["makale"], TUR_RENK["Makale"]), ("Q1", say["Q1"], Q_RENK["Q1"]),
-               ("Q2", say["Q2"], Q_RENK["Q2"]), ("Q3", say["Q3"], Q_RENK["Q3"]), ("Q4", say["Q4"], Q_RENK["Q4"]),
-               ("Bildiri", say["bildiri"], TUR_RENK["Bildiri"]), ("İlk %10", say["ilk10"], ("#e8eef8", "#17365d"))]
+    kutular = [("Makale", say["makale"], TUR_RENK["Makale"]),
+               ("İlk %1", say["ilk1"], ("#dde6f3", "#0f2a4a")), ("İlk %10", say["ilk10"], ("#e8eef8", "#17365d")),
+               ("Q1", say["Q1"], Q_RENK["Q1"]), ("Q2", say["Q2"], Q_RENK["Q2"]), ("Q3", say["Q3"], Q_RENK["Q3"]),
+               ("Q4", say["Q4"], Q_RENK["Q4"]), ("Bildiri", say["bildiri"], TUR_RENK["Bildiri"])]
     p = ['<div style="margin:6px 0 18px 0;">']
     for ad, n, (zemin, yazi) in kutular:
         p.append(f'<div style="display:inline-block;min-width:78px;text-align:center;margin:0 8px 8px 0;'
