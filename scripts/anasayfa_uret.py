@@ -50,18 +50,26 @@ def rakamlar(say, toplam):
 
 IMG = "https://mjkmh.github.io/images/yayinlar/"
 ALANLAR = [
-    ("Mühendislik Jeolojisi", "undul-2026-kaya-dusmesi.jpg", "Heyelan ve kaya düşmesi tehlikesi, CBS tabanlı tehlike haritalaması, zemin iyileştirme ve altyapı projelerinde jeolojik değerlendirme."),
-    ("Kaya Mekaniği", "undul-2026-bonded-particle.jpg", "Kayaçların dayanım ve deformasyon davranışı, çatlak başlangıcı, parçacık tabanlı sayısal modelleme, tünel ve şev stabilitesi."),
-    ("Hidrojeoloji", "dinc-gogus-2026-fraktal.jpg", "Yeraltı suyu akımı ve kalitesi, kirletici taşınımı, akifer karakterizasyonu ve su–kaya etkileşimi."),
+    ("Mühendislik Jeolojisi", ("https://upload.wikimedia.org/wikipedia/commons/7/72/Landslide_on_Karakoram_Highway_in_Pakistan.jpg", "Wikimedia Commons, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Landslide_on_Karakoram_Highway_in_Pakistan.jpg"), "Heyelan ve kaya düşmesi tehlikesi, CBS tabanlı tehlike haritalaması, zemin iyileştirme ve altyapı projelerinde jeolojik değerlendirme."),
+    ("Kaya Mekaniği", ("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jointed_turbidite_outcrop_at_Randa%2C_Mallorca.jpg/960px-Jointed_turbidite_outcrop_at_Randa%2C_Mallorca.jpg", "Graeme Churchard, CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Jointed_turbidite_outcrop_at_Randa,_Mallorca.jpg"), "Kayaçların dayanım ve deformasyon davranışı, çatlak başlangıcı, parçacık tabanlı sayısal modelleme, tünel ve şev stabilitesi."),
+    ("Hidrojeoloji", ("https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg/960px-Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg", "Günter Herrmann, CC BY-SA 3.0 de", "https://commons.wikimedia.org/wiki/File:Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg"), "Yeraltı suyu akımı ve kalitesi, kirletici taşınımı, akifer karakterizasyonu ve su–kaya etkileşimi."),
 ]
+
+
+def gorsel_html(g, yukseklik):
+    url, kredi, kaynak = g
+    return (f'<div style="height:{yukseklik}px;overflow:hidden;background:#e9edf2;">'
+            f'<img src="{url}" alt="" style="display:block;width:100%;height:{yukseklik}px;object-fit:cover;object-position:center;" /></div>'
+            f'<p style="margin:3px 8px 10px 0;text-align:right;font-size:10px;line-height:1.2;color:#999;">'
+            f'Görsel: <a href="{kaynak}" target="_blank" style="color:#999;">{e(kredi)}</a></p>')
 
 
 def alanlar():
     p = [baslik("Çalışma Alanlarımız"),
          '<table style="width:100%;border-collapse:separate;border-spacing:12px 0;border:0;margin:0 -12px;"><tbody><tr>']
     for ad, gorsel, metin in ALANLAR:
-        p.append(f'<td style="width:33%;vertical-align:top;border-top:4px solid {LACIVERT};background:#fafafa;padding:0 0 16px 0;">'
-                 f'<img src="{IMG}{gorsel}" alt="{e(ad)}" style="display:block;width:100%;height:150px;object-fit:cover;margin:0 0 14px 0;" />'
+        p.append(f'<td style="width:33%;vertical-align:top;border-top:4px solid {LACIVERT};background:#fafafa;padding:0 0 16px 0;">' +
+                 gorsel_html(gorsel, 160) +
                  f'<div style="padding:0 18px;">'
                  f'<p style="margin:0 0 8px 0;font-size:18px;font-weight:bold;color:{LACIVERT};">{e(ad)}</p>'
                  f'<p style="margin:0;font-size:14px;line-height:1.6;color:#444;">{e(metin)}</p></div></td>')
@@ -110,9 +118,9 @@ def son_yayinlar(girdiler, n=4):
 
 
 HABERLER = [
-    ("angi-2026-kufeki.jpg", "05.11.2026", "[Örnek] TÜBİTAK 1001 projemiz için bursiyer alımı başladı", "Kültürel miras yapı taşları projemizde görev alacak lisans, yüksek lisans ve doktora bursiyerleri aranıyor."),
-    ("bozkurtoglu-2026-kazi.jpg", "20.10.2026", "[Örnek] Arazi çalışması: İstanbul kazı şevlerinde ölçümler", "Ekibimiz İstanbul’daki derin kazılarda süreksizlik ölçümleri ve numune alımı gerçekleştirdi."),
-    ("zengin-2026-yesil-alan.jpg", "15.09.2026", "[Örnek] EUROCK 2026’da iki bildiri sunduk", "Üsküp’te düzenlenen sempozyumda grubumuzun çalışmaları sözlü ve poster olarak sunuldu."),
+    (("https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/GeologyGarda4.jpg/960px-GeologyGarda4.jpg", "Silvia Forti, CC0", "https://commons.wikimedia.org/wiki/File:GeologyGarda4.jpg"), "05.11.2026", "[Örnek] TÜBİTAK 1001 projemiz için bursiyer alımı başladı", "Kültürel miras yapı taşları projemizde görev alacak lisans, yüksek lisans ve doktora bursiyerleri aranıyor."),
+    (("https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Judson_Locality_%28GeoDIL_number_-_1947%29.jpg/960px-Judson_Locality_%28GeoDIL_number_-_1947%29.jpg", "Joseph H. Hartman, CC0", "https://commons.wikimedia.org/wiki/File:Judson_Locality_(GeoDIL_number_-_1947).jpg"), "20.10.2026", "[Örnek] Arazi çalışması: İstanbul kazı şevlerinde ölçümler", "Ekibimiz İstanbul’daki derin kazılarda süreksizlik ölçümleri ve numune alımı gerçekleştirdi."),
+    (("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg/960px-Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg", "Julian Nyča, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skopje_%E2%80%93_Vardar_Bridge_(2017).jpg"), "15.09.2026", "[Örnek] EUROCK 2026’da iki bildiri sunduk", "Üsküp’te düzenlenen sempozyumda grubumuzun çalışmaları sözlü ve poster olarak sunuldu."),
 ]
 
 
@@ -120,8 +128,8 @@ def haberler():
     p = [baslik("Haberler ve Duyurular"),
          '<table style="width:100%;border-collapse:separate;border-spacing:12px 0;border:0;margin:0 -12px;"><tbody><tr>']
     for gorsel, tarih, ad, ozet in HABERLER:
-        p.append(f'<td style="width:33%;vertical-align:top;background:#fff;border:1px solid #e3e8ef;padding:0 0 14px 0;">'
-                 f'<img src="{IMG}{gorsel}" alt="" style="display:block;width:100%;height:170px;object-fit:cover;margin:0 0 12px 0;" />'
+        p.append(f'<td style="width:33%;vertical-align:top;background:#fff;border:1px solid #e3e8ef;padding:0 0 14px 0;">' +
+                 gorsel_html(gorsel, 170) +
                  f'<div style="padding:0 16px;"><p style="margin:0 0 6px 0;font-size:12px;color:#888;">{tarih}</p>'
                  f'<p style="margin:0 0 8px 0;font-size:16px;line-height:1.35;font-weight:bold;color:{LACIVERT};">{e(ad)}</p>'
                  f'<p style="margin:0;font-size:14px;line-height:1.55;color:#444;">{e(ozet)}</p></div></td>')
