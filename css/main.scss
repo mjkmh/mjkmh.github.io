@@ -164,3 +164,15 @@ iframe { max-width: 100%; }
 .etiket.q2 { background: #eef5dc; color: #556b23; }
 .etiket.q3 { background: #fbf1dc; color: #7a5a17; }
 .etiket.q4 { background: #f8e6e3; color: #7a3a2f; }
+
+/* Yayın istatistik şeridi */
+.yayin-istatistik { margin: 6px 0 10px 0; }
+.yayin-istatistik .kutu { display: inline-block; min-width: 78px; text-align: center; margin: 0 8px 8px 0;
+  padding: 8px 10px; border-radius: 8px; font-size: 12px; background: #eef2f7; color: #4a5b70; }
+.yayin-istatistik .kutu b { display: block; font-size: 24px; line-height: 1.2; }
+.yayin-istatistik .q1 { background: #e3f2e6; color: #2e6b3a; }
+.yayin-istatistik .q2 { background: #eef5dc; color: #556b23; }
+.yayin-istatistik .q3 { background: #fbf1dc; color: #7a5a17; }
+.yayin-istatistik .q4 { background: #f8e6e3; color: #7a3a2f; }
+.yayin-istatistik .bildiri { background: #f3eef7; color: #5f4a70; }
+.yayin-istatistik .ilk10 { background: #e8eef8; color: #17365d; }

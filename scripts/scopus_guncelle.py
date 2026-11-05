@@ -498,13 +498,47 @@ def etiket(metin_, renk):
     return f'<span class="tag" style="{_ETIKET}background:{zemin};color:{yazi};">{html.escape(metin_)}</span>'
 
 
+def istatistik(girdiler):
+    """Yalnızca Q değeri olan makaleler ve bildiriler sayılır; derlemeler ve Q'suz makaleler katılmaz."""
+    say = {"makale": 0, "Q1": 0, "Q2": 0, "Q3": 0, "Q4": 0, "bildiri": 0, "ilk10": 0}
+    for g in girdiler:
+        if g.get("type") == "Bildiri":
+            say["bildiri"] += 1
+        elif g.get("type") == "Makale":
+            q = re.search(r"Q[1-4]", g.get("quartile") or "")
+            if not q:
+                continue
+            say["makale"] += 1
+            say[q.group(0)] += 1
+            if g.get("top_percent") and int(g["top_percent"]) <= 10:
+                say["ilk10"] += 1
+    return say
+
+
+def istatistik_kutulari(say):
+    kutular = [("Makale", say["makale"], TUR_RENK["Makale"]), ("Q1", say["Q1"], Q_RENK["Q1"]),
+               ("Q2", say["Q2"], Q_RENK["Q2"]), ("Q3", say["Q3"], Q_RENK["Q3"]), ("Q4", say["Q4"], Q_RENK["Q4"]),
+               ("Bildiri", say["bildiri"], TUR_RENK["Bildiri"]), ("İlk %10", say["ilk10"], ("#e8eef8", "#17365d"))]
+    p = ['<div style="margin:6px 0 18px 0;">']
+    for ad, n, (zemin, yazi) in kutular:
+        p.append(f'<div style="display:inline-block;min-width:78px;text-align:center;margin:0 8px 8px 0;'
+                 f'padding:8px 10px;border-radius:8px;background:{zemin};color:{yazi};">'
+                 f'<div style="font-size:24px;font-weight:bold;line-height:1.2;">{n}</div>'
+                 f'<div style="font-size:12px;">{html.escape(ad)}</div></div>')
+    p.append('</div>')
+    p.append('<p style="color:#888;font-size:12px;margin:-8px 0 16px 0;">Q değerleri Scopus CiteScore '
+             'yüzdeliklerine göredir; Q değeri bulunmayan makaleler ve derlemeler sayılara katılmamıştır.</p>')
+    return "\n".join(p)
+
+
 def html_yaz(girdiler):
     e = html.escape
     yillar = {}
     for g in girdiler:
         yillar.setdefault(g.get("year"), []).append(g)
     p = ['<div class="mjkmh-pubs">', STIL,
-         f'<p class="note">Kaynak: Scopus · Toplam {len(girdiler)} yayın · Son güncelleme: {date.today():%d.%m.%Y}</p>']
+         f'<p class="note">Kaynak: Scopus · Toplam {len(girdiler)} yayın · Son güncelleme: {date.today():%d.%m.%Y}</p>',
+         istatistik_kutulari(istatistik(girdiler))]
     for yil in sorted(yillar, key=lambda x: x or 0, reverse=True):
         liste = yillar[yil]
         p.append(f'<h3>{yil} <span class="count">({len(liste)})</span></h3>')
@@ -590,6 +624,9 @@ def main():
     yeni = [g for g in girdiler if (norm_doi(g.get("doi")) or norm_baslik(g.get("title"))) not in eski]
 
     yml_yaz(girdiler, kaynak)
+    (KOK / "_data" / "yayin_istatistik.yml").write_text(
+        "# scopus_guncelle.py üretir; Q'suz makaleler ve derlemeler sayılmaz\n"
+        + "".join(f"{k}: {v}\n" for k, v in istatistik(girdiler).items()), encoding="utf-8")
     yol = html_yaz(girdiler)
     print(f"\nToplam {len(girdiler)} yayın ({len(yeni)} yeni).")
     for g in yeni:
