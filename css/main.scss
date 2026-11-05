@@ -155,3 +155,8 @@ iframe { max-width: 100%; }
 @media (min-width: 768px) {
   .navbar-nav > li.dil-secimi { border-left: 1px solid #ccc; margin-left: 6px; }
 }
+
+/* Yayın etiketleri: tür ve Q / yüzdelik (Sitefinity ile aynı görünüm) */
+.etiket { display: inline-block; font-size: 12px; line-height: 1.6; padding: 0 7px; margin-left: 4px;
+  border: 1px solid #bbb; border-radius: 3px; color: #555; white-space: nowrap; font-style: normal; }
+.etiket.q { border-color: #17365d; color: #17365d; }

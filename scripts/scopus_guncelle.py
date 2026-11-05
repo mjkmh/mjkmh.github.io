@@ -474,10 +474,11 @@ STIL = """<style>
     .mjkmh-pubs h3 { margin: 1.6em 0 .5em; border-bottom: 1px solid #ddd; padding-bottom: .2em; }
     .mjkmh-pubs .count { font-weight: normal; color: #888; font-size: .8em; }
     .mjkmh-pubs ol { padding-left: 1.4em; }
-    .mjkmh-pubs li { margin-bottom: .6em; }
+    .mjkmh-pubs li { margin-bottom: .7em; }
     .mjkmh-pubs a { word-break: break-all; }
-    .mjkmh-pubs .tag { display: inline-block; font-size: .75em; padding: 0 .45em; margin-left: .2em;
-    border: 1px solid #bbb; border-radius: 3px; color: #555; }
+    .mjkmh-pubs .tag { display: inline-block; font-size: 12px; line-height: 1.6; padding: 0 7px; margin-left: 4px;
+    border: 1px solid #bbb; border-radius: 3px; color: #555; white-space: nowrap; }
+    .mjkmh-pubs .tag.q { border-color: #17365d; color: #17365d; }
     .mjkmh-pubs .note { color: #888; font-size: .85em; }
 </style>"""
 
@@ -501,8 +502,10 @@ def html_yaz(girdiler):
                 s += f' <a href="https://doi.org/{e(g["doi"])}" target="_blank" rel="noopener">doi:{e(g["doi"])}</a>'
             if g.get("type"):
                 s += f' <span class="tag">{e(g["type"])}</span>'
-            if g.get("top_percent"):
-                s += f' <span class="tag">İlk %{g["top_percent"]}</span>'
+            q = re.search(r"Q[1-4]", g.get("quartile") or "")
+            if q or g.get("top_percent"):
+                metin_q = (q.group(0) if q else "") + (f" (%{g['top_percent']})" if g.get("top_percent") else "")
+                s += f' <span class="tag q">{e(metin_q.strip())}</span>'
             p.append(s + "</li>")
         p.append("</ol>")
     p.append("</div>")

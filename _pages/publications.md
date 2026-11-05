@@ -24,7 +24,7 @@ permalink: /yayinlar/
 <div class="col-sm-8">
 <p class="yayin-baslik"><strong>{{ y.title }}</strong></p>
 <p class="yazarlar">{% include yazarlar.html authors=y.authors %}</p>
-<p><em>{{ y.source }}</em> · {{ y.type }}{% if y.quartile %} · <span class="quartile">{{ y.quartile }}</span>{% endif %}{% if y.doi %} · <a href="https://doi.org/{{ y.doi }}" target="_blank" rel="noopener">doi:{{ y.doi }}</a>{% endif %}</p>
+<p><em>{{ y.source }}{% if y.source_detail %}, {{ y.source_detail }}{% endif %}</em>{% if y.doi %} · <a href="https://doi.org/{{ y.doi }}" target="_blank" rel="noopener">doi:{{ y.doi }}</a>{% endif %} <span class="etiket">{{ y.type }}</span>{% if y.quartile or y.top_percent %}{% assign q = y.quartile | slice: 1, 2 %} <span class="etiket q">{{ q }}{% if y.top_percent %} (%{{ y.top_percent }}){% endif %}</span>{% endif %}</p>
 {% if y.abstract %}<div class="ozet kisa">{{ y.abstract }}</div>
 <a href="#" class="devami" onclick="var o=this.previousElementSibling;o.classList.toggle('kisa');this.textContent=o.classList.contains('kisa')?'devamı':'kapat';return false;">devamı</a>{% endif %}
 </div>
@@ -36,7 +36,7 @@ permalink: /yayinlar/
 <li>
 <strong>{{ y.title }}</strong><br>
 <span class="yazarlar">{% include yazarlar.html authors=y.authors %}</span><br>
-<em>{{ y.source }}</em> · {{ y.type }}{% if y.quartile %} · <span class="quartile">{{ y.quartile }}</span>{% endif %}{% if y.doi %} · <a href="https://doi.org/{{ y.doi }}" target="_blank" rel="noopener">doi:{{ y.doi }}</a>{% endif %}
+<em>{{ y.source }}{% if y.source_detail %}, {{ y.source_detail }}{% endif %}</em>{% if y.doi %} · <a href="https://doi.org/{{ y.doi }}" target="_blank" rel="noopener">doi:{{ y.doi }}</a>{% endif %} <span class="etiket">{{ y.type }}</span>{% if y.quartile or y.top_percent %}{% assign q = y.quartile | slice: 1, 2 %} <span class="etiket q">{{ q }}{% if y.top_percent %} (%{{ y.top_percent }}){% endif %}</span>{% endif %}
 </li>
 {% endfor %}
 </ul>
