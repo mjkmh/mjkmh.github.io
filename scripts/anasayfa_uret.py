@@ -56,10 +56,11 @@ ALANLAR = [
 ]
 
 
-def gorsel_html(g, yukseklik):
+def gorsel_html(g, yukseklik, link=None):
     url, kredi, kaynak = g
-    return (f'<div style="height:{yukseklik}px;overflow:hidden;background:#e9edf2;">'
-            f'<img src="{url}" alt="" style="display:block;width:100%;height:{yukseklik}px;object-fit:cover;object-position:center;" /></div>'
+    ac, kapa = (f'<a href="{link}">', "</a>") if link else ("", "")
+    return (ac + f'<div style="height:{yukseklik}px;overflow:hidden;background:#e9edf2;">'
+            f'<img src="{url}" alt="" style="display:block;width:100%;height:{yukseklik}px;object-fit:cover;object-position:center;" /></div>' + kapa +
             f'<p style="margin:3px 8px 10px 0;text-align:right;font-size:10px;line-height:1.2;color:#999;">'
             f'Görsel: <a href="{kaynak}" target="_blank" style="color:#999;">{e(kredi)}</a></p>')
 
@@ -118,21 +119,22 @@ def son_yayinlar(girdiler, n=4):
 
 
 HABERLER = [
-    (("https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/GeologyGarda4.jpg/960px-GeologyGarda4.jpg", "Silvia Forti, CC0", "https://commons.wikimedia.org/wiki/File:GeologyGarda4.jpg"), "05.11.2026", "[Örnek] TÜBİTAK 1001 projemiz için bursiyer alımı başladı", "Kültürel miras yapı taşları projemizde görev alacak lisans, yüksek lisans ve doktora bursiyerleri aranıyor."),
-    (("https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Judson_Locality_%28GeoDIL_number_-_1947%29.jpg/960px-Judson_Locality_%28GeoDIL_number_-_1947%29.jpg", "Joseph H. Hartman, CC0", "https://commons.wikimedia.org/wiki/File:Judson_Locality_(GeoDIL_number_-_1947).jpg"), "20.10.2026", "[Örnek] Arazi çalışması: İstanbul kazı şevlerinde ölçümler", "Ekibimiz İstanbul’daki derin kazılarda süreksizlik ölçümleri ve numune alımı gerçekleştirdi."),
-    (("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg/960px-Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg", "Julian Nyča, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skopje_%E2%80%93_Vardar_Bridge_(2017).jpg"), "15.09.2026", "[Örnek] EUROCK 2026’da iki bildiri sunduk", "Üsküp’te düzenlenen sempozyumda grubumuzun çalışmaları sözlü ve poster olarak sunuldu."),
+    (("https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/GeologyGarda4.jpg/960px-GeologyGarda4.jpg", "Silvia Forti, CC0", "https://commons.wikimedia.org/wiki/File:GeologyGarda4.jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-tübi-tak-1001-projemiz-için-bursiyer-alımı-başladı", "[Örnek] TÜBİTAK 1001 projemiz için bursiyer alımı başladı", "Kültürel miras yapı taşları projemizde görev alacak lisans, yüksek lisans ve doktora bursiyerleri aranıyor."),
+    (("https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Judson_Locality_%28GeoDIL_number_-_1947%29.jpg/960px-Judson_Locality_%28GeoDIL_number_-_1947%29.jpg", "Joseph H. Hartman, CC0", "https://commons.wikimedia.org/wiki/File:Judson_Locality_(GeoDIL_number_-_1947).jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-arazi-çalışması-i-stanbul-kazı-şevlerinde-ölçümler", "[Örnek] Arazi çalışması: İstanbul kazı şevlerinde ölçümler", "Ekibimiz İstanbul’daki derin kazılarda süreksizlik ölçümleri ve numune alımı gerçekleştirdi."),
+    (("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg/960px-Skopje_%E2%80%93_Vardar_Bridge_%282017%29.jpg", "Julian Nyča, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skopje_%E2%80%93_Vardar_Bridge_(2017).jpg"), "05.11.2026", "/haber-detay/2026/11/05/örnek-eurock-2026-da-iki-bildiri-sunduk", "[Örnek] EUROCK 2026’da iki bildiri sunduk", "Üsküp’te düzenlenen sempozyumda grubumuzun çalışmaları sözlü ve poster olarak sunuldu."),
 ]
 
 
 def haberler():
-    p = [baslik("Haberler ve Duyurular"),
+    p = [baslik("Haberler ve Duyurular", "/haberler", "Tüm haberler"),
          '<table style="width:100%;border-collapse:separate;border-spacing:12px 0;border:0;margin:0 -12px;"><tbody><tr>']
-    for gorsel, tarih, ad, ozet in HABERLER:
+    for gorsel, tarih, link, ad, ozet in HABERLER:
         p.append(f'<td style="width:33%;vertical-align:top;background:#fff;border:1px solid #e3e8ef;padding:0 0 14px 0;">' +
-                 gorsel_html(gorsel, 170) +
+                 gorsel_html(gorsel, 170, link) +
                  f'<div style="padding:0 16px;"><p style="margin:0 0 6px 0;font-size:12px;color:#888;">{tarih}</p>'
-                 f'<p style="margin:0 0 8px 0;font-size:16px;line-height:1.35;font-weight:bold;color:{LACIVERT};">{e(ad)}</p>'
-                 f'<p style="margin:0;font-size:14px;line-height:1.55;color:#444;">{e(ozet)}</p></div></td>')
+                 f'<p style="margin:0 0 8px 0;font-size:16px;line-height:1.35;font-weight:bold;"><a href="{link}" style="color:{LACIVERT};text-decoration:none;">{e(ad)}</a></p>'
+                 f'<p style="margin:0 0 8px 0;font-size:14px;line-height:1.55;color:#444;">{e(ozet)}</p>'
+                 f'<p style="margin:0;font-size:13px;"><a href="{link}">Devamı →</a></p></div></td>')
     p.append('</tr></tbody></table>')
     return "".join(p)
 
