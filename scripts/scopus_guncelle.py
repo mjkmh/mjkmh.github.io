@@ -483,10 +483,20 @@ STIL = """<style>
 </style>"""
 
 
-# Sitefinity <style> bloklarını sildiği için etiket stilleri satır içi yazılır
-ETIKET = ("display:inline-block;font-size:12px;line-height:1.6;padding:0 7px;margin-left:4px;"
-          "border:1px solid #bbb;border-radius:3px;color:#555;white-space:nowrap;")
-ETIKET_Q = ETIKET.replace("border:1px solid #bbb", "border:1px solid #17365d").replace("color:#555", "color:#17365d")
+# Sitefinity <style> bloklarını sildiği için stiller satır içi yazılır
+UYE = "color:#8b1a1a;font-weight:bold;"
+_ETIKET = ("display:inline-block;font-size:12px;line-height:1.6;padding:0 8px;margin-left:4px;"
+           "border-radius:10px;white-space:nowrap;")
+TUR_RENK = {"Makale": ("#eef2f7", "#4a5b70"), "Bildiri": ("#f3eef7", "#5f4a70"),
+            "Derleme": ("#eef6f3", "#3f6656"), "Kitap Bölümü": ("#f7f3ec", "#6b5a3e")}
+Q_RENK = {"Q1": ("#e3f2e6", "#2e6b3a"), "Q2": ("#eef5dc", "#556b23"),
+          "Q3": ("#fbf1dc", "#7a5a17"), "Q4": ("#f8e6e3", "#7a3a2f")}
+
+
+def etiket(metin_, renk):
+    zemin, yazi = renk
+    return f'<span class="tag" style="{_ETIKET}background:{zemin};color:{yazi};">{html.escape(metin_)}</span>'
+
 
 def html_yaz(girdiler):
     e = html.escape
@@ -500,17 +510,17 @@ def html_yaz(girdiler):
         p.append(f'<h3>{yil} <span class="count">({len(liste)})</span></h3>')
         p.append("<ol>")
         for g in liste:
-            yz = ", ".join(f"<strong>{e(a['n'])}</strong>" if a.get("m") else e(a["n"]) for a in g.get("authors") or [])
+            yz = ", ".join(f'<strong style="{UYE}">{e(a["n"])}</strong>' if a.get("m") else e(a["n"]) for a in g.get("authors") or [])
             kaynak = e(g.get("source") or "") + (f", {e(g['source_detail'])}" if g.get("source_detail") else "")
             s = f"    <li>{yz} ({g.get('year')}). {e(g.get('title') or '')}. <em>{kaynak}</em>."
             if g.get("doi"):
                 s += f' <a href="https://doi.org/{e(g["doi"])}" target="_blank" rel="noopener">doi:{e(g["doi"])}</a>'
             if g.get("type"):
-                s += f' <span class="tag" style="{ETIKET}">{e(g["type"])}</span>'
+                s += " " + etiket(g["type"], TUR_RENK.get(g["type"], ("#f1f1f1", "#555")))
             q = re.search(r"Q[1-4]", g.get("quartile") or "")
             if q or g.get("top_percent"):
                 metin_q = (q.group(0) if q else "") + (f" (%{g['top_percent']})" if g.get("top_percent") else "")
-                s += f' <span class="tag q" style="{ETIKET_Q}">{e(metin_q.strip())}</span>'
+                s += " " + etiket(metin_q.strip(), Q_RENK.get(q.group(0) if q else "", ("#f1f1f1", "#555")))
             p.append(s + "</li>")
         p.append("</ol>")
     p.append("</div>")

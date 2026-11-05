@@ -115,7 +115,7 @@ firstp {
 .ozet { line-height: 1.5; text-align: justify; }
 .ozet.kisa { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .devami { font-size: 14px; }
-.uye { color: #C00000; font-weight: 600; }
+.uye { color: #8b1a1a; font-weight: bold; }
 .yazarlar { font-size: 14px; color: #444; }
 .yayin-not { font-size: 14px; color: #666; }
 .gorsel-kaynak { font-size: 12px; color: #888; margin-top: -4px; }
@@ -157,6 +157,10 @@ iframe { max-width: 100%; }
 }
 
 /* Yayın etiketleri: tür ve Q / yüzdelik (Sitefinity ile aynı görünüm) */
-.etiket { display: inline-block; font-size: 12px; line-height: 1.6; padding: 0 7px; margin-left: 4px;
-  border: 1px solid #bbb; border-radius: 3px; color: #555; white-space: nowrap; font-style: normal; }
-.etiket.q { border-color: #17365d; color: #17365d; }
+.etiket { display: inline-block; font-size: 12px; line-height: 1.6; padding: 0 8px; margin-left: 4px;
+  border-radius: 10px; white-space: nowrap; font-style: normal; background: #eef2f7; color: #4a5b70; }
+.etiket.bildiri { background: #f3eef7; color: #5f4a70; }
+.etiket.q1 { background: #e3f2e6; color: #2e6b3a; }
+.etiket.q2 { background: #eef5dc; color: #556b23; }
+.etiket.q3 { background: #fbf1dc; color: #7a5a17; }
+.etiket.q4 { background: #f8e6e3; color: #7a3a2f; }
