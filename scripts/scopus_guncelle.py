@@ -143,7 +143,7 @@ def api_ile_topla(uyeler):
                 yol = "yazar profili"
             except Exception:
                 # Kurum ağı dışında (ör. GitHub) yazar profili kapalıdır; Scopus Search açıktır.
-                docs = ScopusSearch(f"AU-ID({sid})", view="STANDARD", subscriber=False, refresh=True).results or []
+                docs = ScopusSearch(f"AU-ID({sid})", view="STANDARD", subscriber=False, count=25, refresh=True).results or []
                 yol = "Scopus Search"
             print(f"  {u['ad']:<16} {len(docs)} yayın ({yol})")
             for d in docs:
