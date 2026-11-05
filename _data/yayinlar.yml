@@ -1,9 +1,8 @@
-# Yayınlar — Scopus dışa aktarımı: Scopus_Yayin_Listesi_20260924_202209_181650.xlsx
-# Sıra: yıl (azalan), yıl içinde yayın tarihi (Crossref, azalan). Düzeltme (Erratum) kayıtları ve
-# Scopus'ta iki kez dizinlenen bildirilerin DOI'siz kopyaları çıkarıldı. Koktaszhal makalesi Scopus'ta 2028,
-# Crossref tarihine (21.09.2026) göre 2026 yapıldı.
+# Yayınlar — scripts/scopus_guncelle.py ile üretildi (Scopus_Yayin_Listesi_20260924_202209_181650.xlsx, 05.11.2026).
+# Elle düzeltilen alanlar (year, date, title, image, image_credit, abstract) sonraki güncellemelerde korunur.
+# Elle eklenen ve Scopus'ta olmayan bir kayıt silinmesin isteniyorsa ona 'manuel: true' ekleyin.
 # authors: tüm yazarlar; m: true = MJKMH üyesi (sitede koyu kırmızı)
-# quartile: Scopus CiteScore çeyreği (dergi için dışa aktarım tarihindeki güncel değer)
+# quartile: Scopus CiteScore çeyreği; top_percent: alanındaki en iyi yüzdelik dilim (İlk %X)
 # abstract, image, image_credit: _config.yml yayin_detayli_yillar içindeki yıllarda gösterilir
 #   (image: images/yayinlar/ içindeki dosya; yoksa gri kare)
 
@@ -22,9 +21,11 @@
   source: "Kompleksnoe Ispolzovanie Mineralnogo Syra"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 36
   doi: "10.31643/2028/6445.26"
+  eid: "2-s2.0-105050469753"
   abstract: "This paper presents the results of a comprehensive mineralogical study of oxidized copper-porphyry ore from the Koktashal deposit. Optical microscopy, silicate analysis, and quantitative phase analysis were used to characterize the mineral composition and forms of copper occurrence in the oxidation zone. The ore contains 0.735% total copper, of which 89.8% occurs in oxidized form, 6.39% in primary sulfides, 2.72% in secondary sulfides, and 1.09% in water-soluble form. The principal ore minerals are malachite (1.5–2.0%) and azurite (0.3–0.4%), accompanied by hematite with magnetite (0.5%), goethite (0.2%), and pyrite (0.2%), whereas copper sulfides and native copper occur only in trace amounts. The integration of classical mineralogical methods with quantitative phase analysis provides new insights into the distribution of copper occurrence forms and their relationship to oxidation processes. Malachite and azurite occur as well-crystallized vein and nest aggregates as well as colloform earthy masses developed along microcracks in association with iron hydroxides. Their close association with iron hydroxides and the near absence of copper sulfides represent a diagnostic feature of the oxidation zone in copper-porphyry systems. These findings improve the assessment of supergene alteration during exploration and support the classification of oxidation-zone ores as a distinct geological and industrial type for reserve estimation, ore body delineation, and processing scheme selection."
-  image: zengin-2026-koktaszhal.jpg
+  image: "zengin-2026-koktaszhal.jpg"
   image_credit: "Jeolojik harita, CC BY-SA 4.0"
 
 - year: 2026
@@ -37,8 +38,9 @@
   source: "Applied Sciences Switzerland"
   type: Makale
   doi: "10.3390/app16178637"
+  eid: "2-s2.0-105050340210"
   abstract: "Featured Application: The proposed lithology-based multi-scale framework can support asphalt aggregate selection by integrating mechanical durability, inferred binder–aggregate interaction potential, moisture susceptibility, stripping resistance, and hydrated lime response under different lithological conditions. This study investigates how lithological origin influences the engineering performance, stripping resistance, and multi-scale material characteristics of aggregates used in asphalt pavement applications. Three representative aggregate systems—carbonate limestone from Cebeci (Istanbul), siliciclastic sandstone from Arnavutköy (Istanbul), and mafic volcanic basalt from the Karatepe Formation (Çorlu, Tekirdağ)—were comparatively evaluated. The experimental program included physical and mechanical tests, X-ray diffraction, inductively coupled plasma optical emission spectroscopy, inductively coupled plasma mass spectrometry, thin-section petrography, and stripping resistance testing. Physical, mechanical, and durability test results were evaluated using replicate measurements and are reported as mean ± standard deviation where applicable. Basalt showed the best mechanical and durability performance, with the lowest flakiness index, Los Angeles abrasion value, and magnesium sulfate soundness loss, but exhibited the lowest unmodified retained coating. Limestone showed a higher inferred binder-affinity potential, interpreted from its calcite-dominated mineralogy, whereas sandstone displayed higher sensitivity related to particle shape, mineralogical heterogeneity, phyllosilicate-bearing components, and petrographic pore/microvoid characteristics. The addition of 0.5% CL 90 S hydrated lime produced an intermediate improvement in stripping resistance, increasing retained coating values to 75–80% for all aggregates, whereas 1.0% hydrated lime further improved retained coating to 80–85%. Higher lime contents of 1.5% and 2.0% did not provide additional improvement under the applied laboratory conditions. These results indicate that 1.0% CL 90 S hydrated lime represents the most effective dosage among the tested conditions. Overall, the results demonstrate that aggregate performance is governed by coupled lithological controls involving mineralogy, petrography, geochemistry, inferred surface-related interaction potential, mechanical durability, stripping resistance, and anti-stripping additive response. The proposed framework should therefore be interpreted as a comparative multi-scale assessment rather than a direct predictive model."
-  image: akgunduz-2026-agrega.jpg
+  image: "akgunduz-2026-agrega.jpg"
   image_credit: "Şekil 1, CC BY 4.0"
 
 - year: 2026
@@ -49,9 +51,11 @@
   source: "Bulletin of Engineering Geology and the Environment"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 12
   doi: "10.1007/s10064-026-05010-1"
+  eid: "2-s2.0-105042968646"
   abstract: "Excavation-induced stress-release governs the mechanical response of geomaterials and may influence ground deformation and foundation performance beneath excavation bases. Although the concept of normal consolidation is commonly associated with soils, stress-states governed primarily by present overburden conditions may also occur in transitional rock and rock masses. This study presents a simplified analytical framework for evaluating excavation-induced stress redistribution and for defining preliminary ground-improvement depth envelopes in normally consolidated geomaterials. The proposed formulation is based on a one-dimensional reference stress framework governed by self-weight and reformulates the overconsolidation ratio (OCR) to represent excavation-induced stress-release as a normalized indicator of unloading. Within this framework, the depth at which the normalized OCR approaches unity is expressed as a function of excavation depth, defining an asymptotic analytical limit associated with the attenuation of excavation-induced stress redistribution. For normally consolidated soils, this limiting depth is approximately proportional to excavation depth (≈ 201·ED), which should be interpreted as a theoretical upper-bound envelope rather than a physically mobilized disturbance depth. The analytical framework is used to derive preliminary expressions for estimating ground-improvement depth in soils and to define ratio-based influence envelopes for transitional rock and rock environments. The proposed relationships are intended as screening-level engineering indicators that translate excavation depth and structural importance into rational ranges of ground-improvement depth. Although real excavation behaviour is governed by complex three-dimensional processes, recognition of such asymptotic stress-release envelopes may provide useful insight into the potential extent of excavation influence zone and support preliminary design assessment."
-  image: bozkurtoglu-2026-kazi.jpg
+  image: "bozkurtoglu-2026-kazi.jpg"
   image_credit: "Şekil 6, CC BY 4.0"
 
 - year: 2026
@@ -62,9 +66,11 @@
   source: "Remote Sensing in Earth Systems Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 17
   doi: "10.1007/s41976-026-00287-y"
+  eid: "2-s2.0-105037637763"
   abstract: "Istanbul, situated in one of the world’s most seismically active regions, faces urgent challenges in disaster preparedness due to its dense urban environment and large population. Urban green spaces are vital for enhancing disaster resilience, serving as essential evacuation zones, emergency shelters, and relief hubs. This study highlights the critical importance of accessible green spaces on the Anatolian side of Istanbul, using advanced GIS tools to evaluate their accessibility, size, and distribution. The findings expose stark spatial disparities among neighborhoods: while 53% of residents are within a five-minute walk of green spaces, this number rises to only 84% at ten minutes and 90% at fifteen minutes, leaving approximately 9% of the population beyond a fifteen-minute walk—an urgent gap that must be addressed. These results compellingly demonstrate the need for targeted urban planning strategies to expand green spaces in underserved areas, integrating disaster resilience into the core of urban development."
-  image: zengin-2026-yesil-alan.jpg
+  image: "zengin-2026-yesil-alan.jpg"
   image_credit: "Makaledeki harita"
 
 - year: 2026
@@ -81,8 +87,9 @@
   source: "Fractal and Fractional"
   type: Makale
   doi: "10.3390/fractalfract10040250"
+  eid: "2-s2.0-105039295274"
   abstract: "Moderate thermal exposure can significantly influence the mechanical behavior of volcanic rocks by inducing microcrack development and altering crack network characteristics. However, quantifying such damage processes remains challenging when relying solely on conventional mechanical parameters. In this study, the evolution of crack network complexity in andesite and andesitic–basaltic rocks subjected to moderate thermal exposure (200 °C) is investigated using fractal analysis integrated with mechanical and mineralogical observations. Six core specimens were tested under uniaxial compression, including three natural specimens and three specimens thermally treated at 200 °C prior to loading. After failure, crack surfaces were digitized and fractal dimensions (D) were calculated using the box-counting method. Petrographic observations and X-ray powder diffraction (XRPD) analyses were conducted to characterize the mineralogical composition and microstructural features controlling crack development. The results indicate that thermal exposure primarily reduces rock stiffness rather than peak strength. While the uniaxial compressive strength (UCS) of two specimens remains nearly unchanged after heating, the elastic modulus (E) decreases in all thermally treated specimens. Mineralogical observations reveal a heterogeneous volcanic fabric dominated by plagioclase and pyroxene within a fine-grained groundmass, with secondary calcite phases occurring in veins and pocket fillings. Fractal analysis shows generally lower D values in thermally treated specimens, suggesting crack redistribution and coalescence rather than increased network complexity, consistent with the observed reduction in stiffness and a tendency toward more ductile deformation behavior."
-  image: dinc-gogus-2026-fraktal.jpg
+  image: "dinc-gogus-2026-fraktal.jpg"
   image_credit: "Şekil 5, CC BY 4.0"
 
 - year: 2026
@@ -96,9 +103,11 @@
   source: "Geoheritage"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 25
   doi: "10.1007/s12371-026-01293-8"
+  eid: "2-s2.0-105034673928"
   abstract: "Natural stone not only endures; it records cultural memory. Bakırköy Küfeki Stone, a Miocene biosparitic limestone, historically quarried near present-day Bakırköy where is a district in Istanbul, and as the relevant lithology is most commonly found within the boundaries of this district, the stone has been named accordingly underpinned the architectural fabric of Istanbul’s Historical Peninsula (UNESCO World Heritage Site), spanning the Roman and Ottoman eras (e.g. city walls, aqueducts, major churches and mosques). Rapid urbanization has removed access to the original quarries. As a result, recent restorations have often substituted lithologies that mimic color/texture but differ in provenance and engineering behavior, which may hasten decay and compromise authenticity. This study assesses Bakırköy Küfeki Stone as a Global Heritage Stone Resource (GHSR) nominee by documenting its historical use, quarry distribution, geological context, and by characterizing mineralogical–petrographic, geochemical, and physico-mechanical characteristics (XRPD, WD-XRF, density, water absorption, porosity, uniaxial compressive, tensile, and abrasion strengths, frost resistance). Findings indicate a calcite-dominated, porous stone that is workable when freshly extracted yet hardens with time, a behavior consistent with its long service life but also with observed deteriorations such as erosion, dissolution, black crust (gypsum) formation, granular disintegration, and biological colonization under humid, polluted urban atmospheres. We discuss weathering pathways, restoration outcomes, and risks posed by non-equivalent replacements. To sustain both material integrity and urban identity, the paper proposes identifying and qualifying new sources that match the original stone potentially in Türkiye (e.g. Çanakkale) and in abroad using standardized testing and performance-based acceptance criteria. Formal GHSR recognition would, in turn, support better sourcing, documentation, and conservation planning across Istanbul’s heritage assets."
-  image: angi-2026-kufeki.jpg
+  image: "angi-2026-kufeki.jpg"
   image_credit: "Şekil 1, CC BY 4.0"
 
 - year: 2026
@@ -112,8 +121,9 @@
   source: "Applied Sciences Switzerland"
   type: Makale
   doi: "10.3390/app16021045"
+  eid: "2-s2.0-105029083122"
   abstract: "The increase in population and demand for the various needs of citizens increases the interaction with the geo-environment. Thus, the rate of natural events affecting daily human life increases. Such an event occurred on a rock cliff in a densely populated area in İstanbul (Türkiye). More than four rock blocks (approximately 3–5 m<sup>3</sup>) belonging to the Paleozoic sequence of İstanbul, composed of nodular limestone with sandy-clay interlayers, detached and fell. The blocks traveled along a path of approximately 60 m and stopped by crushing a couple of buildings downslope. The path was rough and contained various surface conditions (e.g., bedrock, talus, and plants). This study was initiated by the examination of the dimensions of failed rock blocks, their paths, and topographic conditions. Unmanned vehicles (drones) facilitated the generation of 3D numerical models of topographic changes on the site. Quantifying discontinuity properties (such as persistence, spacing, roughness, etc.) and defining weathering properties comprises the second stage, along with sampling. Based on digital topographic data and field observations, cross-sections were defined by means of possible rockfall areas within the area of potentially unstable blocks. Numerical analysis and rockfall analysis were conducted along these critical sections. Interpretation of laboratory data and results obtained from numerical studies leads to an understanding of the mechanism of the recent rockfall event and demonstrates the most critical areas to be considered and reinforced. The research comprises proposing appropriate reinforcement techniques due to the strong Turkish regulations along the “Bosphorus Waterfront Protected Zone”. The study advises pre-cleaning of potentially unstable blocks after a fence production on paths where rocks could fall, and rock anchors in some localities with varying lengths. The latest part of the research covers the re-assessment of mitigation processes with numerical models, which shows that the factor of safety increased to the desired levels. The reinforcement applications at the site match well with the proposed prevention methods."
-  image: undul-2026-kaya-dusmesi.jpg
+  image: "undul-2026-kaya-dusmesi.jpg"
   image_credit: "Şekil 20, CC BY 4.0"
 
 - year: 2026
@@ -125,9 +135,11 @@
   source: "Mediterranean Geoscience Reviews"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 38
   doi: "10.1007/s42990-025-00214-1"
+  eid: "2-s2.0-105027588482"
   abstract: "In rock mechanics and rock engineering, numerical methods are routinely employed to evaluate tunnel behavior in heterogeneous sedimentary rocks where variable strength and mixed-mode failure are common. To better understand the mechanical response of these rocks under tunnel stress conditions, three bonded-particle models—the Parallel-Bonded Model (PBM), Soft-Bonded Model (SBM), and Flat-Jointed Model (FJM)—were evaluated under different confinement levels using the Particle Flow Code (PFC). Laboratory test data on siltstone specimens from Istanbul, Türkiye, were used to calibrate the models, which were then subjected to triaxial loading at confining pressures of 1, 3, and 5 MPa before being upscaled to tunnel-scale analyses. Results indicate that PBM effectively captures brittle failure and localized shear bands; SBM yields lower strengths with diffuse cracking, typical of weak rock masses; and FJM reproduces mixed tensile–shear failure with ductile-like post-peak behavior. Rock behavior is strongly dependent on the selected contact model. The tunnel geometry served solely as a controlled testbed, and the results guide the selection of models for sedimentary rocks under confinement."
-  image: undul-2026-bonded-particle.jpg
+  image: "undul-2026-bonded-particle.jpg"
   image_credit: "Makaledeki şekil"
 
 - year: 2025
@@ -139,6 +151,7 @@
   source: "Geotechnics"
   type: Makale
   doi: "10.3390/geotechnics5040082"
+  eid: "2-s2.0-105025985034"
 
 - year: 2025
   date: "2025-09-04"
@@ -148,7 +161,9 @@
   source: "Mediterranean Geoscience Reviews"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 38
   doi: "10.1007/s42990-025-00193-3"
+  eid: "2-s2.0-105015392926"
 
 - year: 2025
   date: "2025-07-02"
@@ -159,7 +174,9 @@
   source: "Euro Mediterranean Journal for Environmental Integration"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 46
   doi: "10.1007/s41207-025-00850-x"
+  eid: "2-s2.0-105009550103"
 
 - year: 2025
   date: "2025-06-27"
@@ -170,6 +187,7 @@
   source: "Water Switzerland"
   type: Makale
   doi: "10.3390/w17131931"
+  eid: "2-s2.0-105010242020"
 
 - year: 2025
   date: "2025-04-12"
@@ -181,7 +199,9 @@
   source: "Bulletin of Engineering Geology and the Environment"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 12
   doi: "10.1007/s10064-025-04245-8"
+  eid: "2-s2.0-105002760903"
 
 - year: 2025
   date: "2025-04-01"
@@ -194,7 +214,9 @@
   source: "Iop Conference Series Earth and Environmental Science"
   type: Bildiri
   quartile: "(Q3 - Scopus)"
+  top_percent: 65
   doi: "10.1088/1755-1315/1480/1/012094"
+  eid: "2-s2.0-105003391427"
 
 - year: 2025
   date: "2025-03-21"
@@ -207,7 +229,9 @@
   source: "Turkish Journal of Earth Sciences"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 39
   doi: "10.55730/1300-0985.1969"
+  eid: "2-s2.0-105001688285"
 
 - year: 2025
   date: "2025-03-07"
@@ -219,6 +243,7 @@
   source: "Applied Sciences Switzerland"
   type: Makale
   doi: "10.3390/app15062908"
+  eid: "2-s2.0-105001132353"
 
 - year: 2025
   date: "2025-02-05"
@@ -230,6 +255,7 @@
   source: "Water Switzerland"
   type: Derleme
   doi: "10.3390/w17030439"
+  eid: "2-s2.0-85217684751"
 
 - year: 2025
   date: "2025-02"
@@ -255,6 +281,7 @@
   source: "Journal of Hydrology Regional Studies"
   type: Makale
   doi: "10.1016/j.ejrh.2024.102145"
+  eid: "2-s2.0-85214258323"
 
 - year: 2025
   title: "Stability assessment of the Pekmez landslide area: a comparison of the 2D Limit Equilibrium Method (2D LEM), 2D Finite Element Method (2D FEM), and 3D Finite Element Method (3D FEM)"
@@ -267,7 +294,9 @@
   source: "Geologica Balcanica"
   type: Makale
   quartile: "(Q3 - Scopus)"
+  top_percent: 69
   doi: "10.52321/GeolBalc.54.3.83"
+  eid: "2-s2.0-105026675292"
 
 - year: 2024
   date: "2024-11-19"
@@ -280,6 +309,7 @@
   source: "Scientific Reports"
   type: Makale
   doi: "10.1038/s41598-024-79940-9"
+  eid: "2-s2.0-85209388422"
 
 - year: 2024
   date: "2024-09-23"
@@ -291,7 +321,9 @@
   source: "Hydrogeology Journal"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 19
   doi: "10.1007/s10040-024-02816-9"
+  eid: "2-s2.0-85204637470"
 
 - year: 2024
   date: "2024-03-21"
@@ -308,7 +340,9 @@
   source: "Lecture Notes in Civil Engineering"
   type: Bildiri
   quartile: "(Q4 - Scopus)"
+  top_percent: 89
   doi: "10.1007/978-981-97-0948-9_4"
+  eid: "2-s2.0-85189749752"
 
 - year: 2024
   date: "2024-01-29"
@@ -320,7 +354,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-023-11374-4"
+  eid: "2-s2.0-85188250668"
 
 - year: 2023
   date: "2023-12"
@@ -335,6 +371,7 @@
   source: "Structures"
   type: Makale
   doi: "10.1016/j.istruc.2023.105411"
+  eid: "2-s2.0-85174684894"
 
 - year: 2023
   date: "2023-11-22"
@@ -347,7 +384,9 @@
   source: "Mine Water and the Environment"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 37
   doi: "10.1007/s10230-023-00956-0"
+  eid: "2-s2.0-85177571459"
 
 - year: 2023
   date: "2023-09-11"
@@ -358,7 +397,9 @@
   source: "Urban Rail Transit"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 13
   doi: "10.1007/s40864-023-00200-6"
+  eid: "2-s2.0-85170378029"
 
 - year: 2023
   date: "2023-07-19"
@@ -368,7 +409,9 @@
   source: "Environmental Monitoring and Assessment"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 22
   doi: "10.1007/s10661-023-11549-3"
+  eid: "2-s2.0-85165250441"
 
 - year: 2023
   date: "2023-05-03"
@@ -381,6 +424,7 @@
   source: "Fractal and Fractional"
   type: Makale
   doi: "10.3390/fractalfract7050383"
+  eid: "2-s2.0-85160362463"
 
 - year: 2023
   date: "2023-04-17"
@@ -390,7 +434,9 @@
   source: "Journal of the Indian Society of Remote Sensing"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 32
   doi: "10.1007/s12524-023-01694-0"
+  eid: "2-s2.0-85153096408"
 
 - year: 2023
   date: "2023-03-01"
@@ -405,7 +451,9 @@
   source: "Environmental Monitoring and Assessment"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 22
   doi: "10.1007/s10661-023-11016-z"
+  eid: "2-s2.0-85149180522"
 
 - year: 2023
   date: "2023-02-13"
@@ -418,7 +466,9 @@
   source: "Yerbilimleri Earth Sciences"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 84
   doi: "10.17824/yerbilimleri.1209614"
+  eid: "2-s2.0-85169826983"
 
 - year: 2022
   date: "2022-11-03"
@@ -429,6 +479,7 @@
   source: "Plos One"
   type: Makale
   doi: "10.1371/journal.pone.0276214"
+  eid: "2-s2.0-85141890291"
 
 - year: 2022
   date: "2022-08-05"
@@ -439,7 +490,9 @@
   source: "Bulletin of Engineering Geology and the Environment"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 12
   doi: "10.1007/s10064-022-02857-y"
+  eid: "2-s2.0-85135496209"
 
 - year: 2022
   date: "2022-03-29"
@@ -449,7 +502,9 @@
   source: "Yerbilimleri Earth Sciences"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 84
   doi: "10.17824/yerbilimleri.1030332"
+  eid: "2-s2.0-85150842308"
 
 - year: 2022
   title: "Changes in Settlement Troughs Induced by Subway Tunnel Excavations in Weak Geological Environments in Istanbul"
@@ -459,7 +514,9 @@
   source: "Jeoloji Muhendisligi Dergisi"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 79
   doi: "10.24232/jmd.1138974"
+  eid: "2-s2.0-85136786205"
 
 - year: 2022
   title: "Characterization of Natural Discontinuities in Tight Sandstone and Gas Shale Unconventional Reservoir Rocks of Thrace Region in Turkey with DFN Method"
@@ -468,6 +525,7 @@
     - {n: "Develi K.", m: true}
   source: "56th U S Rock Mechanics Geomechanics Symposium"
   type: Bildiri
+  eid: "2-s2.0-85149222010"
 
 - year: 2021
   date: "2021-12"
@@ -479,7 +537,9 @@
   source: "Journal of Applied Geophysics"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 30
   doi: "10.1016/j.jappgeo.2021.104474"
+  eid: "2-s2.0-85117711759"
 
 - year: 2021
   date: "2021-06-18"
@@ -489,7 +549,9 @@
   source: "Jeoloji Muhendisligi Dergisi"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 79
   doi: "10.24232/JMD.935400"
+  eid: "2-s2.0-85109003673"
 
 - year: 2021
   date: "2021-02-27"
@@ -500,7 +562,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-021-09509-6"
+  eid: "2-s2.0-85101915004"
 
 - year: 2021
   date: "2021-02-05"
@@ -513,7 +577,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-021-09426-8"
+  eid: "2-s2.0-85100572410"
 
 - year: 2021
   title: "Modelling of Hydraulic Fracturing Treatments in South East Part of Turkey with DFN Method and Comparison with Simulation Results"
@@ -522,6 +588,7 @@
     - {n: "Develi K.", m: true}
   source: "55th U S Rock Mechanics Geomechanics Symposium 2021"
   type: Bildiri
+  eid: "2-s2.0-85122941955"
 
 - year: 2020
   date: "2020-10-01"
@@ -534,7 +601,9 @@
   source: "Soil Mechanics and Foundation Engineering"
   type: Makale
   quartile: "(Q3 - Scopus)"
+  top_percent: 74
   doi: "10.1007/s11204-020-09667-y"
+  eid: "2-s2.0-85091760540"
 
 - year: 2020
   date: "2020-10"
@@ -548,7 +617,9 @@
   source: "International Journal of Rock Mechanics and Mining Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 5
   doi: "10.1016/j.ijrmms.2020.104446"
+  eid: "2-s2.0-85089543636"
 
 - year: 2020
   date: "2020-10"
@@ -558,7 +629,9 @@
   source: "International Journal of Solids and Structures"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 8
   doi: "10.1016/j.ijsolstr.2020.06.038"
+  eid: "2-s2.0-85089096130"
 
 - year: 2020
   date: "2020-07-14"
@@ -568,7 +641,9 @@
   source: "Arabian Journal of Geosciences"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 46
   doi: "10.1007/s12517-020-05684-1"
+  eid: "2-s2.0-85087983947"
 
 - year: 2020
   date: "2020-05-29"
@@ -580,7 +655,9 @@
   source: "Hydrogeology Journal"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 19
   doi: "10.1007/s10040-020-02183-1"
+  eid: "2-s2.0-85085869717"
 
 - year: 2019
   date: "2019-12"
@@ -598,7 +675,9 @@
   source: "Geomorphology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 18
   doi: "10.1016/j.geomorph.2019.106859"
+  eid: "2-s2.0-85073968454"
 
 - year: 2019
   date: "2019-09"
@@ -612,7 +691,9 @@
   source: "Journal of Petroleum Science and Engineering"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 5
   doi: "10.1016/j.petrol.2019.05.009"
+  eid: "2-s2.0-85066245366"
 
 - year: 2019
   date: "2019-07-04"
@@ -625,6 +706,7 @@
   source: "Rock Dynamics Summit Proceedings of the 2019 Rock Dynamics Summit Rds 2019"
   type: Bildiri
   doi: "10.1201/9780429327933-96"
+  eid: "2-s2.0-85091660955"
 
 - year: 2019
   date: "2019-03-21"
@@ -635,7 +717,9 @@
   source: "Biological Trace Element Research"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 17
   doi: "10.1007/s12011-019-01695-6"
+  eid: "2-s2.0-85063195012"
 
 - year: 2019
   date: "2019-03-04"
@@ -647,7 +731,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-019-8181-8"
+  eid: "2-s2.0-85062767552"
 
 - year: 2019
   title: "Evaluation of blast size and shape for blast induced ground vibrations"
@@ -658,6 +744,7 @@
     - {n: "Bozkurtoğlu E.", m: true}
   source: "Imcet 2019 Proceedings of the 26th International Mining Congress and Exhibition of Turkey"
   type: Bildiri
+  eid: "2-s2.0-85074145766"
 
 - year: 2018
   date: "2018-12-15"
@@ -669,7 +756,9 @@
   source: "Jeoloji Muhendisligi Dergisi"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 79
   doi: "10.24232/jmd.486009"
+  eid: "2-s2.0-85069469665"
 
 - year: 2018
   date: "2018-06-15"
@@ -681,7 +770,9 @@
   source: "Jeoloji Muhendisligi Dergisi"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 79
   doi: "10.24232/jmd.434139"
+  eid: "2-s2.0-85049728355"
 
 - year: 2018
   date: "2018-04-22"
@@ -695,6 +786,7 @@
   source: "SPE Western Regional Meeting Proceedings"
   type: Bildiri
   doi: "10.2118/190041-ms"
+  eid: "2-s2.0-85050471488"
 
 - year: 2018
   date: "2018-01-23"
@@ -707,6 +799,7 @@
   source: "Society of Petroleum Engineers SPE Hydraulic Fracturing Technology Conference and Exhibition 2018 Hftc 2018"
   type: Bildiri
   doi: "10.2118/189892-ms"
+  eid: "2-s2.0-85066279189"
 
 - year: 2018
   date: "2018-01-16"
@@ -717,7 +810,9 @@
   source: "Rock Mechanics and Rock Engineering"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1007/s00603-017-1397-6"
+  eid: "2-s2.0-85040604075"
 
 - year: 2017
   date: "2017-11"
@@ -728,7 +823,9 @@
   source: "Engineering Geology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1016/j.enggeo.2017.09.022"
+  eid: "2-s2.0-85032503609"
 
 - year: 2017
   date: "2017-10"
@@ -740,7 +837,9 @@
   source: "Journal of Contaminant Hydrology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 18
   doi: "10.1016/j.jconhyd.2017.08.009"
+  eid: "2-s2.0-85028504380"
 
 - year: 2017
   date: "2017-06-26"
@@ -750,7 +849,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-017-6770-y"
+  eid: "2-s2.0-85021353968"
 
 - year: 2017
   date: "2017-02"
@@ -763,7 +864,9 @@
   source: "International Journal of Rock Mechanics and Mining Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 5
   doi: "10.1016/j.ijrmms.2016.12.006"
+  eid: "2-s2.0-85008147348"
 
 - year: 2017
   date: "2017-01-23"
@@ -775,7 +878,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-017-6423-1"
+  eid: "2-s2.0-85010669738"
 
 - year: 2017
   date: "2016-03-26"
@@ -790,7 +895,9 @@
   source: "Journal of Periodontal Research"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 7
   doi: "10.1111/jre.12371"
+  eid: "2-s2.0-84961644456"
 
 - year: 2016
   date: "2016-12-15"
@@ -801,7 +908,9 @@
   source: "Jeoloji Muhendisligi Dergisi"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 79
   doi: "10.24232/jeoloji-muhendisligi-dergisi.295420"
+  eid: "2-s2.0-85013177921"
 
 - year: 2016
   date: "2016-12-12"
@@ -815,6 +924,7 @@
   source: "ISRM International Symposium Eurock 2016"
   type: Bildiri
   doi: "10.1201/9781315388502-30"
+  eid: "2-s2.0-85060987067"
 
 - year: 2016
   date: "2016-12-12"
@@ -826,6 +936,7 @@
   source: "ISRM International Symposium Eurock 2016"
   type: Bildiri
   doi: "10.1201/9781315388502-102"
+  eid: "2-s2.0-85060970825"
 
 - year: 2016
   date: "2016-10-31"
@@ -838,7 +949,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-016-6224-y"
+  eid: "2-s2.0-84993999183"
 
 - year: 2016
   date: "2016-10-07"
@@ -849,7 +962,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-016-6152-x"
+  eid: "2-s2.0-84990852429"
 
 - year: 2016
   date: "2016-08"
@@ -859,7 +974,9 @@
   source: "Engineering Geology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1016/j.enggeo.2016.06.001"
+  eid: "2-s2.0-84973460485"
 
 - year: 2016
   date: "2016-07"
@@ -872,7 +989,9 @@
   source: "Journal of Natural Gas Science and Engineering"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 7
   doi: "10.1016/j.jngse.2016.06.040"
+  eid: "2-s2.0-84990066634"
 
 - year: 2016
   date: "2016-05-20"
@@ -884,7 +1003,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-016-5724-0"
+  eid: "2-s2.0-84970973738"
 
 - year: 2016
   date: "2016-01-06"
@@ -896,7 +1017,9 @@
   source: "Environmental Earth Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 14
   doi: "10.1007/s12665-015-4986-2"
+  eid: "2-s2.0-84953311110"
 
 - year: 2016
   title: "Swiss quartz dust guideline: A tool for managing the health risk related to quartz dust in early project stages"
@@ -911,6 +1034,7 @@
     - {n: "Martini D."}
   source: "Ita Aites World Tunnel Congress 2016 Wtc 2016"
   type: Bildiri
+  eid: "2-s2.0-84976408043"
 
 - year: 2015
   date: "2015-12-15"
@@ -922,7 +1046,9 @@
   source: "Jeoloji Muhendisligi Dergisi"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 79
   doi: "10.24232/jeoloji-muhendisligi-dergisi.295372"
+  eid: "2-s2.0-84958531167"
 
 - year: 2015
   date: "2015-10"
@@ -935,7 +1061,9 @@
   source: "International Journal of Multiphase Flow"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 16
   doi: "10.1016/j.ijmultiphaseflow.2015.05.005"
+  eid: "2-s2.0-84930664652"
 
 - year: 2015
   date: "2015-07"
@@ -948,7 +1076,9 @@
   source: "Engineering Geology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1016/j.enggeo.2015.04.024"
+  eid: "2-s2.0-84930762847"
 
 - year: 2015
   date: "2015-03-27"
@@ -960,7 +1090,9 @@
   source: "Fractals"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 3
   doi: "10.1142/S0218348X15400058"
+  eid: "2-s2.0-84928628003"
 
 - year: 2015
   date: "2015-03-18"
@@ -973,7 +1105,9 @@
   source: "Journal of Geophysics and Engineering"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 37
   doi: "10.1088/1742-2132/12/2/273"
+  eid: "2-s2.0-84927553993"
 
 - year: 2015
   date: "2015-02-03"
@@ -986,6 +1120,7 @@
   source: "Society of Petroleum Engineers SPE Hydraulic Fracturing Technology Conference 2015"
   type: Bildiri
   doi: "10.2118/173385-ms"
+  eid: "2-s2.0-84945388232"
 
 - year: 2015
   date: "2015-01"
@@ -997,7 +1132,9 @@
   source: "International Journal of Multiphase Flow"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 16
   doi: "10.1016/j.ijmultiphaseflow.2014.10.004"
+  eid: "2-s2.0-84910066632"
 
 - year: 2015
   date: "2015-01"
@@ -1008,7 +1145,9 @@
   source: "International Journal of Rock Mechanics and Mining Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 5
   doi: "10.1016/j.ijrmms.2014.11.002"
+  eid: "2-s2.0-84912017994"
 
 - year: 2015
   date: "2014-08-31"
@@ -1019,6 +1158,7 @@
   source: "Engineering Geology for Society and Territory Volume 6 Applied Geology for Major Engineering Projects"
   type: Kitap Bölümü
   doi: "10.1007/978-3-319-09060-3_12"
+  eid: "2-s2.0-84944610151"
 
 - year: 2014
   date: "2014-11"
@@ -1030,7 +1170,9 @@
   source: "International Journal of Coal Geology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 1
   doi: "10.1016/j.coal.2014.09.003"
+  eid: "2-s2.0-84908502878"
 
 - year: 2014
   date: "2014-05-08"
@@ -1041,6 +1183,7 @@
   source: "Rock Engineering and Rock Mechanics Structures in and on Rock Masses Proceedings of Eurock 2014 ISRM European Regional Symposium"
   type: Bildiri
   doi: "10.1201/b16955-208"
+  eid: "2-s2.0-84901345459"
 
 - year: 2014
   date: "2013-10-24"
@@ -1052,7 +1195,9 @@
   source: "Rock Mechanics and Rock Engineering"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1007/s00603-013-0495-3"
+  eid: "2-s2.0-84907596601"
 
 - year: 2014
   title: "Effect of fracture roughness and shear displacement on permeability and proppant transportation in a single fracture"
@@ -1063,6 +1208,7 @@
     - {n: "Develi K.", m: true}
   source: "Society of Petroleum Engineers SPE Canadian Unconventional Resources Conference 2014"
   type: Bildiri
+  eid: "2-s2.0-84925682807"
 
 - year: 2013
   date: "2013-10-24"
@@ -1075,6 +1221,7 @@
   source: "ISRM International Symposium Eurock 2013"
   type: Bildiri
   doi: "10.1201/b15683-60"
+  eid: "2-s2.0-84930758280"
 
 - year: 2013
   date: "2013-04-28"
@@ -1085,7 +1232,9 @@
   source: "Water Air and Soil Pollution"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 23
   doi: "10.1007/s11270-013-1573-6"
+  eid: "2-s2.0-84876667947"
 
 - year: 2013
   date: "2013-01-01"
@@ -1097,7 +1246,9 @@
   source: "Turkish Journal of Earth Sciences"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 39
   doi: "10.3906/yer-1204-1"
+  eid: "2-s2.0-84874678451"
 
 - year: 2013
   title: "Brittle failure processes in veined clay rock with large strength contrasts between vein and matrix"
@@ -1107,6 +1258,7 @@
     - {n: "Ündül Ö.", m: true}
   source: "47th US Rock Mechanics Geomechanics Symposium 2013"
   type: Bildiri
+  eid: "2-s2.0-84892699399"
 
 - year: 2012
   date: "2012-07"
@@ -1119,7 +1271,9 @@
   source: "Ecological Indicators"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1016/j.ecolind.2012.01.024"
+  eid: "2-s2.0-84858702046"
 
 - year: 2012
   date: "2011-08-30"
@@ -1130,7 +1284,9 @@
   source: "Rock Mechanics and Rock Engineering"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1007/s00603-011-0174-1"
+  eid: "2-s2.0-84861580588"
 
 - year: 2012
   title: "Assessment of mass movements in the western part of Istanbul, Turkey"
@@ -1140,6 +1296,7 @@
     - {n: "Zarif H."}
   source: "Landslides and Engineered Slopes Protecting Society Through Improved Understanding Proceedings of the 11th International and 2nd North American Symposium on Landslides and Engineered Slopes 2012"
   type: Bildiri
+  eid: "2-s2.0-85070986920"
 
 - year: 2011
   date: "2011-06"
@@ -1152,7 +1309,9 @@
   source: "International Journal of Rock Mechanics and Mining Sciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 5
   doi: "10.1016/j.ijrmms.2011.03.001"
+  eid: "2-s2.0-79956087523"
 
 - year: 2011
   date: "2011-02"
@@ -1164,7 +1323,9 @@
   source: "Chemosphere"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 1
   doi: "10.1016/j.chemosphere.2010.11.029"
+  eid: "2-s2.0-78650882950"
 
 - year: 2011
   date: "2010-05-01"
@@ -1174,7 +1335,9 @@
   source: "Bulletin of Engineering Geology and the Environment"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 12
   doi: "10.1007/s10064-010-0289-8"
+  eid: "2-s2.0-79551650966"
 
 - year: 2011
   title: "Comparison of weathering properties by the help of Electrical Resistivity Tomography Technique (ERT)"
@@ -1185,6 +1348,8 @@
   source: "Jeoloji Muhendisligi Dergisi"
   type: Makale
   quartile: "(Q4 - Scopus)"
+  top_percent: 79
+  eid: "2-s2.0-84856979527"
 
 - year: 2011
   title: "Identifying the weathering profiles of ultramafic rocks using electrical resistivity tomography (ERT)"
@@ -1194,6 +1359,7 @@
     - {n: "Zarif I.H."}
   source: "45th US Rock Mechanics Geomechanics Symposium"
   type: Makale
+  eid: "2-s2.0-82555188424"
 
 - year: 2010
   title: "A new empirical approach for prediction of rock mass strength based on a strength reducing curve zone instead of unique strength reducing curve"
@@ -1205,6 +1371,7 @@
     - {n: "Tunusluoglu M.C."}
   source: "ISRM International Symposium 6th Asian Rock Mechanics Symposium Arms 2010"
   type: Bildiri
+  eid: "2-s2.0-84962823705"
 
 - year: 2010
   title: "Changes in physico-mechanical properties of ultramafic rocks due to weathering"
@@ -1213,6 +1380,7 @@
     - {n: "Tǔgrul A."}
   source: "Rock Mechanics in Civil and Environmental Engineering Proceedings of the European Rock Mechanics Symposium Eurock 2010"
   type: Bildiri
+  eid: "2-s2.0-84860119448"
 
 - year: 2009
   title: "In-situ chemical oxidation of residual TCE by permanganate in epikarst"
@@ -1221,6 +1389,7 @@
     - {n: "Yolcubal İ.", m: true}
   source: "World Academy of Science Engineering and Technology"
   type: Makale
+  eid: "2-s2.0-78651559326"
 
 - year: 2009
   title: "Weathering and alteration in tuzla geothermal field: Correlation of petrographical weathering patterns with geochemical data,Çanakkale-northwestern Turkey"
@@ -1230,6 +1399,7 @@
     - {n: "Suner F."}
   source: "9th International Multidicsciplinary Scientific Geoconference and EXPO Modern Management of Mine Producing Geology and Environmental Protection Sgem 2009"
   type: Bildiri
+  eid: "2-s2.0-84890376167"
 
 - year: 2008
   date: "2008-11"
@@ -1240,7 +1410,9 @@
   source: "Chemosphere"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 1
   doi: "10.1016/j.chemosphere.2008.07.013"
+  eid: "2-s2.0-54149092154"
 
 - year: 2007
   date: "2007-05-03"
@@ -1253,7 +1425,9 @@
   source: "Water Air and Soil Pollution"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 23
   doi: "10.1007/s11270-007-9403-3"
+  eid: "2-s2.0-34548265177"
 
 - year: 2007
   title: "Retention and transport of hexavalent chromium in calcareous karst soils"
@@ -1263,6 +1437,8 @@
   source: "Turkish Journal of Earth Sciences"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 39
+  eid: "2-s2.0-34548125474"
 
 - year: 2006
   date: "2006-09"
@@ -1275,7 +1451,9 @@
   source: "Engineering Geology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1016/j.enggeo.2006.06.002"
+  eid: "2-s2.0-33748171487"
 
 - year: 2006
   date: "2006-04-15"
@@ -1290,7 +1468,9 @@
   source: "Water Resources Research"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 10
   doi: "10.1029/2005WR004112"
+  eid: "2-s2.0-33744786783"
 
 - year: 2006
   date: "2006-01"
@@ -1300,7 +1480,9 @@
   source: "Engineering Geology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1016/j.enggeo.2005.09.001"
+  eid: "2-s2.0-29944434465"
 
 - year: 2006
   title: "Tunnelling difficulties under squeezing and flowing conditions at Ayas tunnel"
@@ -1311,6 +1493,7 @@
     - {n: "Şans G.", m: true}
   source: "Felsbau"
   type: Makale
+  eid: "2-s2.0-33750368615"
 
 - year: 2005
   title: "Water-level changes in shallow wells before and after the 1999 İzmit and Düzce earthquakes and comparison with long-term water-level observations (1999-2004), NW Turkey"
@@ -1322,6 +1505,8 @@
   source: "Turkish Journal of Earth Sciences"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 39
+  eid: "2-s2.0-29844446008"
 
 - year: 2004
   date: "2004-08-01"
@@ -1336,7 +1521,9 @@
   source: "Environmental Toxicology and Chemistry"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 36
   doi: "10.1897/03-379"
+  eid: "2-s2.0-3442875841"
 
 - year: 2004
   date: "2004"
@@ -1350,6 +1537,7 @@
   source: "Environmental Monitoring and Characterization"
   type: Kitap Bölümü
   doi: "10.1016/B978-012064477-3/50014-X"
+  eid: "2-s2.0-80052069341"
 
 - year: 2003
   date: "2003-11"
@@ -1362,7 +1550,9 @@
   source: "Journal of Contaminant Hydrology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 18
   doi: "10.1016/S0169-7722(03)00027-5"
+  eid: "2-s2.0-0142120357"
 
 - year: 2003
   date: "2003-05"
@@ -1373,7 +1563,9 @@
   source: "Bulletin of Engineering Geology and the Environment"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 12
   doi: "10.1007/s10064-002-0183-0"
+  eid: "2-s2.0-0038198669"
 
 - year: 2003
   date: "2003-01"
@@ -1384,7 +1576,9 @@
   source: "Theoretical and Applied Fracture Mechanics"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 4
   doi: "10.1016/S0167-8442(02)00139-8"
+  eid: "2-s2.0-0037214810"
 
 - year: 2003
   title: "Effects of the 17 August, 1999 earthquake on the heavy metal composition of thermal waters in the Marmara Region, northwest Turkey: Is it a precursor?"
@@ -1396,6 +1590,8 @@
   source: "Journal of the Geological Society of India"
   type: Makale
   quartile: "(Q3 - Scopus)"
+  top_percent: 51
+  eid: "2-s2.0-0842322914"
 
 - year: 2002
   date: "2002-11"
@@ -1408,7 +1604,9 @@
   source: "Journal of Environmental Quality"
   type: Makale
   quartile: "(Q2 - Scopus)"
+  top_percent: 37
   doi: "10.2134/jeq2002.1824"
+  eid: "2-s2.0-2242456807"
 
 - year: 2002
   date: "2002-01"
@@ -1423,7 +1621,9 @@
   source: "Journal of Environmental Radioactivity"
   type: Makale
   quartile: "(Q3 - Scopus)"
+  top_percent: 52
   doi: "10.1016/S0265-931X(02)00031-0"
+  eid: "2-s2.0-0036384630"
 
 - year: 2001
   date: "2011-11-20"
@@ -1434,7 +1634,9 @@
   source: "Fractals"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 3
   doi: "10.1142/S0218348X01000464"
+  eid: "2-s2.0-0346125281"
 
 - year: 2001
   date: "2001-08"
@@ -1448,7 +1650,9 @@
   source: "Journal of Contaminant Hydrology"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 18
   doi: "10.1016/S0169-7722(01)00111-5"
+  eid: "2-s2.0-0034915835"
 
 - year: 2001
   date: "2001-04"
@@ -1460,7 +1664,9 @@
   source: "Computers and Geosciences"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 11
   doi: "10.1016/S0098-3004(00)00083-2"
+  eid: "2-s2.0-0035098138"
 
 - year: 2000
   date: "2000-11"
@@ -1474,7 +1680,9 @@
   source: "Analytica Chimica Acta"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 13
   doi: "10.1016/S0003-2670(00)01072-2"
+  eid: "2-s2.0-0034642134"
 
 - year: 1998
   date: "1998-11"
@@ -1485,6 +1693,7 @@
   source: "Mathematical Geology"
   type: Makale
   doi: "10.1023/A:1021781525574"
+  eid: "2-s2.0-0032460437"
 
 - year: 1998
   date: "1998-07-14"
@@ -1494,7 +1703,9 @@
   source: "Rock Mechanics and Rock Engineering"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1007/s006030050017"
+  eid: "2-s2.0-0032116605"
 
 - year: 1997
   date: "1997-09"
@@ -1507,4 +1718,6 @@
   source: "Journal of Geophysical Research Planets"
   type: Makale
   quartile: "(Q1 - Scopus)"
+  top_percent: 2
   doi: "10.1029/97JE01873"
+  eid: "2-s2.0-0000822168"

@@ -1,0 +1,36 @@
+# Scopus yayın güncelleme ayarları (scripts/scopus_guncelle.py okur)
+#
+# uyeler: yayınları çekilecek grup üyeleri. Pasif üyeler de kalabilir; geçmiş yayınları listede durur.
+#   scopus_id: Scopus Author ID
+#   ad: sitede yazar listesinde gösterilecek kısa ad (Scopus'taki yazımı düzeltmek için, ör. "Dinç G Ö." yerine)
+uyeler:
+  - {scopus_id: "6506402368",  ad: "Yolcubal İ."}
+  - {scopus_id: "55884063500", ad: "Mahmutoğlu Y."}
+  - {scopus_id: "48462096700", ad: "Ündül Ö."}
+  - {scopus_id: "57189441189", ad: "Zengin E."}
+  - {scopus_id: "57218117985", ad: "Dinç Göğüş Ö."}
+  - {scopus_id: "6507238281",  ad: "Bozkurtoğlu E."}
+  - {scopus_id: "6508241951",  ad: "Develi K."}
+  - {scopus_id: "57211442038", ad: "Korkut M."}
+  - {scopus_id: "15045539500", ad: "Şans G."}
+  - {scopus_id: "60367036300", ad: "Doğu M.M."}
+
+# Listeye hiç alınmayacak yayın türleri (Scopus İngilizce adlarıyla)
+haric_turler: ["Erratum"]
+
+# Listeye hiç alınmayacak tekil yayınlar (EID veya DOI). Gerekçe yanına yazılabilir.
+haric_yayinlar: []
+
+# Türkçe yayın türü adları
+tur_adlari:
+  Article: Makale
+  Review: Derleme
+  Conference Paper: Bildiri
+  Book Chapter: Kitap Bölümü
+  Book: Kitap
+  Letter: Mektup
+  Editorial: Editoryal
+  Note: Not
+  Short Survey: Kısa Derleme
+  Data Paper: Veri Makalesi
+  Erratum: Düzeltme

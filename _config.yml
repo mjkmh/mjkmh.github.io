@@ -26,6 +26,8 @@ include:
 
 # kisiler/: orijinal fotoğraflar (yalnızca yerelde); sitede images/kisiler/ kullanılır
 exclude:
+  - scripts
+  - cikti
   - kisiler
   - Gemfile
   - Gemfile.lock
