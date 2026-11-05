@@ -10,7 +10,7 @@ Ne yapar
      image_credit, abstract) ve "manuel: true" işaretli kayıtlar korunur.
   4. Yazar:
        _data/yayinlar.yml              -> GitHub sitesi (mjkmh.github.io)
-       cikti/sitefinity_yayinlar.html  -> mjkmh.itu.edu.tr Yayınlar sayfasına yapıştırılacak blok
+       sitefinity/yayinlar.html  -> mjkmh.itu.edu.tr Yayınlar sayfasına yapıştırılacak blok
 
 Kullanım (depo klasöründe, API anahtarının tanımlı olduğu bilgisayarda)
   python scripts/scopus_guncelle.py                 # Scopus API'den çek
@@ -37,7 +37,7 @@ KOK = Path(__file__).resolve().parent.parent
 AYAR = KOK / "scripts" / "scopus_ayarlar.yml"
 YAYIN_YML = KOK / "_data" / "yayinlar.yml"
 CONFIG = KOK / "_config.yml"
-CIKTI = KOK / "cikti"
+CIKTI = KOK / "sitefinity"
 
 KORUNAN_ALANLAR = ["year", "date", "title", "authors", "image", "image_credit", "abstract"]
 
@@ -461,7 +461,7 @@ def html_yaz(girdiler):
         p.append("</ol>")
     p.append("</div>")
     CIKTI.mkdir(exist_ok=True)
-    yol = CIKTI / "sitefinity_yayinlar.html"
+    yol = CIKTI / "yayinlar.html"
     yol.write_text("\n".join(p), encoding="utf-8")
     return yol
 
@@ -524,7 +524,7 @@ def main():
         print(f"  + {g.get('year')}  {g.get('title')}")
     print(f"\nYazıldı: {YAYIN_YML.relative_to(KOK)}")
     print(f"Yazıldı: {yol.relative_to(KOK)}  (mjkmh.itu.edu.tr Yayınlar sayfası için)")
-    print("\nSonraki adım:  git add _data/yayinlar.yml && git commit -m \"Yayınlar güncellendi\" && git push")
+    print("\nSonraki adım:  git add _data/yayinlar.yml sitefinity && git commit -m \"Yayınlar güncellendi\" && git push")
 
 
 if __name__ == "__main__":

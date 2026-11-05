@@ -29,18 +29,14 @@ jobs:
 
       - name: Değiştiyse kaydet
         run: |
-          if git diff --quiet _data/yayinlar.yml; then
+          git add -N sitefinity
+          if git diff --quiet _data/yayinlar.yml sitefinity; then
             echo "Yeni yayın yok."
           else
             git config user.name "mjkmh-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add _data/yayinlar.yml
+            git add _data/yayinlar.yml sitefinity
             git commit -m "Yayınlar Scopus'tan güncellendi ($(date +%d.%m.%Y))"
             git push
           fi
 
-      - name: Sitefinity HTML'ini sakla
-        uses: actions/upload-artifact@v4
-        with:
-          name: sitefinity-yayinlar
-          path: cikti/sitefinity_yayinlar.html

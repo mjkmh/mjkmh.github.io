@@ -4,6 +4,4 @@ _site
 .DS_Store
 /kisiler/
 
-# scopus_guncelle.py çıktıları (Sitefinity için HTML)
-cikti/
 __pycache__/
