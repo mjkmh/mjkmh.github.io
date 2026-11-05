@@ -200,7 +200,6 @@
 
 - name: Yüksel
   surname: ILGAR
-  pasif: true
   photo:
   info: Teknisyen
   education: []
