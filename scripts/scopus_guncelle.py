@@ -39,7 +39,7 @@ YAYIN_YML = KOK / "_data" / "yayinlar.yml"
 CONFIG = KOK / "_config.yml"
 CIKTI = KOK / "cikti"
 
-KORUNAN_ALANLAR = ["year", "date", "title", "image", "image_credit", "abstract"]
+KORUNAN_ALANLAR = ["year", "date", "title", "authors", "image", "image_credit", "abstract"]
 
 
 # ---------------------------------------------------------------- yardımcılar
@@ -97,11 +97,31 @@ def temiz_issn(v):
     return v[0] if v else None
 
 
+def crossref_yazarlar(k):
+    """Yazar listesi Scopus'tan alınamazsa DOI üzerinden Crossref'ten alır (yazar ID'si olmadan)."""
+    if not k.get("doi"):
+        return
+    try:
+        req = urllib.request.Request(f"https://api.crossref.org/works/{k['doi']}",
+                                     headers={"User-Agent": "mjkmh-yayin-guncelleme"})
+        msg = json.load(urllib.request.urlopen(req, timeout=20))["message"]
+        adlar = []
+        for a in msg.get("author") or []:
+            if a.get("family"):
+                adlar.append(indeks_ad(f"{a['family']}, {a.get('given', '')}"))
+        if adlar:
+            k["yazar_adlari"], k["yazar_idleri"] = adlar, []
+        if bos(k.get("ozet")) and msg.get("abstract"):
+            k["ozet"] = re.sub(r"<[^>]+>", "", msg["abstract"]).strip()
+    except Exception as e:
+        print(f"  yazar listesi tamamlanamadı {k.get('doi')}: {e}")
+
+
 # ---------------------------------------------------------------- Scopus API
 def api_ile_topla(uyeler):
     import os
     import pybliometrics
-    from pybliometrics.scopus import AbstractRetrieval, AuthorRetrieval, SerialTitleISSN
+    from pybliometrics.scopus import AbstractRetrieval, AuthorRetrieval, ScopusSearch, SerialTitleISSN
 
     # GitHub Actions'ta anahtar ortam değişkeninden gelir; kendi bilgisayarınızda ayar dosyasından okunur.
     anahtar = os.environ.get("SCOPUS_API_KEY")
@@ -114,12 +134,18 @@ def api_ile_topla(uyeler):
     for u in uyeler:
         sid = str(u["scopus_id"])
         try:
-            au = AuthorRetrieval(sid, refresh=True, view="ENHANCED")
             try:
-                docs = au.get_documents(refresh=True, view="COMPLETE")
+                au = AuthorRetrieval(sid, refresh=True, view="ENHANCED")
+                try:
+                    docs = au.get_documents(refresh=True, view="COMPLETE")
+                except Exception:
+                    docs = au.get_documents(refresh=True)
+                yol = "yazar profili"
             except Exception:
-                docs = au.get_documents(refresh=True)
-            print(f"  {u['ad']:<16} {len(docs)} yayın")
+                # Kurum ağı dışında (ör. GitHub) yazar profili kapalıdır; Scopus Search açıktır.
+                docs = ScopusSearch(f"AU-ID({sid})", view="STANDARD", refresh=True).results or []
+                yol = "Scopus Search"
+            print(f"  {u['ad']:<16} {len(docs)} yayın ({yol})")
             for d in docs:
                 kayitlar.append({
                     "eid": getattr(d, "eid", None),
@@ -136,6 +162,7 @@ def api_ile_topla(uyeler):
                     "yazar_adlari": [indeks_ad(n) for n in ayir(getattr(d, "author_names", None))],
                     "yazar_idleri": ayir(getattr(d, "author_ids", None)),
                     "ozet": getattr(d, "description", None),
+                    "uye_id": sid,
                 })
             time.sleep(0.5)
         except Exception as e:
@@ -160,8 +187,8 @@ def api_ile_topla(uyeler):
                 k["yazar_idleri"] = [str(a.auid) for a in ab.authors]
             if bos(k["ozet"]):
                 k["ozet"] = ab.abstract or ab.description
-        except Exception as e:
-            print(f"  tamamlanamadı {k['eid']}: {e}")
+        except Exception:
+            crossref_yazarlar(k)
         time.sleep(0.3)
 
     # Dergi CiteScore yüzdelikleri
@@ -224,8 +251,11 @@ def tekillestir(kayitlar):
     for k in kayitlar:
         anahtar = k.get("eid") or norm_doi(k.get("doi")) or norm_baslik(k.get("title"))
         if anahtar in gorulen:
+            if k.get("uye_id"):
+                gorulen[anahtar].setdefault("uye_idleri", set()).add(k["uye_id"])
             continue
-        gorulen[anahtar] = True
+        k["uye_idleri"] = {k["uye_id"]} if k.get("uye_id") else set()
+        gorulen[anahtar] = k
         sonuc.append(k)
     basliga_gore = {}
     for k in sonuc:
@@ -238,6 +268,18 @@ def tekillestir(kayitlar):
         if puan(k) > puan(onceki):
             basliga_gore[b] = k
     return list(basliga_gore.values())
+
+
+def sade(s):
+    tablo = str.maketrans("çğıöşüÇĞİÖŞÜâîû", "cgiosuCGIOSUaiu")
+    return re.sub(r"[^a-z]", "", str(s).translate(tablo).lower())
+
+
+def soyad_esit(uye, ad):
+    """'Zengin E.' ile 'Zengin E.' / 'Ündül Ö.' ile 'Undul O.' gibi yazımları eşleştirir."""
+    u_soyad, _, u_bas = uye.rpartition(" ")
+    a_soyad, _, a_bas = ad.rpartition(" ")
+    return sade(u_soyad) == sade(a_soyad) and sade(u_bas)[:1] == sade(a_bas)[:1]
 
 
 def kaynak_ayrinti(k):
@@ -268,12 +310,18 @@ def girdileri_kur(tekil, ayar, mevcut, detayli_yillar):
             continue
         yazarlar = []
         idler = k.get("yazar_idleri") or []
+        uye_idleri = set(k.get("uye_idleri") or [])
         for i, ad in enumerate(k.get("yazar_adlari") or []):
             aid = idler[i] if i < len(idler) else None
             if aid and aid in uye_ad:
                 yazarlar.append({"n": uye_ad[aid], "m": True})
-            else:
-                yazarlar.append({"n": ad})
+                continue
+            if not idler:  # ID yoksa (Crossref) soyadı + baş harfle eşleştir
+                eslesme = [u for u in uye_idleri if soyad_esit(uye_ad[u], ad)]
+                if eslesme:
+                    yazarlar.append({"n": uye_ad[eslesme[0]], "m": True})
+                    continue
+            yazarlar.append({"n": ad})
         g = {
             "year": int(str(k["cover_date"])[:4]) if str(k.get("cover_date"))[:4].isdigit() else None,
             "date": k["cover_date"] if len(str(k.get("cover_date"))) == 10 else None,
