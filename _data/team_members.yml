@@ -127,7 +127,6 @@
 - name: Kayhan
   surname: DEVELİ
   photo: kayhan-develi.png
-  pasif: true
   info: Dr. Öğr. Üyesi
   education:
     - level: Doktora
@@ -163,7 +162,6 @@
 - name: Gökhan
   surname: ŞANS
   photo: gokhan-sans.png
-  pasif: true
   info: Arş. Gör.
   education:
     - level: Yüksek Lisans
