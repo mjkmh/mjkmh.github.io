@@ -130,6 +130,21 @@ def scopus_ara(sid, anahtar, token=None):
         time.sleep(0.3)
 
 
+def tum_kurumlar(eid, anahtar, token=None):
+    """Abstract Retrieval (META) ile yayındaki tüm kurum adlarını döndürür; kurum dışından da açıktır."""
+    if not anahtar:
+        import pybliometrics.utils as pu
+        anahtar = pu.config["Authentication"]["APIKey"].split(",")[0].strip()
+    bas_lik = {"X-ELS-APIKey": anahtar, "Accept": "application/json"}
+    if token:
+        bas_lik["X-ELS-Insttoken"] = token
+    url = f"https://api.elsevier.com/content/abstract/eid/{eid}?view=META"
+    r = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=bas_lik), timeout=30))
+    af = r.get("abstracts-retrieval-response", {}).get("affiliation") or []
+    af = af if isinstance(af, list) else [af]
+    return ";".join(a.get("affilname") or "" for a in af)
+
+
 def crossref_yazarlar(k):
     """Yazar listesi Scopus'tan alınamazsa DOI üzerinden Crossref'ten alır (yazar ID'si olmadan)."""
     if not k.get("doi"):
@@ -151,7 +166,7 @@ def crossref_yazarlar(k):
 
 
 # ---------------------------------------------------------------- Scopus API
-def api_ile_topla(uyeler):
+def api_ile_topla(uyeler, kurum_suz=False):
     import os
     import pybliometrics
     from pybliometrics.scopus import AbstractRetrieval, AuthorRetrieval, SerialTitleISSN
@@ -207,6 +222,17 @@ def api_ile_topla(uyeler):
         sys.exit("Şu üyelerin yayınları alınamadı: " + ", ".join(hatalar)
                  + ". Eksik liste yazılmasın diye dosyalar değiştirilmedi.")
     tekil = tekillestir(kayitlar)
+
+    # Kurum süzgeci için yayının tüm adresleri (arama sonucu yalnızca ilk yazarınkini verebilir)
+    if kurum_suz:
+        for k in tekil:
+            if not k.get("eid"):
+                continue
+            try:
+                k["kurumlar"] = tum_kurumlar(k["eid"], anahtar, token) or k.get("kurumlar", "")
+            except Exception as e:
+                print(f"  adresler alınamadı {k['eid']}: {e}")
+            time.sleep(0.2)
 
     # Yazar listesi eksik kalanları tek tek tamamla
     for k in tekil:
@@ -523,7 +549,7 @@ def main():
         tekil, kaynak = excel_ile_topla(a.excel), Path(a.excel).name
     else:
         print("Scopus API'den çekiliyor...")
-        tekil, kaynak = api_ile_topla(ayar["uyeler"]), "Scopus API"
+        tekil, kaynak = api_ile_topla(ayar["uyeler"], bool(ayar.get("sadece_kurum"))), "Scopus API"
     if not tekil:
         sys.exit("Hiç yayın gelmedi; API anahtarını ve bağlantıyı kontrol edin. Dosyalar değiştirilmedi.")
 
