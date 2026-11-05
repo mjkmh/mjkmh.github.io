@@ -99,10 +99,17 @@ def temiz_issn(v):
 
 # ---------------------------------------------------------------- Scopus API
 def api_ile_topla(uyeler):
+    import os
     import pybliometrics
     from pybliometrics.scopus import AbstractRetrieval, AuthorRetrieval, SerialTitleISSN
 
-    pybliometrics.init()
+    # GitHub Actions'ta anahtar ortam değişkeninden gelir; kendi bilgisayarınızda ayar dosyasından okunur.
+    anahtar = os.environ.get("SCOPUS_API_KEY")
+    token = os.environ.get("SCOPUS_INSTTOKEN")
+    if anahtar:
+        pybliometrics.init(keys=[anahtar], inst_tokens=[token] if token else None)
+    else:
+        pybliometrics.init()
     kayitlar = []
     for u in uyeler:
         sid = str(u["scopus_id"])

@@ -1,5 +1,13 @@
 # Yayın listesini Scopus'tan güncelleme
 
+**Otomatik:** `.github/workflows/scopus.yml` her ayın 1'inde GitHub'da çalışır; yeni yayın varsa
+`_data/yayinlar.yml` güncellenir ve site kendiliğinden yenilenir. Sitefinity için üretilen HTML,
+çalıştırma sayfasındaki "Artifacts" bölümünden (sitefinity-yayinlar) indirilebilir.
+GitHub → Actions → "Scopus yayın güncellemesi" → "Run workflow" ile istenildiği an çalıştırılabilir.
+Gerekli gizli değişken: `SCOPUS_API_KEY` (isteğe bağlı: `SCOPUS_INSTTOKEN`).
+
+Aşağıdaki adımlar betiği kendi bilgisayarınızda çalıştırmak içindir.
+
 `scopus_guncelle.py`, grup üyelerinin Scopus yayınlarını çeker ve iki çıktı üretir:
 
 - `_data/yayinlar.yml` → GitHub sitesindeki Yayınlar sayfası
