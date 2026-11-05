@@ -39,6 +39,7 @@ YAYIN_YML = KOK / "_data" / "yayinlar.yml"
 CONFIG = KOK / "_config.yml"
 CIKTI = KOK / "sitefinity"
 
+DISARIDA = []
 KORUNAN_ALANLAR = ["year", "date", "title", "authors", "image", "image_credit", "abstract"]
 
 
@@ -121,7 +122,8 @@ def scopus_ara(sid, anahtar, token=None):
                 issn=e.get("prism:issn") or e.get("prism:eIssn"),
                 volume=e.get("prism:volume"), issueIdentifier=e.get("prism:issueIdentifier"),
                 pageRange=e.get("prism:pageRange"), article_number=e.get("article-number"),
-                author_names=None, author_ids=None, description=None))
+                author_names=None, author_ids=None, description=None,
+                affilname=";".join(a.get("affilname") or "" for a in e.get("affiliation") or [])))
         bas += 25
         if not girdiler or bas >= int(sr.get("opensearch:totalResults", 0)):
             return sonuc
@@ -194,6 +196,7 @@ def api_ile_topla(uyeler):
                     "yazar_idleri": ayir(getattr(d, "author_ids", None)),
                     "ozet": getattr(d, "description", None),
                     "uye_id": sid,
+                    "kurumlar": metin(getattr(d, "affilname", None)) or "",
                 })
             time.sleep(0.5)
         except Exception as e:
@@ -333,9 +336,13 @@ def girdileri_kur(tekil, ayar, mevcut, detayli_yillar):
     doi_ile = {norm_doi(e.get("doi")): e for e in mevcut if e.get("doi")}
     baslik_ile = {norm_baslik(e.get("title")): e for e in mevcut}
 
+    kurum = [sade(x) for x in (ayar.get("sadece_kurum") or [])]
     girdiler, eslesen = [], set()
     for k in tekil:
         if k.get("tur_en") in haric_tur:
+            continue
+        if kurum and not any(x in sade(k.get("kurumlar", "")) for x in kurum):
+            DISARIDA.append(k)
             continue
         if (k.get("eid") or "").lower() in haric or norm_doi(k.get("doi")) in haric:
             continue
@@ -503,6 +510,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--excel", help="API yerine Scopus.ipynb'nin Excel dışa aktarımını kullan")
     ap.add_argument("--crossref", action="store_true", help="Eksik yayın tarihlerini Crossref'ten tamamla")
+    ap.add_argument("--deneme", action="store_true", help="Dosyaları değiştirmeden ne olacağını listele")
     a = ap.parse_args()
 
     ayar = yaml.safe_load(AYAR.read_text(encoding="utf-8"))
@@ -520,7 +528,14 @@ def main():
         sys.exit("Hiç yayın gelmedi; API anahtarını ve bağlantıyı kontrol edin. Dosyalar değiştirilmedi.")
 
     girdiler = girdileri_kur(tekil, ayar, mevcut or [], detayli)
-    if mevcut and len(girdiler) < 0.9 * len(mevcut):
+    if DISARIDA:
+        print(f"\nKurum süzgeci ({', '.join(ayar.get('sadece_kurum') or [])}) dışında kalan {len(DISARIDA)} yayın:")
+        for k in sorted(DISARIDA, key=lambda x: str(x.get("cover_date")), reverse=True):
+            print(f"  - {str(k.get('cover_date'))[:4]}  {k.get('title')}  [{k.get('kurumlar') or 'adres yok'}]")
+    if a.deneme:
+        print(f"\nDENEME: {len(girdiler)} yayın kalırdı (şu an {len(mevcut or [])}). Dosyalar değiştirilmedi.")
+        return
+    if mevcut and len(girdiler) + len(DISARIDA) < 0.9 * len(mevcut):
         sys.exit(f"Gelen liste ({len(girdiler)}) mevcut listeden ({len(mevcut)}) belirgin biçimde kısa; "
                  "erişim kısıtlı olabilir. Dosyalar değiştirilmedi.")
     if a.crossref:

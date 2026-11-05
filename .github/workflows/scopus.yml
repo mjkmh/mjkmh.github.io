@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "17 4 1 * *"   # her ayın 1'i, 07:17 (İstanbul)
   workflow_dispatch:         # GitHub'da "Run workflow" ile elle de çalıştırılabilir
+    inputs:
+      deneme:
+        description: "Deneme (dosyaları değiştirme, yalnızca listele)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -25,7 +30,7 @@ jobs:
         env:
           SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
           SCOPUS_INSTTOKEN: ${{ secrets.SCOPUS_INSTTOKEN }}
-        run: python scripts/scopus_guncelle.py --crossref
+        run: python scripts/scopus_guncelle.py --crossref ${{ inputs.deneme && '--deneme' || '' }}
 
       - name: Değiştiyse kaydet
         run: |
