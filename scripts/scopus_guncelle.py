@@ -110,7 +110,7 @@ def api_ile_topla(uyeler):
         pybliometrics.init(keys=[anahtar], inst_tokens=[token] if token else None)
     else:
         pybliometrics.init()
-    kayitlar = []
+    kayitlar, hatalar = [], []
     for u in uyeler:
         sid = str(u["scopus_id"])
         try:
@@ -140,7 +140,11 @@ def api_ile_topla(uyeler):
             time.sleep(0.5)
         except Exception as e:
             print(f"  HATA {u['ad']} ({sid}): {e}")
+            hatalar.append(u["ad"])
 
+    if hatalar:
+        sys.exit("Şu üyelerin yayınları alınamadı: " + ", ".join(hatalar)
+                 + ". Eksik liste yazılmasın diye dosyalar değiştirilmedi.")
     tekil = tekillestir(kayitlar)
 
     # Yazar listesi eksik kalanları tek tek tamamla
@@ -424,6 +428,9 @@ def main():
         sys.exit("Hiç yayın gelmedi; API anahtarını ve bağlantıyı kontrol edin. Dosyalar değiştirilmedi.")
 
     girdiler = girdileri_kur(tekil, ayar, mevcut or [], detayli)
+    if mevcut and len(girdiler) < 0.9 * len(mevcut):
+        sys.exit(f"Gelen liste ({len(girdiler)}) mevcut listeden ({len(mevcut)}) belirgin biçimde kısa; "
+                 "erişim kısıtlı olabilir. Dosyalar değiştirilmedi.")
     if a.crossref:
         crossref_tarihleri(girdiler)
         girdiler.sort(key=lambda g: (int(g.get("year") or 0), str(g.get("date") or "")), reverse=True)
