@@ -449,19 +449,6 @@
   eid: "2-s2.0-85170378029"
 
 - year: 2023
-  date: "2023-07-19"
-  title: "Inundation risk assessment of Eastern Mediterranean Coastal archaeological and historical sites of Türkiye and Greece"
-  authors:
-    - {n: "Zengin E.", m: true}
-  source: "Environmental Monitoring and Assessment"
-  source_detail: "195(8), 968"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 22
-  doi: "10.1007/s10661-023-11549-3"
-  eid: "2-s2.0-85165250441"
-
-- year: 2023
   date: "2023-05-03"
   title: "Quantifying the Rock Damage Intensity Controlled by Mineral Compositions: Insights from Fractal Analyses"
   authors:
@@ -476,37 +463,6 @@
   top_percent: 3
   doi: "10.3390/fractalfract7050383"
   eid: "2-s2.0-85160362463"
-
-- year: 2023
-  date: "2023-04-17"
-  title: "A Combined Assessment of Sea Level Rise (SLR) Effect on Antalya Gulf (Türkiye) and Future Predictions on Land Loss"
-  authors:
-    - {n: "Zengin E.", m: true}
-  source: "Journal of the Indian Society of Remote Sensing"
-  source_detail: "51(5), 1121-1133"
-  type: Makale
-  quartile: "(Q2 - Scopus)"
-  top_percent: 32
-  doi: "10.1007/s12524-023-01694-0"
-  eid: "2-s2.0-85153096408"
-
-- year: 2023
-  date: "2023-03-01"
-  title: "The impact of livestock activities and geochemical processes on groundwater quality of fractured volcanic rock aquifer: Lake Çıldır watershed (NE Turkey)"
-  authors:
-    - {n: "Govarchin S.M."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Şener A."}
-    - {n: "Sanğu E."}
-    - {n: "Güneş K."}
-    - {n: "Beşiktaş M."}
-  source: "Environmental Monitoring and Assessment"
-  source_detail: "195(3), 436"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 22
-  doi: "10.1007/s10661-023-11016-z"
-  eid: "2-s2.0-85149180522"
 
 - year: 2023
   date: "2023-02-13"
@@ -539,20 +495,6 @@
   eid: "2-s2.0-85141890291"
 
 - year: 2022
-  date: "2022-08-05"
-  title: "Experimental investigation of pore-fracture relationship on failure behaviour of porous rock materials"
-  authors:
-    - {n: "Zengin E.", m: true}
-    - {n: "Erguler Z.A."}
-  source: "Bulletin of Engineering Geology and the Environment"
-  source_detail: "81(9), 351"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 12
-  doi: "10.1007/s10064-022-02857-y"
-  eid: "2-s2.0-85135496209"
-
-- year: 2022
   date: "2022-06-01"
   title: "Changes in Settlement Troughs Induced by Subway Tunnel Excavations in Weak Geological Environments in Istanbul"
   authors:
@@ -567,19 +509,6 @@
   eid: "2-s2.0-85136786205"
 
 - year: 2022
-  date: "2022-03-29"
-  title: "Usability Assessment of Different Contact Models for Modelling the Failure Behaviour of Sedimentary Rocks Under Unconfined Stress Conditions"
-  authors:
-    - {n: "Zengin E.", m: true}
-  source: "Yerbilimleri Earth Sciences"
-  source_detail: "43(1), 61-75"
-  type: Makale
-  quartile: "(Q4 - Scopus)"
-  top_percent: 85
-  doi: "10.17824/yerbilimleri.1030332"
-  eid: "2-s2.0-85150842308"
-
-- year: 2022
   date: "2022-01-01"
   title: "Characterization of Natural Discontinuities in Tight Sandstone and Gas Shale Unconventional Reservoir Rocks of Thrace Region in Turkey with DFN Method"
   authors:
@@ -588,21 +517,6 @@
   source: "56th U S Rock Mechanics Geomechanics Symposium"
   type: Bildiri
   eid: "2-s2.0-85149222010"
-
-- year: 2021
-  date: "2021-12"
-  title: "Application of square array configuration and electrical resistivity tomography for characterization of the recharge area of a karst aquifer: A case study from Menekşe karst plateau (Kocaeli, Turkey)"
-  authors:
-    - {n: "Şener A."}
-    - {n: "Pekşen E."}
-    - {n: "Yolcubal İ.", m: true}
-  source: "Journal of Applied Geophysics"
-  source_detail: "195, 104474"
-  type: Makale
-  quartile: "(Q2 - Scopus)"
-  top_percent: 29
-  doi: "10.1016/j.jappgeo.2021.104474"
-  eid: "2-s2.0-85117711759"
 
 - year: 2021
   date: "2021-06-18"
@@ -659,22 +573,6 @@
   eid: "2-s2.0-85122941955"
 
 - year: 2020
-  date: "2020-10-01"
-  title: "Shear Rate Effect on Strength Characteristics of Sandy Soils"
-  authors:
-    - {n: "Beren M."}
-    - {n: "Çobanoglu I."}
-    - {n: "Çelik S.B."}
-    - {n: "Ündül Ö.", m: true}
-  source: "Soil Mechanics and Foundation Engineering"
-  source_detail: "57(4), 281-287"
-  type: Makale
-  quartile: "(Q3 - Scopus)"
-  top_percent: 75
-  doi: "10.1007/s11204-020-09667-y"
-  eid: "2-s2.0-85091760540"
-
-- year: 2020
   date: "2020-10"
   title: "A visual experimental study on proppants transport in rough vertical fractures"
   authors:
@@ -716,21 +614,6 @@
   top_percent: 46
   doi: "10.1007/s12517-020-05684-1"
   eid: "2-s2.0-85087983947"
-
-- year: 2020
-  date: "2020-05-29"
-  title: "Determination of recharge, storage and flow characteristics of a karst aquifer using multi-method approaches (Kocaeli, Turkey)"
-  authors:
-    - {n: "Şener A."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Sanğu E."}
-  source: "Hydrogeology Journal"
-  source_detail: "28(6), 2141-2157"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 18
-  doi: "10.1007/s10040-020-02183-1"
-  eid: "2-s2.0-85085869717"
 
 - year: 2019
   date: "2019-12"
@@ -784,78 +667,6 @@
   doi: "10.1201/9780429327933-96"
   eid: "2-s2.0-85091660955"
 
-- year: 2019
-  date: "2019-03-21"
-  title: "Presence of Toxic Heavy Metals in Platelet-Rich Fibrin: a Pilot Study"
-  authors:
-    - {n: "Yaprak E."}
-    - {n: "Yolcubal İ.", m: true}
-  source: "Biological Trace Element Research"
-  source_detail: "191(2), 363-369"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 16
-  doi: "10.1007/s12011-019-01695-6"
-  eid: "2-s2.0-85063195012"
-
-- year: 2019
-  date: "2019-03-04"
-  title: "Origin of salinization and pollution sources and geochemical processes in urban coastal aquifer (Kocaeli, NW Turkey)"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Ataş Gündüz Ö.C."}
-    - {n: "Kurtuluş N."}
-  source: "Environmental Earth Sciences"
-  source_detail: "78(6), 181"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 13
-  doi: "10.1007/s12665-019-8181-8"
-  eid: "2-s2.0-85062767552"
-
-- year: 2019
-  date: "2019-01-01"
-  title: "Evaluation of blast size and shape for blast induced ground vibrations"
-  authors:
-    - {n: "Hüdaverdi T."}
-    - {n: "Akyildiz"}
-    - {n: "Karadogan A."}
-    - {n: "Bozkurtoğlu E.", m: true}
-  source: "Imcet 2019 Proceedings of the 26th International Mining Congress and Exhibition of Turkey"
-  source_detail: "247-255"
-  type: Bildiri
-  eid: "2-s2.0-85074145766"
-
-- year: 2018
-  date: "2018-12-15"
-  title: "The differences of strength and deformation properties of dikes and host rocks in the paleozoic sequence of ıstanbul"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Çobanoğlu B.C."}
-    - {n: "Taz F."}
-  source: "Jeoloji Muhendisligi Dergisi"
-  source_detail: "42(2), 121-142"
-  type: Makale
-  quartile: "(Q4 - Scopus)"
-  top_percent: 79
-  doi: "10.24232/jmd.486009"
-  eid: "2-s2.0-85069469665"
-
-- year: 2018
-  date: "2018-06-15"
-  title: "Evaluation of problems encountered during the construction of the Çamlıca hill access tunnels"
-  authors:
-    - {n: "Taz F."}
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Denek H."}
-  source: "Jeoloji Muhendisligi Dergisi"
-  source_detail: "42(1), 49-76"
-  type: Makale
-  quartile: "(Q4 - Scopus)"
-  top_percent: 79
-  doi: "10.24232/jmd.434139"
-  eid: "2-s2.0-85049728355"
-
 - year: 2018
   date: "2018-04-22"
   title: "Experimental Study on the Effect of Injection Parameters on Proppant Transport in Rough Vertical Hydraulic Fractures"
@@ -883,34 +694,6 @@
   type: Bildiri
   doi: "10.2118/189892-ms"
   eid: "2-s2.0-85066279189"
-
-- year: 2018
-  date: "2018-01-16"
-  title: "Discrete Analysis of Damage and Shear Banding in Argillaceous Rocks"
-  authors:
-    - {n: "Dinç Göğüş Ö.", m: true}
-    - {n: "Scholtès L."}
-  source: "Rock Mechanics and Rock Engineering"
-  source_detail: "51(5), 1521-1538"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1007/s00603-017-1397-6"
-  eid: "2-s2.0-85040604075"
-
-- year: 2017
-  date: "2017-11"
-  title: "Investigating the effects of micro-texture and geo-mechanical properties on the abrasiveness of volcanic rocks"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Er S."}
-  source: "Engineering Geology"
-  source_detail: "229, 85-94"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1016/j.enggeo.2017.09.022"
-  eid: "2-s2.0-85032503609"
 
 - year: 2017
   date: "2017-10"
@@ -971,66 +754,6 @@
   doi: "10.1007/s12665-017-6423-1"
   eid: "2-s2.0-85010669738"
 
-- year: 2017
-  date: "2016-03-26"
-  title: "High levels of heavy metal accumulation in dental calculus of smokers: a pilot inductively coupled plasma mass spectrometry study"
-  authors:
-    - {n: "Yaprak E."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Sinanoğlu A."}
-    - {n: "Doğrul-Demiray A."}
-    - {n: "Guzeldemir-Akcakanat E."}
-    - {n: "Marakoğlu"}
-  source: "Journal of Periodontal Research"
-  source_detail: "52(1), 83-88"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 7
-  doi: "10.1111/jre.12371"
-  eid: "2-s2.0-84961644456"
-
-- year: 2016
-  date: "2016-12-15"
-  title: "The effects of micro-textural properties on the strength and deformation characteristics of rocks with andesite and rhyodasite compositions exposed in gökçeada"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Aysal N."}
-  source: "Jeoloji Muhendisligi Dergisi"
-  source_detail: "40(2), 123-148"
-  type: Makale
-  quartile: "(Q4 - Scopus)"
-  top_percent: 79
-  doi: "10.24232/jeoloji-muhendisligi-dergisi.295420"
-  eid: "2-s2.0-85013177921"
-
-- year: 2016
-  date: "2016-12-12"
-  title: "Strength, deformation and cracking characteristics of limestones"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Aysal N."}
-    - {n: "Çobanoğlu B.C."}
-    - {n: "Amann F."}
-    - {n: "Perras M."}
-  source: "ISRM International Symposium Eurock 2016"
-  source_detail: "181-185"
-  type: Bildiri
-  doi: "10.1201/9781315388502-30"
-  eid: "2-s2.0-85060987067"
-
-- year: 2016
-  date: "2016-12-12"
-  title: "The effects of strength parameters on slope failure mechanisms in weak rocks"
-  authors:
-    - {n: "Dinç Göğüş Ö.", m: true}
-    - {n: "Karaca Z."}
-    - {n: "Işık N."}
-  source: "ISRM International Symposium Eurock 2016"
-  source_detail: "591-594"
-  type: Bildiri
-  doi: "10.1201/9781315388502-102"
-  eid: "2-s2.0-85060970825"
-
 - year: 2016
   date: "2016-10-31"
   title: "Environmental impact of mining activities on surface water and sediment qualities around Murgul copper mine, Northeastern Turkey"
@@ -1048,33 +771,6 @@
   eid: "2-s2.0-84993999183"
 
 - year: 2016
-  date: "2016-10-07"
-  title: "On the variations of geo-engineering properties of dunites and diorites related to weathering"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Tuğrul A."}
-  source: "Environmental Earth Sciences"
-  source_detail: "75(19), 1326"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 13
-  doi: "10.1007/s12665-016-6152-x"
-  eid: "2-s2.0-84990852429"
-
-- year: 2016
-  date: "2016-08"
-  title: "Assessment of mineralogical and petrographic factors affecting petro-physical properties, strength and cracking processes of volcanic rocks"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-  source: "Engineering Geology"
-  source_detail: "210, 10-22"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1016/j.enggeo.2016.06.001"
-  eid: "2-s2.0-84973460485"
-
-- year: 2016
   date: "2016-07"
   title: "Quantitative and visual analysis of proppant transport in rough fractures"
   authors:
@@ -1089,68 +785,6 @@
   top_percent: 7
   doi: "10.1016/j.jngse.2016.06.040"
   eid: "2-s2.0-84990066634"
-
-- year: 2016
-  date: "2016-05-20"
-  title: "Time-dependent physicomechanical behavior of ballasts used for railway between Sabuncupinar and Kütahya in Western Turkey"
-  authors:
-    - {n: "Erguler Z.A."}
-    - {n: "Zengin E.", m: true}
-    - {n: "Kalyoncu Erguler G."}
-  source: "Environmental Earth Sciences"
-  source_detail: "75(10), 918"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 13
-  doi: "10.1007/s12665-016-5724-0"
-  eid: "2-s2.0-84970973738"
-
-- year: 2016
-  date: "2016-01-06"
-  title: "Assessment of impact of environmental pollution on groundwater and surface water qualities in a heavily industrialized district of Kocaeli (Dilovası), Turkey"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Gündüz Ö.C."}
-    - {n: "Sönmez F."}
-  source: "Environmental Earth Sciences"
-  source_detail: "75(2), 1-23"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 13
-  doi: "10.1007/s12665-015-4986-2"
-  eid: "2-s2.0-84953311110"
-
-- year: 2016
-  date: "2016-01-01"
-  title: "Swiss quartz dust guideline: A tool for managing the health risk related to quartz dust in early project stages"
-  authors:
-    - {n: "Neuenschwander M."}
-    - {n: "Singer J."}
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Theiler A."}
-    - {n: "Weh M."}
-    - {n: "Vogel M."}
-    - {n: "Steinle P."}
-    - {n: "Martini D."}
-  source: "Ita Aites World Tunnel Congress 2016 Wtc 2016"
-  source_detail: "1, 238-247"
-  type: Bildiri
-  eid: "2-s2.0-84976408043"
-
-- year: 2015
-  date: "2015-12-15"
-  title: "Strength and deformation properties of sulphate-rich clay rocks and their brittle failure processes"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Amann F."}
-    - {n: "Kaiser P.K."}
-  source: "Jeoloji Muhendisligi Dergisi"
-  source_detail: "39(2), 91-115"
-  type: Makale
-  quartile: "(Q4 - Scopus)"
-  top_percent: 79
-  doi: "10.24232/jeoloji-muhendisligi-dergisi.295372"
-  eid: "2-s2.0-84958531167"
 
 - year: 2015
   date: "2015-10"
@@ -1169,22 +803,6 @@
   eid: "2-s2.0-84930664652"
 
 - year: 2015
-  date: "2015-07"
-  title: "Micro-textural effects on crack initiation and crack propagation of andesitic rocks"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Amann F."}
-    - {n: "Aysal N."}
-    - {n: "Plötze M.L."}
-  source: "Engineering Geology"
-  source_detail: "193, 267-275"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1016/j.enggeo.2015.04.024"
-  eid: "2-s2.0-84930762847"
-
-- year: 2015
   date: "2015-03-27"
   title: "Fractal aspects of miscible displacement in rough fractures: An experimental approach"
   authors:
@@ -1198,22 +816,6 @@
   top_percent: 3
   doi: "10.1142/S0218348X15400058"
   eid: "2-s2.0-84928628003"
-
-- year: 2015
-  date: "2015-03-18"
-  title: "Identifying the changes of geo-engineering properties of dunites due to weathering utilizing electrical resistivity tomography (ERT)"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Tuʇrul A."}
-    - {n: "Özyalin Ş."}
-    - {n: "Zarif I.H."}
-  source: "Journal of Geophysics and Engineering"
-  source_detail: "12(2), 273-281"
-  type: Makale
-  quartile: "(Q2 - Scopus)"
-  top_percent: 36
-  doi: "10.1088/1742-2132/12/2/273"
-  eid: "2-s2.0-84927553993"
 
 - year: 2015
   date: "2015-02-03"
@@ -1258,18 +860,6 @@
   doi: "10.1016/j.ijrmms.2014.11.002"
   eid: "2-s2.0-84912017994"
 
-- year: 2015
-  date: "2014-08-31"
-  title: "Influence of micro-texture on the geo-engineering properties of low porosity volcanic rocks"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Florian A."}
-  source: "Engineering Geology for Society and Territory Volume 6 Applied Geology for Major Engineering Projects"
-  source_detail: "69-72"
-  type: Kitap Bölümü
-  doi: "10.1007/978-3-319-09060-3_12"
-  eid: "2-s2.0-84944610151"
-
 - year: 2014
   date: "2014-11"
   title: "Geochemistry of trace elements in the Keşan coal and its effect on the physicochemical features of ground- and surface waters in the coal fields, Edirne, Thrace Region, Turkey"
@@ -1286,18 +876,6 @@
   eid: "2-s2.0-84908502878"
 
 - year: 2014
-  date: "2014-05-08"
-  title: "Possible mechanical behavior of Elmadag and Artova formations during tunnel excavation"
-  authors:
-    - {n: "Dinç Göğüş Ö.", m: true}
-    - {n: "Tunusluoglu C."}
-  source: "Rock Engineering and Rock Mechanics Structures in and on Rock Masses Proceedings of Eurock 2014 ISRM European Regional Symposium"
-  source_detail: "1203-1205"
-  type: Bildiri
-  doi: "10.1201/b16955-208"
-  eid: "2-s2.0-84901345459"
-
-- year: 2014
   date: "2014-01-01"
   title: "Effect of fracture roughness and shear displacement on permeability and proppant transportation in a single fracture"
   authors:
@@ -1309,61 +887,6 @@
   source_detail: "1, 89-106"
   type: Bildiri
   eid: "2-s2.0-84925682807"
-
-- year: 2014
-  date: "2013-10-24"
-  title: "Crack initiation and crack propagation in heterogeneous sulfate-rich clay rocks"
-  authors:
-    - {n: "Amann F."}
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Kaiser P.K."}
-  source: "Rock Mechanics and Rock Engineering"
-  source_detail: "47(5), 1849-1865"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1007/s00603-013-0495-3"
-  eid: "2-s2.0-84907596601"
-
-- year: 2013
-  date: "2013-12-01"
-  title: "Brittle failure processes in veined clay rock with large strength contrasts between vein and matrix"
-  authors:
-    - {n: "Amann F."}
-    - {n: "Kaiser P.K."}
-    - {n: "Ündül Ö.", m: true}
-  source: "47th US Rock Mechanics Geomechanics Symposium 2013"
-  source_detail: "1, 53-59"
-  type: Bildiri
-  eid: "2-s2.0-84892699399"
-
-- year: 2013
-  date: "2013-10-24"
-  title: "Micro-textural controlled variations of the geomechanical properties of andesites"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Amann F."}
-    - {n: "Aysal N."}
-    - {n: "Plötze M."}
-  source: "ISRM International Symposium Eurock 2013"
-  source_detail: "357-361"
-  type: Bildiri
-  doi: "10.1201/b15683-60"
-  eid: "2-s2.0-84930758280"
-
-- year: 2013
-  date: "2013-04-28"
-  title: "Oxidation of nonaqueous phase trichloroethylene with permanganate in epikarst"
-  authors:
-    - {n: "Akyol N.H."}
-    - {n: "Yolcubal İ.", m: true}
-  source: "Water Air and Soil Pollution"
-  source_detail: "224(5), 1573"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 23
-  doi: "10.1007/s11270-013-1573-6"
-  eid: "2-s2.0-84876667947"
 
 - year: 2013
   date: "2013-01-01"
@@ -1380,104 +903,6 @@
   doi: "10.3906/yer-1204-1"
   eid: "2-s2.0-84874678451"
 
-- year: 2012
-  date: "2012-07"
-  title: "Biomonitoring of airborne metals using the Lichen Xanthoria parietina in Kocaeli Province, Turkey"
-  authors:
-    - {n: "Doǧrul Demiray A."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Akyol N.H."}
-    - {n: "Çobanoǧlu G."}
-  source: "Ecological Indicators"
-  source_detail: "18, 632-643"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1016/j.ecolind.2012.01.024"
-  eid: "2-s2.0-84858702046"
-
-- year: 2012
-  date: "2012-01-01"
-  title: "Assessment of mass movements in the western part of Istanbul, Turkey"
-  authors:
-    - {n: "Tugrul A."}
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Zarif H."}
-  source: "Landslides and Engineered Slopes Protecting Society Through Improved Understanding Proceedings of the 11th International and 2nd North American Symposium on Landslides and Engineered Slopes 2012"
-  source_detail: "1053-1056"
-  type: Bildiri
-  eid: "2-s2.0-85070986920"
-
-- year: 2012
-  date: "2011-08-30"
-  title: "The influence of weathering on the engineering properties of dunites"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Tuǧrul A."}
-  source: "Rock Mechanics and Rock Engineering"
-  source_detail: "45(2), 225-239"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1007/s00603-011-0174-1"
-  eid: "2-s2.0-84861580588"
-
-- year: 2011
-  date: "2011-12-06"
-  title: "Identifying the weathering profiles of ultramafic rocks using electrical resistivity tomography (ERT)"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Tugrul A."}
-    - {n: "Zarif I.H."}
-  source: "45th US Rock Mechanics Geomechanics Symposium"
-  type: Makale
-  eid: "2-s2.0-82555188424"
-
-- year: 2011
-  date: "2011-06"
-  title: "A new general empirical approach for the prediction of rock mass strengths of soft to hard rock masses"
-  authors:
-    - {n: "Dinç Göğüş Ö.", m: true}
-    - {n: "Sonmez H."}
-    - {n: "Tunusluoglu C."}
-    - {n: "Kasapoglu K.E."}
-  source: "International Journal of Rock Mechanics and Mining Sciences"
-  source_detail: "48(4), 650-665"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 5
-  doi: "10.1016/j.ijrmms.2011.03.001"
-  eid: "2-s2.0-79956087523"
-
-- year: 2011
-  date: "2011-02"
-  title: "Sorption and transport of trichloroethylene in caliche soil"
-  authors:
-    - {n: "Akyol N.H."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Yüksel D.I."}
-  source: "Chemosphere"
-  source_detail: "82(6), 809-816"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 1
-  doi: "10.1016/j.chemosphere.2010.11.029"
-  eid: "2-s2.0-78650882950"
-
-- year: 2011
-  date: "2011-01-01"
-  title: "Comparison of weathering properties by the help of Electrical Resistivity Tomography Technique (ERT)"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Tuǧrul A."}
-    - {n: "Halil ZarIf I."}
-  source: "Jeoloji Muhendisligi Dergisi"
-  source_detail: "35(2), 115-132"
-  type: Makale
-  quartile: "(Q4 - Scopus)"
-  top_percent: 79
-  eid: "2-s2.0-84856979527"
-
 - year: 2011
   date: "2010-05-01"
   title: "Surface subsidence induced by twin subway tunnelling in soft ground conditions in Istanbul"
@@ -1491,30 +916,6 @@
   doi: "10.1007/s10064-010-0289-8"
   eid: "2-s2.0-79551650966"
 
-- year: 2010
-  date: "2010-12-01"
-  title: "Changes in physico-mechanical properties of ultramafic rocks due to weathering"
-  authors:
-    - {n: "Ündül Ö.", m: true}
-    - {n: "Tǔgrul A."}
-  source: "Rock Mechanics in Civil and Environmental Engineering Proceedings of the European Rock Mechanics Symposium Eurock 2010"
-  source_detail: "123-126"
-  type: Bildiri
-  eid: "2-s2.0-84860119448"
-
-- year: 2010
-  date: "2010-01-01"
-  title: "A new empirical approach for prediction of rock mass strength based on a strength reducing curve zone instead of unique strength reducing curve"
-  authors:
-    - {n: "Sonmez H."}
-    - {n: "Kasapoglu K.E."}
-    - {n: "Coskun A."}
-    - {n: "Dinç Göğüş Ö.", m: true}
-    - {n: "Tunusluoglu M.C."}
-  source: "ISRM International Symposium 6th Asian Rock Mechanics Symposium Arms 2010"
-  type: Bildiri
-  eid: "2-s2.0-84962823705"
-
 - year: 2009
   date: "2009-12-01"
   title: "Weathering and alteration in tuzla geothermal field: Correlation of petrographical weathering patterns with geochemical data,Çanakkale-northwestern Turkey"
@@ -1526,60 +927,6 @@
   source_detail: "1, 1-8"
   type: Bildiri
   eid: "2-s2.0-84890376167"
-
-- year: 2009
-  date: "2009-09-01"
-  title: "In-situ chemical oxidation of residual TCE by permanganate in epikarst"
-  authors:
-    - {n: "Akyol N.H."}
-    - {n: "Yolcubal İ.", m: true}
-  source: "World Academy of Science Engineering and Technology"
-  source_detail: "57, 353-355"
-  type: Makale
-  eid: "2-s2.0-78651559326"
-
-- year: 2008
-  date: "2008-11"
-  title: "Adsorption and transport of arsenate in carbonate-rich soils: Coupled effects of nonlinear and rate-limited sorption"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Akyol N.H."}
-  source: "Chemosphere"
-  source_detail: "73(8), 1300-1307"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 1
-  doi: "10.1016/j.chemosphere.2008.07.013"
-  eid: "2-s2.0-54149092154"
-
-- year: 2007
-  date: "2007-08-28"
-  title: "Retention and transport of hexavalent chromium in calcareous karst soils"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Akyol N.H."}
-  source: "Turkish Journal of Earth Sciences"
-  source_detail: "16(3), 363-379"
-  type: Makale
-  quartile: "(Q2 - Scopus)"
-  top_percent: 40
-  eid: "2-s2.0-34548125474"
-
-- year: 2007
-  date: "2007-05-03"
-  title: "Gas-phase diffusive tracer test for the in-situ measurement of tortuosity in the vadose zone"
-  authors:
-    - {n: "Tick G.R."}
-    - {n: "McColl C.M."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Brusseau M.L."}
-  source: "Water Air and Soil Pollution"
-  source_detail: "184(1-4), 355-362"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 23
-  doi: "10.1007/s11270-007-9403-3"
-  eid: "2-s2.0-34548265177"
 
 - year: 2006
   date: "2006-10-01"
@@ -1611,24 +958,6 @@
   eid: "2-s2.0-33748171487"
 
 - year: 2006
-  date: "2006-04-15"
-  title: "Biodegradation during contaminant transport in porous media: 8. The influence of microbial system variability on transport behavior and parameter determination"
-  authors:
-    - {n: "Brusseau M.L."}
-    - {n: "Sandrin S.K."}
-    - {n: "Li L."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Jordan F.L."}
-    - {n: "Maier R.M."}
-  source: "Water Resources Research"
-  source_detail: "42(4), W04406"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 10
-  doi: "10.1029/2005WR004112"
-  eid: "2-s2.0-33744786783"
-
-- year: 2006
   date: "2006-01"
   title: "The effects of strain rate and saturation on a micro-cracked marble"
   authors:
@@ -1656,39 +985,6 @@
   top_percent: 40
   eid: "2-s2.0-29844446008"
 
-- year: 2004
-  date: "2004-08-01"
-  title: "Use of cyclodextrin and calcium chloride for enhanced removal of mercury from soil"
-  authors:
-    - {n: "Wang X."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Wang W."}
-    - {n: "Artiola J."}
-    - {n: "Maier R."}
-    - {n: "Brusseau M."}
-  source: "Environmental Toxicology and Chemistry"
-  source_detail: "23(8), 1888-1892"
-  type: Makale
-  quartile: "(Q2 - Scopus)"
-  top_percent: 34
-  doi: "10.1897/03-379"
-  eid: "2-s2.0-3442875841"
-
-- year: 2004
-  date: "2004"
-  title: "Environmental Physical Properties and Processes"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Brusseau M.L."}
-    - {n: "Artiola J.F."}
-    - {n: "Wierenga P.J."}
-    - {n: "Wilson L.G."}
-  source: "Environmental Monitoring and Characterization"
-  source_detail: "207-239"
-  type: Kitap Bölümü
-  doi: "10.1016/B978-012064477-3/50014-X"
-  eid: "2-s2.0-80052069341"
-
 - year: 2003
   date: "2003-11-01"
   title: "Effects of the 17 August, 1999 earthquake on the heavy metal composition of thermal waters in the Marmara Region, northwest Turkey: Is it a precursor?"
@@ -1703,22 +999,6 @@
   quartile: "(Q3 - Scopus)"
   top_percent: 53
   eid: "2-s2.0-0842322914"
-
-- year: 2003
-  date: "2003-11"
-  title: "The influence of substrate and electron acceptor availability on bioactive zone dynamics in porous media"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Dorn J.G."}
-    - {n: "Maier R.M."}
-    - {n: "Brusseau M.L."}
-  source: "Journal of Contaminant Hydrology"
-  source_detail: "66(3-4), 219-237"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 17
-  doi: "10.1016/S0169-7722(03)00027-5"
-  eid: "2-s2.0-0142120357"
 
 - year: 2003
   date: "2003-05"
@@ -1747,22 +1027,6 @@
   top_percent: 4
   doi: "10.1016/S0167-8442(02)00139-8"
   eid: "2-s2.0-0037214810"
-
-- year: 2002
-  date: "2002-11"
-  title: "Biodegradation during contaminant transport in porous media: V. The influence of growth and cell elution on microbial distribution"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Pierce S.A."}
-    - {n: "Maier R.M."}
-    - {n: "Brusseau M.L."}
-  source: "Journal of Environmental Quality"
-  source_detail: "31(6), 1824-1830"
-  type: Makale
-  quartile: "(Q2 - Scopus)"
-  top_percent: 37
-  doi: "10.2134/jeq2002.1824"
-  eid: "2-s2.0-2242456807"
 
 - year: 2002
   date: "2002-01"
@@ -1797,23 +1061,6 @@
   eid: "2-s2.0-0346125281"
 
 - year: 2001
-  date: "2001-08"
-  title: "Biodegradation during contaminant transport in porous media: 3. Apparent condition-dependency of growth-related coefficients"
-  authors:
-    - {n: "Li L."}
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Sandrin S."}
-    - {n: "Hu M.Q."}
-    - {n: "Brusseau M.L."}
-  source: "Journal of Contaminant Hydrology"
-  source_detail: "50(3-4), 209-223"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 17
-  doi: "10.1016/S0169-7722(01)00111-5"
-  eid: "2-s2.0-0034915835"
-
-- year: 2001
   date: "2001-04"
   title: "A new computer-controlled surface-scanning device for measurement of fracture surface roughness"
   authors:
@@ -1827,23 +1074,6 @@
   top_percent: 11
   doi: "10.1016/S0098-3004(00)00083-2"
   eid: "2-s2.0-0035098138"
-
-- year: 2000
-  date: "2000-11"
-  title: "Fiber optic detection of in situ lux reporter gene activity in porous media: System design and performance"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Piatt J.J."}
-    - {n: "Pierce S.A."}
-    - {n: "Brusseau M.L."}
-    - {n: "Maier R.M."}
-  source: "Analytica Chimica Acta"
-  source_detail: "422(2), 121-130"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 13
-  doi: "10.1016/S0003-2670(00)01072-2"
-  eid: "2-s2.0-0034642134"
 
 - year: 1998
   date: "1998-11"
@@ -1869,19 +1099,3 @@
   top_percent: 2
   doi: "10.1007/s006030050017"
   eid: "2-s2.0-0032116605"
-
-- year: 1997
-  date: "1997-09"
-  title: "Formation conditions of igneous regions in ordinary chondrites: Chico, Rose City, and other heavily shocked H and L chondrites"
-  authors:
-    - {n: "Yolcubal İ.", m: true}
-    - {n: "Sack R.O."}
-    - {n: "Wang M.S."}
-    - {n: "Lipschutz M.E."}
-  source: "Journal of Geophysical Research Planets"
-  source_detail: "102(E9), 21589-21611"
-  type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 2
-  doi: "10.1029/97JE01873"
-  eid: "2-s2.0-0000822168"
