@@ -436,12 +436,25 @@ def yml_yaz(girdiler, kaynak):
     YAYIN_YML.write_text("\n".join(sat), encoding="utf-8")
 
 
+STIL = """<style>
+    .mjkmh-pubs { font-family: inherit; line-height: 1.55; }
+    .mjkmh-pubs h3 { margin: 1.6em 0 .5em; border-bottom: 1px solid #ddd; padding-bottom: .2em; }
+    .mjkmh-pubs .count { font-weight: normal; color: #888; font-size: .8em; }
+    .mjkmh-pubs ol { padding-left: 1.4em; }
+    .mjkmh-pubs li { margin-bottom: .6em; }
+    .mjkmh-pubs a { word-break: break-all; }
+    .mjkmh-pubs .tag { display: inline-block; font-size: .75em; padding: 0 .45em; margin-left: .2em;
+    border: 1px solid #bbb; border-radius: 3px; color: #555; }
+    .mjkmh-pubs .note { color: #888; font-size: .85em; }
+</style>"""
+
+
 def html_yaz(girdiler):
     e = html.escape
     yillar = {}
     for g in girdiler:
         yillar.setdefault(g.get("year"), []).append(g)
-    p = ['<div class="mjkmh-pubs">', "",
+    p = ['<div class="mjkmh-pubs">', STIL,
          f'<p class="note">Kaynak: Scopus · Toplam {len(girdiler)} yayın · Son güncelleme: {date.today():%d.%m.%Y}</p>']
     for yil in sorted(yillar, key=lambda x: x or 0, reverse=True):
         liste = yillar[yil]
