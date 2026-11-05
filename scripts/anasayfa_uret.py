@@ -35,8 +35,8 @@ def giris():
 
 
 def rakamlar(say, toplam):
-    kutular = [(say["makale"], "Q’lu makale", "/yayinlar"), (say["Q1"], "Q1 makale", "/yayinlar"),
-               (say["ilk10"], "İlk %10 dergide", "/yayinlar"), (PROJE_SAYISI, "Proje", "/projeler"),
+    kutular = [(say["makale"], "Makale", "/yayinlar"), (say["ilk10"], "İlk %10’luk Dilimdeki Makale", "/yayinlar"),
+               (say["Q1"], "Q1 Makale", "/yayinlar"), (PROJE_SAYISI, "Proje", "/projeler"),
                (KISI_SAYISI, "Araştırmacı", "/kisiler")]
     p = ['<table style="width:100%;border-collapse:separate;border-spacing:10px 0;margin:34px 0 0 0;border:0;"><tbody><tr>']
     for n, ad, link in kutular:
