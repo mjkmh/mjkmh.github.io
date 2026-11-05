@@ -12,7 +12,6 @@ permalink: /yayinlar/
 {% assign st = site.data.yayin_istatistik %}
 <div class="yayin-istatistik">
 <div class="kutu makale"><b>{{ st.makale }}</b>Makale</div>
-<div class="kutu ilk1"><b>{{ st.ilk1 }}</b>İlk %1</div>
 <div class="kutu ilk10"><b>{{ st.ilk10 }}</b>İlk %10</div>
 <div class="kutu q1"><b>{{ st.Q1 }}</b>Q1</div>
 <div class="kutu q2"><b>{{ st.Q2 }}</b>Q2</div>

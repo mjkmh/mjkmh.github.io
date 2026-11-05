@@ -519,7 +519,7 @@ def istatistik(girdiler):
 
 def istatistik_kutulari(say):
     kutular = [("Makale", say["makale"], TUR_RENK["Makale"]),
-               ("İlk %1", say["ilk1"], ("#dde6f3", "#0f2a4a")), ("İlk %10", say["ilk10"], ("#e8eef8", "#17365d")),
+               ("İlk %10", say["ilk10"], ("#e8eef8", "#17365d")),
                ("Q1", say["Q1"], Q_RENK["Q1"]), ("Q2", say["Q2"], Q_RENK["Q2"]), ("Q3", say["Q3"], Q_RENK["Q3"]),
                ("Q4", say["Q4"], Q_RENK["Q4"]), ("Bildiri", say["bildiri"], TUR_RENK["Bildiri"])]
     p = ['<div style="margin:6px 0 18px 0;">']
