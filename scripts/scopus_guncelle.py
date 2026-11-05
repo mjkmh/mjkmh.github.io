@@ -483,6 +483,11 @@ STIL = """<style>
 </style>"""
 
 
+# Sitefinity <style> bloklarını sildiği için etiket stilleri satır içi yazılır
+ETIKET = ("display:inline-block;font-size:12px;line-height:1.6;padding:0 7px;margin-left:4px;"
+          "border:1px solid #bbb;border-radius:3px;color:#555;white-space:nowrap;")
+ETIKET_Q = ETIKET.replace("border:1px solid #bbb", "border:1px solid #17365d").replace("color:#555", "color:#17365d")
+
 def html_yaz(girdiler):
     e = html.escape
     yillar = {}
@@ -501,11 +506,11 @@ def html_yaz(girdiler):
             if g.get("doi"):
                 s += f' <a href="https://doi.org/{e(g["doi"])}" target="_blank" rel="noopener">doi:{e(g["doi"])}</a>'
             if g.get("type"):
-                s += f' <span class="tag">{e(g["type"])}</span>'
+                s += f' <span class="tag" style="{ETIKET}">{e(g["type"])}</span>'
             q = re.search(r"Q[1-4]", g.get("quartile") or "")
             if q or g.get("top_percent"):
                 metin_q = (q.group(0) if q else "") + (f" (%{g['top_percent']})" if g.get("top_percent") else "")
-                s += f' <span class="tag q">{e(metin_q.strip())}</span>'
+                s += f' <span class="tag q" style="{ETIKET_Q}">{e(metin_q.strip())}</span>'
             p.append(s + "</li>")
         p.append("</ol>")
     p.append("</div>")
