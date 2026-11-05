@@ -175,7 +175,6 @@
 - name: Dilek
   surname: KARAPINAR
   photo: dilek-karapinar.png
-  pasif: true
   info: Arş. Gör.
   education:
     - level: Yüksek Lisans
