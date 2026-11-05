@@ -189,6 +189,8 @@
     "Q değerleri Scopus CiteScore yüzdeliklerine göredir. Q değeri bulunmayan makaleler ve derlemeler sayılara katılmamıştır.":
       "Quartiles are based on Scopus CiteScore percentiles. Articles without a quartile and reviews are not included in the counts."
   };
+  EK["İstanbul’un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi"] =
+    TAM["İstanbul'un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi"];
   Object.keys(EK).forEach(function (k) { TAM[k] = EK[k]; });
 
   /* Parça değişimleri (uzundan kısaya uygulanır) */
