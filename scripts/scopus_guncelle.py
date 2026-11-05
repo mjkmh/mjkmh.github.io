@@ -527,7 +527,7 @@ def istatistik_kutulari(say):
                  f'<div style="font-size:12px;">{html.escape(ad)}</div></div>')
     p.append('</div>')
     p.append('<p style="color:#888;font-size:12px;margin:-8px 0 16px 0;">Q değerleri Scopus CiteScore '
-             'yüzdeliklerine göredir; Q değeri bulunmayan makaleler ve derlemeler sayılara katılmamıştır.</p>')
+             'yüzdeliklerine göredir. Q değeri bulunmayan makaleler ve derlemeler sayılara katılmamıştır.</p>')
     return "\n".join(p)
 
 

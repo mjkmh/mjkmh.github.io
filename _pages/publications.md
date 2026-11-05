@@ -19,7 +19,7 @@ permalink: /yayinlar/
 <div class="kutu bildiri"><b>{{ st.bildiri }}</b>Bildiri</div>
 <div class="kutu ilk10"><b>{{ st.ilk10 }}</b>İlk %10</div>
 </div>
-<p class="yayin-not">Q değerleri Scopus CiteScore yüzdeliklerine göredir; Q değeri bulunmayan makaleler ve derlemeler sayılara katılmamıştır.</p>
+<p class="yayin-not">Q değerleri Scopus CiteScore yüzdeliklerine göredir. Q değeri bulunmayan makaleler ve derlemeler sayılara katılmamıştır.</p>
 
 {% assign yillar = site.data.yayinlar | group_by: "year" %}
 {% for yil in yillar %}
