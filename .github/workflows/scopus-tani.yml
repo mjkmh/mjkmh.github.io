@@ -1,0 +1,20 @@
+name: Scopus erişim tanısı (geçici)
+on: workflow_dispatch
+jobs:
+  tani:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          K: ${{ secrets.SCOPUS_API_KEY }}
+        run: |
+          for v in META META_ABS FULL REF ENTITLED; do
+            echo "== abstract $v"
+            curl -s -o o.json -w "HTTP %{http_code}\n" -H "X-ELS-APIKey: $K" -H "Accept: application/json" "https://api.elsevier.com/content/abstract/eid/2-s2.0-105050469753?view=$v"
+            python3 -c "import json;d=json.load(open('o.json'));r=d.get('abstracts-retrieval-response',{});a=r.get('affiliation');a=a if isinstance(a,list) else [a] if a else [];print('affil:',[x.get('affilname') for x in a]);au=(r.get('authors') or {}).get('author') or [];print('authors:',len(au), [ (x.get('ce:indexed-name'), [y.get('@id') for y in (x.get('affiliation') if isinstance(x.get('affiliation'),list) else [x.get('affiliation')] if x.get('affiliation') else [])]) for x in au][:8]);print(str(d)[:200] if not r else '')" || true
+          done
+          echo "== search COMPLETE"
+          curl -s -o s.json -w "HTTP %{http_code}\n" -H "X-ELS-APIKey: $K" -H "Accept: application/json" "https://api.elsevier.com/content/search/scopus?query=EID(2-s2.0-105050469753)&view=COMPLETE"
+          head -c 300 s.json; echo
+          echo "== search field=affilname"
+          curl -s -o s2.json -w "HTTP %{http_code}\n" -H "X-ELS-APIKey: $K" -H "Accept: application/json" "https://api.elsevier.com/content/search/scopus?query=EID(2-s2.0-105050469753)&field=affilname,affiliation-city,author"
+          head -c 600 s2.json; echo
