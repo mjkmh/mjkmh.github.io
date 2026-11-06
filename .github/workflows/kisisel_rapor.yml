@@ -1,0 +1,23 @@
+name: Kişisel yayın raporu (siteye yazmaz)
+
+on:
+  workflow_dispatch:
+    inputs:
+      scopus_id: {description: "Scopus Author ID", required: true}
+      ad: {description: "Kısa ad (ör. Taymaz T.)", required: true}
+
+jobs:
+  rapor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pybliometrics pandas pyyaml openpyxl
+      - name: Scopus'tan çek
+        env:
+          SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
+          SCOPUS_INSTTOKEN: ${{ secrets.SCOPUS_INSTTOKEN }}
+        run: python scripts/kisisel_rapor.py "${{ inputs.scopus_id }}" "${{ inputs.ad }}" rapor.json
+      - uses: actions/upload-artifact@v4
+        with: {name: rapor, path: rapor.json, retention-days: 3}
