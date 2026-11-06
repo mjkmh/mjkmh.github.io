@@ -1,9 +1,9 @@
 # scopus_guncelle.py üretir; Q'suz makaleler ve derlemeler sayılmaz
-makale: 58
-ilk1: 1
-ilk10: 17
-Q1: 41
-Q2: 11
-Q3: 3
-Q4: 3
-bildiri: 10
+makale: 111
+ilk1: 3
+ilk10: 32
+Q1: 77
+Q2: 19
+Q3: 5
+Q4: 10
+bildiri: 21
