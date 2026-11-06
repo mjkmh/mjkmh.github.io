@@ -296,7 +296,7 @@
   authors:
     - {n: "Korkut M.", m: true}
     - {n: "Hartog N."}
-    - {n: "Yavuz V."}
+    - {n: "Yavuz V.", m: true}
   source: "Water Switzerland"
   source_detail: "17(3), 439"
   type: Derleme
@@ -815,7 +815,7 @@
   title: "Liquefaction of freshwater carbonates led to the February 10, 2011, landslide at the Çöllolar coalfield, eastern Turkey"
   authors:
     - {n: "Akçar N."}
-    - {n: "Yavuz V."}
+    - {n: "Yavuz V.", m: true}
     - {n: "Ivy-Ochs S."}
     - {n: "Fredin O."}
     - {n: "Nyffenegger F."}
@@ -867,7 +867,7 @@
   title: "Sinkholes induced by dewatering in an open pit mine: Case study from a coal basin in eastern turkey"
   authors:
     - {n: "Mahmutoğlu Y.", m: true}
-    - {n: "Karagüzel R."}
+    - {n: "Karagüzel R.", m: true}
     - {n: "Şans G.", m: true}
     - {n: "Erdoğan Topçuoğlu M."}
   source: "Rock Dynamics Summit Proceedings of the 2019 Rock Dynamics Summit Rds 2019"
@@ -2016,7 +2016,7 @@
   title: "Tunnelling difficulties under squeezing and flowing conditions at Ayas tunnel"
   authors:
     - {n: "Mahmutoğlu Y.", m: true}
-    - {n: "Vardar M."}
+    - {n: "Vardar M.", m: true}
     - {n: "Koçak C."}
     - {n: "Şans G.", m: true}
   source: "Felsbau"
@@ -2044,7 +2044,7 @@
   title: "A new numerical approach to weathering and alteration in rock using a pilot area in the Tuzla geothermal area, Turkey"
   authors:
     - {n: "Bozkurtoğlu E.", m: true}
-    - {n: "Vardar M."}
+    - {n: "Vardar M.", m: true}
     - {n: "Suner F."}
     - {n: "Zambak C."}
   source: "Engineering Geology"
@@ -2202,7 +2202,7 @@
   title: "Effects of inelastic volume increase on fractured rock behaviour"
   authors:
     - {n: "Mahmutoğlu Y.", m: true}
-    - {n: "Vardar M."}
+    - {n: "Vardar M.", m: true}
   source: "Bulletin of Engineering Geology and the Environment"
   source_detail: "62(2), 117-121"
   type: Makale
