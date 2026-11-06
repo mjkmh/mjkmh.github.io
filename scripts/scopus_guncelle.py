@@ -423,6 +423,14 @@ def girdileri_kur(tekil, ayar, mevcut, detayli_yillar):
             e = dict(e); e["_sira"] = mevcut.index(e) if e in mevcut else 0
             girdiler.append(e)
 
+    # Korunan (elle düzeltilmiş) yazar listelerinde de üyeleri vurgula
+    for g in girdiler:
+        for a in g.get("authors") or []:
+            if not a.get("m"):
+                es = [u for u in uye_ad if soyad_esit(uye_ad[u], str(a.get("n", "")))]
+                if es:
+                    a["n"], a["m"] = uye_ad[es[0]], True
+
     girdiler.sort(key=lambda g: g.get("_sira", 0))
     girdiler.sort(key=lambda g: (int(g.get("year") or 0), str(g.get("date") or "")), reverse=True)
     for g in girdiler:
