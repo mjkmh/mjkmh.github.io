@@ -15,6 +15,9 @@ uyeler:
   - {scopus_id: "15045539500", ad: "Şans G."}
   - {scopus_id: "60367036300", ad: "Doğu M.M."}
   - {scopus_id: "23005082100", ad: "Karagüzel R."}  # emekli
+  - {scopus_id: "6508256391",  ad: "Yüzer E."}  # emekli
+  - {scopus_id: "16204585900", ad: "Vardar M."}  # emekli
+  - {scopus_id: "16204360900", ad: "Yavuz V."}  # emekli
 
 # Yalnızca adreslerinden biri bu kurum adlarını içeren yayınlar listelenir (büyük/küçük harf ve
 # Türkçe karakter farkı gözetilmez). Boş bırakılırsa süzgeç uygulanmaz.
