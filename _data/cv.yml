@@ -1,0 +1,27 @@
+# Araştırmacı CV sayfaları (scripts/cv_uret.py okur). Yayınlar _data/yayinlar.yml'den otomatik gelir.
+- slug: enes-zengin
+  ad: Enes Zengin
+  unvan: Doç. Dr.
+  yazar_adi: Zengin E.          # yayinlar.yml'deki vurgulu ad
+  eposta: eneszengin@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/enes-zengin09831970845441cf9d74f22e75e3c769.png
+  profiller:
+    ORCID: https://orcid.org/0000-0002-5740-7763
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=57189441189
+    Google Scholar: https://scholar.google.com/citations?user=DhM4L_kAAAAJ
+    ResearchGate: https://www.researchgate.net/profile/Enes-Zengin/
+    LinkedIn: https://www.linkedin.com/in/eneszengin
+  ozgecmis: ""                  # hocalardan gelecek
+  uzmanlik: []
+  egitim:
+    - [Post Doktora, The University of British Columbia]
+    - [Doktora, Kütahya Dumlupınar Üniversitesi]
+    - [Doktora Sırası, University of Aberdeen]
+    - [Yüksek Lisans, Kütahya Dumlupınar Üniversitesi]
+    - [Lisans, Kocaeli Üniversitesi]
+  gorevler:
+    - [Editörlük, DSİ Teknik Bülteni, "2026–"]
+  tezler: []                    # [düzey, öğrenci, başlık, yıl, durum]
+  ogrenciler:                   # lisans bitirme / araştırma öğrencileri
+    devam: [Batuhan Aktemur, Elif Yaren Cürul, Hasan Basri Arıca, İbrahim Kaya, Nisanur Sevinç, Zehra Betül Akbal]
+    mezun: [Eda Karanfil, Kübra Beste Karaca]
