@@ -19,5 +19,7 @@ jobs:
           SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
           SCOPUS_INSTTOKEN: ${{ secrets.SCOPUS_INSTTOKEN }}
         run: python scripts/kisisel_rapor.py "${{ inputs.scopus_id }}" "${{ inputs.ad }}" rapor.json
+      - name: JSON çıktısı
+        run: gzip -c rapor.json | base64 -w0; echo
       - uses: actions/upload-artifact@v4
         with: {name: rapor, path: rapor.json, retention-days: 3}
