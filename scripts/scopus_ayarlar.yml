@@ -14,10 +14,11 @@ uyeler:
   - {scopus_id: "57211442038", ad: "Korkut M."}
   - {scopus_id: "15045539500", ad: "Şans G."}
   - {scopus_id: "60367036300", ad: "Doğu M.M."}
+  - {scopus_id: "23005082100", ad: "Karagüzel R."}  # emekli
 
 # Yalnızca adreslerinden biri bu kurum adlarını içeren yayınlar listelenir (büyük/küçük harf ve
 # Türkçe karakter farkı gözetilmez). Boş bırakılırsa süzgeç uygulanmaz.
-sadece_kurum: ["Istanbul Technical University", "Istanbul Teknik Universitesi"]
+sadece_kurum: []
 
 # Listeye hiç alınmayacak yayın türleri (Scopus İngilizce adlarıyla)
 haric_turler: ["Erratum"]
