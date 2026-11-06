@@ -80,7 +80,7 @@ def sayfa(k, yayinlar, projeler, logolar):
         p.append(baslik("Projeler", len(pr)))
         for x in pr:
             rol = re.search(re.escape(k["ad"]) + r"\s*\(([^)]+)\)", str(x["team"]))
-            tarih = " – ".join(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t)
+            tarih = " – ".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
             p.append(f'<div style="border-left:4px solid {LAC};background:#fafafa;padding:10px 16px;margin:0 0 10px 0;">'
                      f'<p style="margin:0 0 4px 0;font-size:13px;color:#666;">{e(x.get("funder") or "")}'
                      f'{" · " + e(x["code"]) if x.get("code") else ""}{" · " + tarih if tarih else ""}'
