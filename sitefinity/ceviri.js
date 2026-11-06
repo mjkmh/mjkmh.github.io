@@ -3,6 +3,8 @@
    1) Tam metin eşleşmeleri (TAM), 2) parça değişimleri (PARCA), 3) iç bağlantı haritası (LINK). */
 (function () {
   var TAM = {
+    'Emekli Öğretim Üyelerimiz': 'Retired Faculty',
+    'Emekli Öğretim Üyesi': 'Retired Faculty Member',
     /* --- Hakkımızda --- */
     "Mühendislik Jeolojisi-Kaya Mekaniği-Hidrojeoloji (MJKMH) Çalışma Grubunun Tarihçesi":
       "History of the Engineering Geology – Rock Mechanics – Hydrogeology (MJKMH) Working Group",
