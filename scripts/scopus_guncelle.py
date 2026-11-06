@@ -380,8 +380,9 @@ def girdileri_kur(tekil, ayar, mevcut, detayli_yillar):
             if aid and aid in uye_ad:
                 yazarlar.append({"n": uye_ad[aid], "m": True})
                 continue
-            if not idler:  # ID yoksa (Crossref) soyadı + baş harfle eşleştir
-                eslesme = [u for u in uye_idleri if soyad_esit(uye_ad[u], ad)]
+            # ID eşleşmezse (Crossref ya da üyenin ikinci Scopus profili) soyadı + baş harfle eşleştir
+            if True:
+                eslesme = [u for u in (uye_idleri if not idler else uye_ad) if soyad_esit(uye_ad[u], ad)]
                 if eslesme:
                     yazarlar.append({"n": uye_ad[eslesme[0]], "m": True})
                     continue
