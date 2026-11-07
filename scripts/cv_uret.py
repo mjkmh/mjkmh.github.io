@@ -130,6 +130,9 @@ def sayfa(k, yayinlar, projeler, logolar):
         t += (f', {e(d["ayrinti"])}' if d.get("ayrinti") else "") + "."
         if d.get("doi"):
             t += f' <a href="https://doi.org/{e(d["doi"])}" target="_blank">DOI</a>'
+        for fld, renk in (("metin", ("#f1f4f8", "#455a74")), ("sunum", ("#f3eef7", "#5f4a70"))):
+            if d.get(fld):
+                t += " " + etiket(d[fld], renk)
         for ind in d.get("indeks") or []:
             t += " " + etiket(ind, IND_RENK.get(ind, ("#eef2f7", "#4a5b70")))
         if tur_etiket:
@@ -169,10 +172,17 @@ def sayfa(k, yayinlar, projeler, logolar):
                 p.append(liste(sirala([(str(g.get("year")), yayin_li(g)) for g in ek] + [(str(d["yil"]), el(d)) for d in bu])))
     # 6. Projeler
     dur = {"Devam Ediyor": ("#e8eef8", "#17365d"), "Tamamlandı": ("#e3f2e6", "#2e6b3a")}
-    if k.get("projeler"):
-        pr = [(str(x["yil"]), li(f'{e(x["baslik"])}. <em>{e(x.get("kaynak", ""))}</em>' + (f', {e(x["kod"])}' if x.get("kod") else "")
-                                 + f' ({e(str(x["yil"]))}).' + (" " + etiket(x["rol"], ROL_RENK.get(x["rol"], ("#f1f1f1", "#555"))) if x.get("rol") else "")))
-              for x in k["projeler"]]
+    def proje_li(x):
+        yil = x.get("yillar") or x["yil"]
+        return (str(x["yil"]), li(f'{e(x["baslik"])}. <em>{e(x.get("kaynak", ""))}</em>' + (f', {e(x["kod"])}' if x.get("kod") else "")
+                + f' ({e(str(yil))}).' + (" " + etiket(x["rol"], ROL_RENK.get(x["rol"], ("#f1f1f1", "#555"))) if x.get("rol") else "")
+                + (" " + etiket(x["durum"], dur.get(x["durum"], ("#f1f1f1", "#555"))) if x.get("durum") else "")))
+
+    if k.get("projeler_arastirma") or k.get("projeler_kus"):
+        for anahtar, ad in (("projeler_arastirma", "Projeler (Araştırma)"), ("projeler_kus", "Projeler (Kamu-Üniversite-Sanayi)")):
+            if k.get(anahtar):
+                p.append(baslik(ad, len(k[anahtar])))
+                p.append(liste(sirala([proje_li(x) for x in k[anahtar]])))
     else:
         pr = []
         for x in projeler:
@@ -184,9 +194,9 @@ def sayfa(k, yayinlar, projeler, logolar):
             pr.append((str(x.get("start") or "")[-4:], li(f'{e(x["title"])}. <em>{kaynak}</em>' + (f' ({tarih})' if tarih else '') + '.'
                        + (" " + etiket(r.group(1), ROL_RENK.get(r.group(1), ("#f1f1f1", "#555"))) if r else "")
                        + (" " + etiket(x["status"], dur.get(x["status"], ("#f1f1f1", "#555"))) if x.get("status") else ""))))
-    if pr:
-        p.append(baslik("Projeler", len(pr)))
-        p.append(liste(sirala(pr)))
+        if pr:
+            p.append(baslik("Projeler", len(pr)))
+            p.append(liste(sirala(pr)))
     # 7. Tez danışmanlıkları
     tz = k.get("tezler") or []
     og = k.get("ogrenciler") or {}
@@ -209,7 +219,7 @@ def sayfa(k, yayinlar, projeler, logolar):
         if k.get("editorluk"):
             p.append(satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["editorluk"]]))
         if k.get("hakemlik"):
-            p.append(f'<p style="margin:10px 0 0 0;"><strong>Hakemlik yaptığı dergiler:</strong> {e(", ".join(k["hakemlik"]))}</p>')
+            p.append(alt("Hakemlik (değerlendirme sayısı)")); p.append('<ul style="padding-left:22px;margin:0;">' + "".join(f'<li style="margin:0 0 4px 0;">{e(h)}</li>' for h in k["hakemlik"]) + "</ul>")
     # 9. Ödüller
     if k.get("oduller"):
         p += [baslik("Ödüller"), satirlar([(a, f"<strong>{e(b)}</strong>, {e(c)}") for a, b, c in k["oduller"]])]
