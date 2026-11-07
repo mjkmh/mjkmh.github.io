@@ -222,7 +222,7 @@ def sayfa(k, yayinlar, projeler, logolar):
             p.append(alt("Hakemlik Yapılan Dergiler")); p.append('<ul style="padding-left:22px;margin:0;">' + "".join(f'<li style="margin:0 0 4px 0;">{e(h)}</li>' for h in k["hakemlik"]) + "</ul>")
     # 9. Ödüller
     if k.get("oduller"):
-        p += [baslik("Burslar, Eğitimler ve Ödüller"), satirlar([(a, f'<strong>{e(b)}</strong><br><span style="color:#555;">{e(c)}</span>') for a, b, c in k["oduller"]])]
+        p += [baslik("Burslar, Eğitimler ve Ödüller"), satirlar([(a, f'<strong>{e(b)}</strong><br><span style="color:#555;">{e(c)}</span>') for a, b, c in sorted(k["oduller"], key=lambda x: str(x[0])[-4:], reverse=True)])]
     p.append('<p style="margin:34px 0 0 0;"><a href="/kisiler">← Kişiler</a></p>')
     return '<div style="padding:10px 0 40px 0;">' + "".join(p) + '</div>'
 
