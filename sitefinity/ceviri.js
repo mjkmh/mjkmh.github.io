@@ -4,6 +4,8 @@
 (function () {
   var TAM = {
     'Emekli Öğretim Üyelerimiz': 'Retired Faculty',
+    'Devam Ediyor': 'Ongoing',
+    'Devam Eden Projeler': 'Ongoing Projects',
     'Emekli Öğretim Üyesi': 'Retired Faculty Member',
     /* --- Hakkımızda --- */
     "Mühendislik Jeolojisi-Kaya Mekaniği-Hidrojeoloji (MJKMH) Çalışma Grubunun Tarihçesi":

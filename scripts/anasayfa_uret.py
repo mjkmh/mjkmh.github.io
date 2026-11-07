@@ -79,26 +79,24 @@ def alanlar():
     return "".join(p)
 
 
-PROJELER = [
-    ("TÜBİTAK 1001", "İstanbul’un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi", "126M496"),
-    ("İTÜ BAP – Hızlı Destek", "Sedimanter Kaya Malzemelerinde Çatlak Başlangıcı Gerilmesinin Parçacık Tabanlı Sayısal Modellemesinde Bağ Modellerinin Karşılaştırmalı Analizi", "2026"),
-    ("İTÜ BAP – Araştırmaya Başlangıç", "D-650 Karayolunun Arifiye-Bozüyük Kesimindeki Heyelan Tehlikesinin AHP ve CBS Tabanlı Yöntemlerle Değerlendirilmesi", "2025–2027"),
-]
-
-
 def projeler():
-    rozet = "display:inline-block;font-size:12px;padding:0 7px;margin-right:4px;"
-    p = [baslik("Devam Eden Projeler", "/projeler", "Tüm projeler")]
-    for tur, ad, ek in PROJELER:
-        p.append(f'<div style="border-left:4px solid {LACIVERT};background:#fafafa;padding:12px 16px;margin:0 0 12px 0;">'
-                 f'<p style="margin:0 0 5px 0;"><span style="{rozet}border:1px solid #bbb;color:#555;">{e(tur)}</span>'
-                 f'<span style="{rozet}border:1px solid {LACIVERT};color:{LACIVERT};">Devam ediyor</span>'
-                 f'<span style="font-size:12px;color:#888;">{e(ek)}</span></p>'
-                 f'<p style="margin:0;font-size:15px;line-height:1.4;"><strong>{e(ad)}</strong></p></div>')
+    import yaml
+    P = yaml.safe_load((KOK / "_data/projeler.yml").read_text(encoding="utf-8")) or []
+    devam = [x for x in P if str(x.get("status", "")).startswith("Devam")]
+    p = [baslik("Devam Eden Projeler", "/projeler", "Tüm projeler"), '<ul style="list-style:none;margin:0;padding:0;">']
+    for x in devam:
+        yil = "–".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
+        bilgi = " · ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or ""), yil] if v)
+        ekip = f' · {e(x["team"])}' if x.get("team") else ""
+        p.append(f'<li style="margin:0 0 14px 0;padding:0 0 14px 0;border-bottom:1px solid #eee;line-height:1.55;">'
+                 f'<span style="font-size:15px;"><strong>{e(x["title"])}</strong></span><br />'
+                 f'<span style="font-size:13px;color:#555;">{bilgi}{ekip}</span> '
+                 + etiket("Devam Ediyor", ("#e3f0fb", "#1f5fa8")) + '</li>')
+    p.append("</ul>")
     return "".join(p)
 
 
-def son_yayinlar(girdiler, n=4):
+def son_yayinlar(girdiler, n=5):
     sirali = sorted(girdiler, key=lambda g: str(g.get("date") or g.get("year")), reverse=True)[:n]
     p = [baslik("Son Yayınlar", "/yayinlar", "Tüm yayınlar"), '<ul style="list-style:none;margin:0;padding:0;">']
     for g in sirali:
@@ -107,8 +105,6 @@ def son_yayinlar(girdiler, n=4):
         s = (f'<li style="margin:0 0 14px 0;padding:0 0 14px 0;border-bottom:1px solid #eee;line-height:1.55;">'
              f'<span style="font-size:15px;"><strong>{e(g.get("title") or "")}</strong></span><br />'
              f'<span style="font-size:13px;color:#555;">{yz} ({g.get("year")}) · <em>{e(g.get("source") or "")}</em></span>')
-        if g.get("type"):
-            s += " " + etiket(g["type"], TUR_RENK.get(g["type"], ("#f1f1f1", "#555")))
         q = re.search(r"Q[1-4]", g.get("quartile") or "")
         if q:
             s += " " + etiket(q.group(0) + (f" (%{g['top_percent']})" if g.get("top_percent") else ""), Q_RENK[q.group(0)])
