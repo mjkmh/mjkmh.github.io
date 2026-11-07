@@ -387,17 +387,17 @@
     ayrinti: Denizli, Türkiye
     metin: Özet
     sunum: Sözlü
-  ogrenciler:
-    devam:
-    - Batuhan Aktemur
-    - Elif Yaren Cürul
-    - Hasan Basri Arıca
-    - İbrahim Kaya
-    - Nisanur Sevinç
-    - Zehra Betül Akbal
-    mezun:
-    - Eda Karanfil
-    - Kübra Beste Karaca
+  lisans_tezleri:   # dönem -> [öğrenci, konu]
+    2026–2027:
+    - [Batuhan Aktemur, ""]
+    - [Elif Yaren Cürul, ""]
+    - [Hasan Basri Arıca, ""]
+    - [İbrahim Kaya, ""]
+    - [Nisanur Sevinç, ""]
+    - [Zehra Betül Akbal, ""]
+    2025–2026:
+    - [Eda Karanfil, ""]
+    - [Kübra Beste Karaca, ""]
   editorluk:
   - - Editör
     - DSİ Teknik Bülteni

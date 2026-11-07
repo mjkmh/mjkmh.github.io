@@ -199,20 +199,19 @@ def sayfa(k, yayinlar, projeler, logolar):
             p.append(liste(sirala(pr)))
     # 7. Tez danışmanlıkları
     tz = k.get("tezler") or []
-    og = k.get("ogrenciler") or {}
-    if tz or og:
+    lt = k.get("lisans_tezleri") or {}
+    if tz or lt:
         p.append(baslik("Tez Danışmanlıkları"))
         for duz in ["Doktora", "Yüksek Lisans"]:
             bu = [t for t in tz if t[0] == duz]
             if bu:
-                p.append(alt(f"{duz} ({len(bu)})"))
+                p.append(alt(duz))
                 p.append(liste([li(f'{e(o)}, <em>{e(b)}</em> ({e(y)}) · {e(d)}') for _, o, b, y, d in sorted(bu, key=lambda x: str(x[3]), reverse=True)]))
-        if og.get("devam") or og.get("mezun"):
-            p.append(alt("Lisans Bitirme Çalışmaları"))
-            if og.get("devam"):
-                p.append(f'<p style="margin:0 0 6px 0;">Devam eden: {e(", ".join(og["devam"]))}</p>')
-            if og.get("mezun"):
-                p.append(f'<p style="margin:0 0 6px 0;">Tamamlanan: {e(", ".join(og["mezun"]))}</p>')
+        if lt:
+            p.append(alt("Lisans"))
+            for donem in sorted(lt, key=str, reverse=True):
+                p.append(f'<p style="margin:10px 0 4px 0;font-weight:bold;color:#666;">{e(str(donem))}</p>')
+                p.append(liste([li(e(o) + (f': <em>{e(konu)}</em>' if konu else "")) for o, konu in lt[donem]]))
     # 8. Editörlük ve hakemlik
     if k.get("editorluk") or k.get("hakemlik"):
         p.append(baslik("Editörlük ve Hakemlik"))
