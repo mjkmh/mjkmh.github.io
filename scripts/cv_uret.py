@@ -121,7 +121,7 @@ def sayfa(k, yayinlar, projeler, logolar):
             duzey, kurum, yil = d[0], d[1], d[2] if len(d) > 2 else ""
             tez = d[3] if len(d) > 3 else ""
             dan = d[4] if len(d) > 4 else ""
-            ek = (f'<br><span style="font-size:14px;color:#555;">Tez: {e(tez)}</span>' if tez else "") + (f'<br><span style="font-size:14px;color:#555;">Danışman: {e(dan)}</span>' if dan else "")
+            ek = (f'<br><span style="color:#555;">Tez: {e(tez)}</span>' if tez else "") + (f'<br><span style="color:#555;">Danışman: {e(dan)}</span>' if dan else "")
             rows.append((yil, f'<strong>{e(duzey)}</strong><br><span style="color:#555;">{e(kurum)}</span>{ek}'))
         p += [baslik("Eğitim"), satirlar(rows)]
     # 4. Yayınlar
