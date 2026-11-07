@@ -9,6 +9,7 @@ from scopus_guncelle import istatistik, etiket, TUR_RENK, Q_RENK, UYE  # noqa: E
 KOK = Path(__file__).resolve().parent.parent
 e = html.escape
 LAC = "#062a54"
+ROL_RENK = {"Yürütücü": ("#062a54", "#ffffff"), "Araştırmacı": ("#e8eef8", "#17365d"), "Danışman": ("#fbf1dc", "#7a5a17"), "Bursiyer": ("#eef6f3", "#3f6656")}
 IND_RENK = {"TR Dizin": ("#fdecea", "#9b2c22"), "DOAJ": ("#fff3e0", "#8a4b00"), "ESCI": ("#e8eef8", "#17365d"), "SCI-E": ("#e3f2e6", "#2e6b3a")}
 LOGO = "/images/librariesprovider187/mjkmh-kisiler/logo-{}.png"
 LOGO_AD = {"ORCID": "orcid", "Scopus": "scopus", "Google Scholar": "scholar", "ResearchGate": "researchgate", "LinkedIn": "linkedin"}
@@ -170,7 +171,7 @@ def sayfa(k, yayinlar, projeler, logolar):
     dur = {"Devam Ediyor": ("#e8eef8", "#17365d"), "Tamamlandı": ("#e3f2e6", "#2e6b3a")}
     if k.get("projeler"):
         pr = [(str(x["yil"]), li(f'{e(x["baslik"])}. <em>{e(x.get("kaynak", ""))}</em>' + (f', {e(x["kod"])}' if x.get("kod") else "")
-                                 + f' ({e(str(x["yil"]))}).' + (" " + etiket(x["rol"], ("#f1f1f1", "#555")) if x.get("rol") else "")))
+                                 + f' ({e(str(x["yil"]))}).' + (" " + etiket(x["rol"], ROL_RENK.get(x["rol"], ("#f1f1f1", "#555"))) if x.get("rol") else "")))
               for x in k["projeler"]]
     else:
         pr = []
@@ -181,7 +182,7 @@ def sayfa(k, yayinlar, projeler, logolar):
             tarih = "–".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
             kaynak = ", ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or "")] if v)
             pr.append((str(x.get("start") or "")[-4:], li(f'{e(x["title"])}. <em>{kaynak}</em>' + (f' ({tarih})' if tarih else '') + '.'
-                       + (" " + etiket(r.group(1), ("#f1f1f1", "#555")) if r else "")
+                       + (" " + etiket(r.group(1), ROL_RENK.get(r.group(1), ("#f1f1f1", "#555"))) if r else "")
                        + (" " + etiket(x["status"], dur.get(x["status"], ("#f1f1f1", "#555"))) if x.get("status") else ""))))
     if pr:
         p.append(baslik("Projeler", len(pr)))
