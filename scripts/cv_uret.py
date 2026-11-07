@@ -61,7 +61,7 @@ def yayin_li(g):
 
 def satirlar(liste):
     return ('<table style="width:100%;border-collapse:collapse;font-size:15px;"><tbody>' + "".join(
-        f'<tr><td style="width:150px;padding:6px 12px 6px 0;color:#777;vertical-align:top;">{e(a)}</td>'
+        f'<tr><td style="width:95px;padding:6px 8px 6px 0;white-space:nowrap;color:#777;vertical-align:top;">{e(a)}</td>'
         f'<td style="padding:6px 0;vertical-align:top;">{b}</td></tr>' for a, b in liste) + '</tbody></table>')
 
 
