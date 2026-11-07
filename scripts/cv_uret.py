@@ -11,11 +11,15 @@ e = html.escape
 LAC = "#062a54"
 # Etiket renk sistemi (tüm CV sayfaları): renk yalnızca anlam taşıyan yerde
 # Q: yeşil→kırmızı (scopus_guncelle.Q_RENK) · Yürütücü: koyu lacivert · diğer görevler: açık lacivert
-# Devam Ediyor: açık mavi · Tam metin/Özet/Sözlü/Poster: gri · İndeks: beyaz zemin, lacivert çerçeve
+# Devam Ediyor: açık mavi · Tam metin/Özet/Sözlü/Poster ve indeksler: her biri ayrı açık renk, çerçevesiz
 ROL_RENK = {"Yürütücü": ("#062a54", "#ffffff")}
 DIGER_ROL = ("#e8eef8", "#062a54")
 DEVAM = ("#e3f0fb", "#1f5fa8")
 GRI = ("#f0f0f0", "#666666")
+FORMAT_RENK = {"Tam metin": ("#dff3f1", "#00695c"), "Özet": ("#eeeeee", "#555555"),
+               "Sözlü": ("#f1e6fa", "#6a3d9a"), "Poster": ("#fce4ef", "#a2185b")}
+IND_RENK = {"TR Dizin": ("#efe6da", "#6d4c2f"), "DOAJ": ("#dff1f7", "#0b6e85"),
+            "ESCI": ("#e9eaf7", "#3c3f8f"), "SCI-E": ("#e6efe3", "#3d5f2e")}
 
 
 def cerceve(metin_):
@@ -140,9 +144,9 @@ def sayfa(k, yayinlar, projeler, logolar):
             t += f' <a href="https://doi.org/{e(d["doi"])}" target="_blank">DOI</a>'
         for fld, renk in (("metin", ("#f1f4f8", "#455a74")), ("sunum", ("#f3eef7", "#5f4a70"))):
             if d.get(fld):
-                t += " " + etiket(d[fld], GRI)
+                t += " " + etiket(d[fld], FORMAT_RENK.get(d[fld], GRI))
         for ind in d.get("indeks") or []:
-            t += " " + cerceve(ind)
+            t += " " + etiket(ind, IND_RENK.get(ind, GRI))
         if tur_etiket:
             t += " " + etiket(tur_etiket, ("#eef2f7", "#4a5b70"))
         return li(t)
