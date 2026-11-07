@@ -197,6 +197,16 @@ def sayfa(k, yayinlar, projeler, logolar):
         if pr:
             p.append(baslik("Projeler", len(pr)))
             p.append(liste(sirala(pr)))
+    # 8. Editörlük ve hakemlik
+    if k.get("editorluk") or k.get("hakemlik"):
+        p.append(baslik("Editörlük ve Hakemlik"))
+        if k.get("editorluk"):
+            p.append(satirlar([(c, f'<strong>{e(a)}</strong><br><span style="color:#555;">{e(b)}</span>') for a, b, c in k["editorluk"]]))
+        if k.get("hakemlik"):
+            p.append(alt("Hakemlik Yapılan Dergiler")); p.append('<ul style="padding-left:22px;margin:0;">' + "".join(f'<li style="margin:0 0 4px 0;">{e(h)}</li>' for h in k["hakemlik"]) + "</ul>")
+    # 9. Ödüller
+    if k.get("oduller"):
+        p += [baslik("Burslar, Eğitimler ve Ödüller"), satirlar([(a, f'<strong>{e(b)}</strong><br><span style="color:#555;">{e(c)}</span>') for a, b, c in sorted(k["oduller"], key=lambda x: str(x[0])[-4:], reverse=True)])]
     # 7. Tez danışmanlıkları
     tz = k.get("tezler") or []
     lt = k.get("lisans_tezleri") or {}
@@ -212,16 +222,6 @@ def sayfa(k, yayinlar, projeler, logolar):
             for donem in sorted(lt, key=str, reverse=True):
                 p.append(f'<p style="margin:10px 0 4px 0;font-weight:bold;color:#666;">{e(str(donem))}</p>')
                 p.append(liste([li(e(o) + (f': <em>{e(konu)}</em>' if konu else "")) for o, konu in lt[donem]]))
-    # 8. Editörlük ve hakemlik
-    if k.get("editorluk") or k.get("hakemlik"):
-        p.append(baslik("Editörlük ve Hakemlik"))
-        if k.get("editorluk"):
-            p.append(satirlar([(c, f'<strong>{e(a)}</strong><br><span style="color:#555;">{e(b)}</span>') for a, b, c in k["editorluk"]]))
-        if k.get("hakemlik"):
-            p.append(alt("Hakemlik Yapılan Dergiler")); p.append('<ul style="padding-left:22px;margin:0;">' + "".join(f'<li style="margin:0 0 4px 0;">{e(h)}</li>' for h in k["hakemlik"]) + "</ul>")
-    # 9. Ödüller
-    if k.get("oduller"):
-        p += [baslik("Burslar, Eğitimler ve Ödüller"), satirlar([(a, f'<strong>{e(b)}</strong><br><span style="color:#555;">{e(c)}</span>') for a, b, c in sorted(k["oduller"], key=lambda x: str(x[0])[-4:], reverse=True)])]
     p.append('<p style="margin:34px 0 0 0;"><a href="/kisiler">← Kişiler</a></p>')
     return '<div style="padding:10px 0 40px 0;">' + "".join(p) + '</div>'
 
