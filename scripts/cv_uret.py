@@ -111,9 +111,9 @@ def sayfa(k, yayinlar, projeler, logolar):
             for u in k["uzmanlik"]) + '</p>')
     # 3. Akademik ve idari geçmiş
     if k.get("akademik"):
-        p += [baslik("Akademik Deneyim"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["akademik"]])]
+        p += [baslik("Akademik Deneyim"), satirlar([(c, f'<strong>{e(a)}</strong><br><span style="color:#555;">{e(b)}</span>') for a, b, c in k["akademik"]])]
     if k.get("idari"):
-        p += [baslik("İdari Deneyim"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["idari"]])]
+        p += [baslik("İdari Deneyim"), satirlar([(c, f'<strong>{e(a)}</strong><br><span style="color:#555;">{e(b)}</span>') for a, b, c in k["idari"]])]
     # 2. Eğitim
     if k.get("egitim"):
         rows = []
@@ -122,7 +122,7 @@ def sayfa(k, yayinlar, projeler, logolar):
             tez = d[3] if len(d) > 3 else ""
             dan = d[4] if len(d) > 4 else ""
             ek = (f'<br><span style="font-size:14px;color:#555;">Tez: {e(tez)}</span>' if tez else "") + (f'<br><span style="font-size:14px;color:#555;">Danışman: {e(dan)}</span>' if dan else "")
-            rows.append((duzey, f'<strong>{e(kurum)}</strong>{" (" + e(yil) + ")" if yil else ""}{ek}'))
+            rows.append((yil, f'<strong>{e(duzey)}</strong><br><span style="color:#555;">{e(kurum)}</span>{ek}'))
         p += [baslik("Eğitim"), satirlar(rows)]
     # 4. Yayınlar
     def el(d, tur_etiket=None):
@@ -217,7 +217,7 @@ def sayfa(k, yayinlar, projeler, logolar):
     if k.get("editorluk") or k.get("hakemlik"):
         p.append(baslik("Editörlük ve Hakemlik"))
         if k.get("editorluk"):
-            p.append(satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["editorluk"]]))
+            p.append(satirlar([(c, f'<strong>{e(a)}</strong><br><span style="color:#555;">{e(b)}</span>') for a, b, c in k["editorluk"]]))
         if k.get("hakemlik"):
             p.append(alt("Hakemlik (değerlendirme sayısı)")); p.append('<ul style="padding-left:22px;margin:0;">' + "".join(f'<li style="margin:0 0 4px 0;">{e(h)}</li>' for h in k["hakemlik"]) + "</ul>")
     # 9. Ödüller
