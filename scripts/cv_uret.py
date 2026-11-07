@@ -9,8 +9,18 @@ from scopus_guncelle import istatistik, etiket, TUR_RENK, Q_RENK, UYE  # noqa: E
 KOK = Path(__file__).resolve().parent.parent
 e = html.escape
 LAC = "#062a54"
-ROL_RENK = {"Yürütücü": ("#062a54", "#ffffff"), "Araştırmacı": ("#e8eef8", "#17365d"), "Danışman": ("#fbf1dc", "#7a5a17"), "Bursiyer": ("#eef6f3", "#3f6656")}
-IND_RENK = {"TR Dizin": ("#fdecea", "#9b2c22"), "DOAJ": ("#fff3e0", "#8a4b00"), "ESCI": ("#e8eef8", "#17365d"), "SCI-E": ("#e3f2e6", "#2e6b3a")}
+# Etiket renk sistemi (tüm CV sayfaları): renk yalnızca anlam taşıyan yerde
+# Q: yeşil→kırmızı (scopus_guncelle.Q_RENK) · Yürütücü: koyu lacivert · diğer görevler: açık lacivert
+# Devam Ediyor: açık mavi · Tam metin/Özet/Sözlü/Poster: gri · İndeks: beyaz zemin, lacivert çerçeve
+ROL_RENK = {"Yürütücü": ("#062a54", "#ffffff")}
+DIGER_ROL = ("#e8eef8", "#062a54")
+DEVAM = ("#e3f0fb", "#1f5fa8")
+GRI = ("#f0f0f0", "#666666")
+
+
+def cerceve(metin_):
+    return (f'<span class="tag" style="display:inline-block;font-size:12px;line-height:1.6;padding:0 8px;margin-left:4px;'
+            f'border-radius:10px;white-space:nowrap;background:#ffffff;color:#062a54;border:1px solid #062a54;">{e(metin_)}</span>')
 LOGO = "/images/librariesprovider187/mjkmh-kisiler/logo-{}.png"
 LOGO_AD = {"ORCID": "orcid", "Scopus": "scopus", "Google Scholar": "scholar", "ResearchGate": "researchgate", "LinkedIn": "linkedin"}
 
@@ -51,8 +61,6 @@ def yayin_li(g, kendi=None):
     s = f'<li style="margin:0 0 10px 0;line-height:1.55;">{yz} ({g.get("year")}). {e(g.get("title") or "")}. <em>{kaynak}</em>.'
     if g.get("doi"):
         s += f' <a href="https://doi.org/{e(g["doi"])}" target="_blank">DOI</a>'
-    if g.get("type"):
-        s += " " + etiket(g["type"], TUR_RENK.get(g["type"], ("#f1f1f1", "#555")))
     q = re.search(r"Q[1-4]", g.get("quartile") or "")
     if q:
         s += " " + etiket(q.group(0) + (f" (%{g['top_percent']})" if g.get("top_percent") else ""), Q_RENK[q.group(0)])
@@ -132,9 +140,9 @@ def sayfa(k, yayinlar, projeler, logolar):
             t += f' <a href="https://doi.org/{e(d["doi"])}" target="_blank">DOI</a>'
         for fld, renk in (("metin", ("#f1f4f8", "#455a74")), ("sunum", ("#f3eef7", "#5f4a70"))):
             if d.get(fld):
-                t += " " + etiket(d[fld], renk)
+                t += " " + etiket(d[fld], GRI)
         for ind in d.get("indeks") or []:
-            t += " " + etiket(ind, IND_RENK.get(ind, ("#eef2f7", "#4a5b70")))
+            t += " " + cerceve(ind)
         if tur_etiket:
             t += " " + etiket(tur_etiket, ("#eef2f7", "#4a5b70"))
         return li(t)
@@ -175,8 +183,8 @@ def sayfa(k, yayinlar, projeler, logolar):
     def proje_li(x):
         yil = x.get("yillar") or x["yil"]
         return (str(x["yil"]), li(f'{e(x["baslik"])}. <em>{e(x.get("kaynak", ""))}</em>' + (f', {e(x["kod"])}' if x.get("kod") else "")
-                + f' ({e(str(yil))}).' + (" " + etiket(x["rol"], ROL_RENK.get(x["rol"], ("#f1f1f1", "#555"))) if x.get("rol") else "")
-                + (" " + etiket(x["durum"], dur.get(x["durum"], ("#f1f1f1", "#555"))) if x.get("durum") else "")))
+                + f' ({e(str(yil))}).' + (" " + etiket(x["rol"], ROL_RENK.get(x["rol"], DIGER_ROL)) if x.get("rol") else "")
+                + (" " + etiket("Devam Ediyor", DEVAM) if str(x.get("durum", "")).lower().startswith("devam") else "")))
 
     if k.get("projeler_arastirma") or k.get("projeler_kus"):
         for anahtar, ad in (("projeler_arastirma", "Projeler (Araştırma)"), ("projeler_kus", "Projeler (Kamu-Üniversite-Sanayi)")):
@@ -192,8 +200,8 @@ def sayfa(k, yayinlar, projeler, logolar):
             tarih = "–".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
             kaynak = ", ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or "")] if v)
             pr.append((str(x.get("start") or "")[-4:], li(f'{e(x["title"])}. <em>{kaynak}</em>' + (f' ({tarih})' if tarih else '') + '.'
-                       + (" " + etiket(r.group(1), ROL_RENK.get(r.group(1), ("#f1f1f1", "#555"))) if r else "")
-                       + (" " + etiket(x["status"], dur.get(x["status"], ("#f1f1f1", "#555"))) if x.get("status") else ""))))
+                       + (" " + etiket(r.group(1), ROL_RENK.get(r.group(1), DIGER_ROL)) if r else "")
+                       + (" " + etiket("Devam Ediyor", DEVAM) if str(x.get("status", "")).lower().startswith("devam") else ""))))
         if pr:
             p.append(baslik("Projeler", len(pr)))
             p.append(liste(sirala(pr)))
