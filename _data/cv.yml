@@ -1,7 +1,7 @@
 # Araştırmacı CV sayfaları (scripts/cv_uret.py okur). Scopus yayınları _data/yayinlar.yml'den otomatik gelir.
 # ornek: true olan kayıtlarda sayfanın üstüne "örnek içerik" uyarısı konur.
 - slug: enes-zengin
-  ornek: true
+  ornek: false
   ad: Enes Zengin
   unvan: Doç. Dr.
   yazar_adi: Zengin E.

@@ -107,6 +107,11 @@ def sayfa(k, yayinlar, projeler, logolar):
         p.append('<p style="margin:6px 0 0 0;">' + "".join(
             f'<span style="display:inline-block;margin:0 6px 6px 0;padding:3px 12px;border-radius:14px;background:#eef2f7;color:{LAC};font-size:14px;">{e(u)}</span>'
             for u in k["uzmanlik"]) + '</p>')
+    # 3. Akademik ve idari geçmiş
+    if k.get("akademik"):
+        p += [baslik("Akademik Deneyim"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["akademik"]])]
+    if k.get("idari"):
+        p += [baslik("İdari Deneyim"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["idari"]])]
     # 2. Eğitim
     if k.get("egitim"):
         rows = []
@@ -117,22 +122,17 @@ def sayfa(k, yayinlar, projeler, logolar):
             ek = (f'<br><span style="font-size:14px;color:#555;">Tez: {e(tez)}' + (f' · Danışman: {e(dan)}' if dan else "") + '</span>') if tez else ""
             rows.append((duzey, f'<strong>{e(kurum)}</strong>{" (" + e(yil) + ")" if yil else ""}{ek}'))
         p += [baslik("Eğitim"), satirlar(rows)]
-    # 3. Akademik ve idari geçmiş
-    if k.get("akademik"):
-        p += [baslik("Akademik Geçmiş"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["akademik"]])]
-    if k.get("idari"):
-        p += [baslik("İdari Görevler"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["idari"]])]
     # 4. Yayınlar
     uluslararasi = [g for g in benim if g.get("type") != "Bildiri"]
-    ulusal = k.get("ulusal_yayinlar") or []
-    kitap = k.get("kitaplar") or []
+    ulusal = sorted(k.get("ulusal_yayinlar") or [], key=lambda x: str(x[1]), reverse=True)
+    kitap = sorted(k.get("kitaplar") or [], key=lambda x: str(x[1]), reverse=True)
     if uluslararasi or ulusal or kitap:
         p.append(baslik("Yayınlar", len(uluslararasi) + len(ulusal) + len(kitap)))
         if uluslararasi:
             p.append(alt(f"Uluslararası Hakemli Dergilerde Yayımlanan Makaleler ({len(uluslararasi)})"))
             p.append('<p style="margin:-4px 0 6px 0;font-size:12px;color:#888;">Scopus’tan otomatik olarak alınmaktadır. '
                      'Q değerleri derginin güncel Scopus CiteScore dilimine göredir.</p>')
-            p.append(yillara_gore(uluslararasi))
+            p.append(liste([yayin_li(g) for g in uluslararasi]))
         if ulusal:
             p.append(alt(f"Ulusal Hakemli Dergilerde Yayımlanan Makaleler ({len(ulusal)})"))
             p.append(liste([li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(d)}</em>, {e(cs)}. '
@@ -150,22 +150,28 @@ def sayfa(k, yayinlar, projeler, logolar):
             ek = sc_bild if kap == "Uluslararası" else []
             if bu or ek:
                 p.append(alt(f"{kap} Bildiriler ({len(bu) + len(ek)})"))
-                p.append(liste([yayin_li(g) for g in ek] + [li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(kg)}</em>, {e(yer)}. '
-                                                             + etiket(tur, ("#f3eef7", "#5f4a70"))) for _, y, yil, t, kg, yer, tur in bu]))
+                ogeler = [(str(g.get("year")), yayin_li(g)) for g in ek] + [(str(yil), li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(kg)}</em>, {e(yer)}. '
+                          + etiket(tur, ("#f3eef7", "#5f4a70")))) for _, y, yil, t, kg, yer, tur in bu]
+                ogeler.sort(key=lambda x: x[0], reverse=True)
+                p.append(liste([h for _, h in ogeler]))
     # 6. Projeler
     pr = [x for x in projeler if k["ad"] in str(x.get("team") or "")]
     if pr:
         def rol(x):
             r = re.search(re.escape(k["ad"]) + r"\s*\(([^)]+)\)", str(x["team"]))
             return r.group(1) if r else ""
-        pr.sort(key=lambda x: 0 if rol(x) == "Yürütücü" else 1)
+        pr.sort(key=lambda x: str(x.get("start") or "")[-4:], reverse=True)
         p.append(baslik("Projeler", len(pr)))
+        dur = {"Devam Ediyor": ("#e8eef8", "#17365d"), "Tamamlandı": ("#e3f2e6", "#2e6b3a")}
+        items = []
         for x in pr:
-            tarih = " – ".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
-            bilgi = " · ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or ""), tarih, e(rol(x)), e(x.get("status") or "")] if v)
-            p.append(f'<div style="border-left:4px solid {LAC};background:#fafafa;padding:10px 16px;margin:0 0 10px 0;">'
-                     f'<p style="margin:0 0 4px 0;font-size:13px;color:#666;">{bilgi}</p>'
-                     f'<p style="margin:0;font-size:15px;line-height:1.4;"><strong>{e(x["title"])}</strong></p></div>')
+            tarih = "–".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
+            kaynak = ", ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or "")] if v)
+            t = (f'{e(x["title"])}. <em>{kaynak}</em>' + (f' ({tarih})' if tarih else '') + '.'
+                 + (" " + etiket(rol(x), ("#f1f1f1", "#555")) if rol(x) else "")
+                 + (" " + etiket(x["status"], dur.get(x["status"], ("#f1f1f1", "#555"))) if x.get("status") else ""))
+            items.append(li(t))
+        p.append(liste(items))
     # 7. Tez danışmanlıkları
     tz = k.get("tezler") or []
     og = k.get("ogrenciler") or {}
@@ -175,7 +181,7 @@ def sayfa(k, yayinlar, projeler, logolar):
             bu = [t for t in tz if t[0] == duz]
             if bu:
                 p.append(alt(f"{duz} ({len(bu)})"))
-                p.append(liste([li(f'{e(o)}, <em>{e(b)}</em> ({e(y)}) · {e(d)}') for _, o, b, y, d in bu]))
+                p.append(liste([li(f'{e(o)}, <em>{e(b)}</em> ({e(y)}) · {e(d)}') for _, o, b, y, d in sorted(bu, key=lambda x: str(x[3]), reverse=True)]))
         if og.get("devam") or og.get("mezun"):
             p.append(alt("Lisans Bitirme Çalışmaları"))
             if og.get("devam"):
