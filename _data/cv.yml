@@ -389,12 +389,11 @@
     sunum: Sözlü
   lisans_tezleri:   # dönem -> [öğrenci, konu]
     2026–2027:
-    - [Batuhan Aktemur, ""]
-    - [Elif Yaren Cürul, ""]
-    - [Hasan Basri Arıca, ""]
+    - ["Elif Yaren Cürul, Zehra Betül Akbal", "İstanbul İli İçin Haber Tabanlı, Dinamik ve İnteraktif Kütle Hareketleri Envanter Sisteminin Tasarımı"]
+    - ["Batuhan Aktemur, Hasan Basri Arıca", "İstanbul İli İçin Katı Atık Düzenli Depolama Tesisi Yer Seçimine Yönelik CBS ve AHP Tabanlı Bir Karar Destek Sisteminin Tasarımı"]
+    - ["Elif Yaren Cürul", "İstanbul İlinde Kütle Hareketlerinin Meydana Geldiği Alanların Jeolojik Özelliklerinin İncelenmesi"]
     - [İbrahim Kaya, ""]
     - [Nisanur Sevinç, ""]
-    - [Zehra Betül Akbal, ""]
     2025–2026:
     - ["Kübra Beste Karaca, Eda Karanfil", "Küçükçekmece Gölü (İstanbul) Güney Doğusundaki Bölgenin Üç Boyutlu Jeolojik Model Tasarımı ve Duraylılık Koşullarının Değerlendirilmesi"]
   editorluk:
