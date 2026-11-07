@@ -119,59 +119,70 @@ def sayfa(k, yayinlar, projeler, logolar):
             duzey, kurum, yil = d[0], d[1], d[2] if len(d) > 2 else ""
             tez = d[3] if len(d) > 3 else ""
             dan = d[4] if len(d) > 4 else ""
-            ek = (f'<br><span style="font-size:14px;color:#555;">Tez: {e(tez)}' + (f' · Danışman: {e(dan)}' if dan else "") + '</span>') if tez else ""
+            ek = (f'<br><span style="font-size:14px;color:#555;">Tez: {e(tez)}</span>' if tez else "") + (f'<br><span style="font-size:14px;color:#555;">Danışman: {e(dan)}</span>' if dan else "")
             rows.append((duzey, f'<strong>{e(kurum)}</strong>{" (" + e(yil) + ")" if yil else ""}{ek}'))
         p += [baslik("Eğitim"), satirlar(rows)]
     # 4. Yayınlar
-    uluslararasi = [g for g in benim if g.get("type") != "Bildiri"]
-    ulusal = sorted(k.get("ulusal_yayinlar") or [], key=lambda x: str(x[1]), reverse=True)
-    kitap = sorted(k.get("kitaplar") or [], key=lambda x: str(x[1]), reverse=True)
-    if uluslararasi or ulusal or kitap:
-        p.append(baslik("Yayınlar", len(uluslararasi) + len(ulusal) + len(kitap)))
-        if uluslararasi:
-            p.append(alt(f"Uluslararası Hakemli Dergilerde Yayımlanan Makaleler ({len(uluslararasi)})"))
-            p.append('<p style="margin:-4px 0 6px 0;font-size:12px;color:#888;">Scopus’tan otomatik olarak alınmaktadır. '
-                     'Q değerleri derginin güncel Scopus CiteScore dilimine göredir.</p>')
-            p.append(liste([yayin_li(g) for g in uluslararasi]))
+    def el(d, tur_etiket=None):
+        t = f'{vurgula(d["yazarlar"], k)} ({e(str(d["yil"]))}). {e(d["baslik"])}. <em>{e(d.get("kaynak", ""))}</em>'
+        t += (f', {e(d["ayrinti"])}' if d.get("ayrinti") else "") + "."
+        if d.get("doi"):
+            t += f' <a href="https://doi.org/{e(d["doi"])}" target="_blank">DOI</a>'
+        if tur_etiket:
+            t += " " + etiket(tur_etiket, ("#eef2f7", "#4a5b70"))
+        return li(t)
+
+    def sirala(ogeler):
+        return [h for _, h in sorted(ogeler, key=lambda x: x[0], reverse=True)]
+
+    sc_mak = [g for g in benim if g.get("type") != "Bildiri"]
+    ek_mak = k.get("uluslararasi_ek") or []
+    ulusal = k.get("ulusal_yayinlar") or []
+    kitap = k.get("kitaplar") or []
+    n_ul = len(sc_mak) + len(ek_mak)
+    if n_ul or ulusal or kitap:
+        p.append(baslik("Yayınlar", n_ul + len(ulusal) + len(kitap)))
+        if n_ul:
+            p.append(alt(f"Uluslararası Hakemli Dergilerde Yayımlanan Makaleler ({n_ul})"))
+            p.append(liste(sirala([(str(g.get("year")) + str(g.get("date") or ""), yayin_li(g)) for g in sc_mak]
+                                  + [(str(d["yil"]), el(d)) for d in ek_mak])))
         if ulusal:
             p.append(alt(f"Ulusal Hakemli Dergilerde Yayımlanan Makaleler ({len(ulusal)})"))
-            p.append(liste([li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(d)}</em>, {e(cs)}. '
-                              + etiket(ind, ("#eef2f7", "#4a5b70"))) for y, yil, t, d, cs, ind in ulusal]))
+            p.append(liste(sirala([(str(d["yil"]), el(d)) for d in ulusal])))
         if kitap:
-            p.append(alt(f"Kitaplar ve Kitap Bölümleri ({len(kitap)})"))
-            p.append(liste([li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(d)}</em>, {e(yv)}.') for y, yil, t, d, yv in kitap]))
+            p.append(alt(f"Kitap Bölümleri ({len(kitap)})"))
+            p.append(liste(sirala([(str(d["yil"]), el(d)) for d in kitap])))
     # 5. Bildiriler
     bild = k.get("bildiriler") or []
     sc_bild = [g for g in benim if g.get("type") == "Bildiri"]
     if bild or sc_bild:
         p.append(baslik("Bildiriler", len(bild) + len(sc_bild)))
         for kap in ["Uluslararası", "Ulusal"]:
-            bu = [b for b in bild if b[0] == kap]
+            bu = [d for d in bild if d.get("kapsam") == kap]
             ek = sc_bild if kap == "Uluslararası" else []
             if bu or ek:
                 p.append(alt(f"{kap} Bildiriler ({len(bu) + len(ek)})"))
-                ogeler = [(str(g.get("year")), yayin_li(g)) for g in ek] + [(str(yil), li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(kg)}</em>, {e(yer)}. '
-                          + etiket(tur, ("#f3eef7", "#5f4a70")))) for _, y, yil, t, kg, yer, tur in bu]
-                ogeler.sort(key=lambda x: x[0], reverse=True)
-                p.append(liste([h for _, h in ogeler]))
+                p.append(liste(sirala([(str(g.get("year")), yayin_li(g)) for g in ek] + [(str(d["yil"]), el(d)) for d in bu])))
     # 6. Projeler
-    pr = [x for x in projeler if k["ad"] in str(x.get("team") or "")]
-    if pr:
-        def rol(x):
+    dur = {"Devam Ediyor": ("#e8eef8", "#17365d"), "Tamamlandı": ("#e3f2e6", "#2e6b3a")}
+    if k.get("projeler"):
+        pr = [(str(x["yil"]), li(f'{e(x["baslik"])}. <em>{e(x.get("kaynak", ""))}</em>' + (f', {e(x["kod"])}' if x.get("kod") else "")
+                                 + f' ({e(str(x["yil"]))}).' + (" " + etiket(x["rol"], ("#f1f1f1", "#555")) if x.get("rol") else "")))
+              for x in k["projeler"]]
+    else:
+        pr = []
+        for x in projeler:
+            if k["ad"] not in str(x.get("team") or ""):
+                continue
             r = re.search(re.escape(k["ad"]) + r"\s*\(([^)]+)\)", str(x["team"]))
-            return r.group(1) if r else ""
-        pr.sort(key=lambda x: str(x.get("start") or "")[-4:], reverse=True)
-        p.append(baslik("Projeler", len(pr)))
-        dur = {"Devam Ediyor": ("#e8eef8", "#17365d"), "Tamamlandı": ("#e3f2e6", "#2e6b3a")}
-        items = []
-        for x in pr:
             tarih = "–".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
             kaynak = ", ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or "")] if v)
-            t = (f'{e(x["title"])}. <em>{kaynak}</em>' + (f' ({tarih})' if tarih else '') + '.'
-                 + (" " + etiket(rol(x), ("#f1f1f1", "#555")) if rol(x) else "")
-                 + (" " + etiket(x["status"], dur.get(x["status"], ("#f1f1f1", "#555"))) if x.get("status") else ""))
-            items.append(li(t))
-        p.append(liste(items))
+            pr.append((str(x.get("start") or "")[-4:], li(f'{e(x["title"])}. <em>{kaynak}</em>' + (f' ({tarih})' if tarih else '') + '.'
+                       + (" " + etiket(r.group(1), ("#f1f1f1", "#555")) if r else "")
+                       + (" " + etiket(x["status"], dur.get(x["status"], ("#f1f1f1", "#555"))) if x.get("status") else ""))))
+    if pr:
+        p.append(baslik("Projeler", len(pr)))
+        p.append(liste(sirala(pr)))
     # 7. Tez danışmanlıkları
     tz = k.get("tezler") or []
     og = k.get("ogrenciler") or {}

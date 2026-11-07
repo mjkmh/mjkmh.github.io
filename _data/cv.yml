@@ -1,7 +1,6 @@
 # Araştırmacı CV sayfaları (scripts/cv_uret.py okur). Scopus yayınları _data/yayinlar.yml'den otomatik gelir.
-# ornek: true olan kayıtlarda sayfanın üstüne "örnek içerik" uyarısı konur.
+# Enes Zengin'in bilgileri eneszengin.com kaynak dosyalarından (cv.yml, papers.bib, projects.yml) alınmıştır.
 - slug: enes-zengin
-  ornek: false
   ad: Enes Zengin
   unvan: Doç. Dr.
   yazar_adi: Zengin E.
@@ -13,43 +12,405 @@
     Google Scholar: https://scholar.google.com/citations?user=DhM4L_kAAAAJ
     ResearchGate: https://www.researchgate.net/profile/Enes-Zengin/
     LinkedIn: https://www.linkedin.com/in/eneszengin
-  ozgecmis: >-
-    Mühendislik jeolojisi ve kaya mekaniği alanlarında çalışmaktadır. Kayaçların dayanım ve deformasyon
-    davranışı, parçacık tabanlı sayısal modelleme ve CBS tabanlı tehlike değerlendirmesi başlıca araştırma
-    konularıdır. Lisans ve lisansüstü düzeyde mühendislik jeolojisi ve kaya mekaniği dersleri vermektedir.
-  uzmanlik: [Mühendislik jeolojisi, Kaya mekaniği, Parçacık tabanlı sayısal modelleme, CBS ve uzaktan algılama, Heyelan ve kaya düşmesi tehlikesi]
-  egitim:   # [düzey, kurum, yıl, tez başlığı, danışman]
-    - [Doktora, Kütahya Dumlupınar Üniversitesi, "2019", "Örnek doktora tezi başlığı", "Prof. Dr. Örnek Danışman"]
-    - [Yüksek Lisans, Kütahya Dumlupınar Üniversitesi, "2014", "Örnek yüksek lisans tezi başlığı", "Prof. Dr. Örnek Danışman"]
-    - [Lisans, Kocaeli Üniversitesi, "2011", "", ""]
-  akademik:  # [unvan/görev, kurum, yıllar]
-    - [Doçent, "İstanbul Teknik Üniversitesi, Jeoloji Mühendisliği Bölümü", "2024–"]
-    - [Doktor Öğretim Üyesi, "Örnek Üniversite, Jeoloji Mühendisliği Bölümü", "2020–2024"]
-    - [Doktora Sonrası Araştırmacı, "The University of British Columbia, Kanada", "2021–2022"]
-    - [Misafir Doktora Öğrencisi, "University of Aberdeen, Birleşik Krallık", "2017–2018"]
-    - [Araştırma Görevlisi, "Kütahya Dumlupınar Üniversitesi", "2012–2019"]
+  ozgecmis: İstanbul Teknik Üniversitesi Maden Fakültesi Jeoloji Mühendisliği Bölümü’nde öğretim üyesi olarak görev yapmaktadır. Araştırmaları mühendislik jeolojisi, kaya mekaniği ve yer bilimlerinde mekânsal analiz konularında yoğunlaşmaktadır. Arazi
+    gözlemleri, laboratuvar deneyleri, sayısal analizler ve mekânsal veri işleme yöntemlerini birlikte kullanarak kaya ve zemin ortamlarının mühendislik davranışını, jeolojik tehlikeleri ve bu tehlikelerin altyapı sistemleri, yerleşim alanları ve kültürel
+    miras yapıları üzerindeki etkilerini çalışmaktadır.
+  uzmanlik:
+  - Mühendislik jeolojisi
+  - Kaya mekaniği
+  - Yer bilimlerinde mekânsal analiz
+  akademik:
+  - - Doç. Dr.
+    - İstanbul Teknik Üniversitesi (İstanbul, Türkiye), Maden Fakültesi, Jeoloji Mühendisliği Bölümü
+    - 2025–
+  - - Doç. Dr.
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Mimarlık Fakültesi, Şehir ve Bölge Planlama Bölümü
+    - 2024–2025
+  - - Dr. Öğr. Üyesi
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Mimarlık Fakültesi, Şehir ve Bölge Planlama Bölümü
+    - 2022–2024
+  - - Doktora Sonrası Araştırmacı
+    - The University of British Columbia (Vancouver, Kanada), Earth, Ocean and Atmospheric Sciences
+    - 2021–2022
+  - - Arş. Gör. Dr.
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Mühendislik Fakültesi, Jeoloji Mühendisliği Bölümü
+    - 2019–2022
+  - - Doktora Sırası Araştırmacı
+    - University of Aberdeen (Aberdeen, Birleşik Krallık), Geology and Geophysics
+    - 2017–2018
+  - - Arş. Gör.
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Mühendislik Fakültesi, Jeoloji Mühendisliği Bölümü
+    - 2010–2019
   idari:
-    - [Bölüm Başkan Yardımcısı, "Örnek Üniversite, Jeoloji Mühendisliği Bölümü", "2022–2024"]
-    - [Erasmus Bölüm Koordinatörü, "Örnek Üniversite", "2021–2024"]
-  ulusal_yayinlar:  # [yazarlar, yıl, başlık, dergi, cilt-sayfa, indeks]
-    - ["Zengin E., Örnek A.", "2024", "Örnek ulusal makale başlığı: kaya şevlerinde duraylılık değerlendirmesi", "Jeoloji Mühendisliği Dergisi", "48(1), 1-20", "TR Dizin"]
-    - ["Örnek B., Zengin E.", "2021", "Örnek ulusal makale başlığı: ayrışmanın dayanım üzerindeki etkisi", "Mühendislik Bilimleri ve Tasarım Dergisi", "9(3), 800-815", "TR Dizin"]
+  - - Koordinatör
+    - İstanbul Teknik Üniversitesi (İstanbul, Türkiye), Maden Fakültesi, Araştırma-Geliştirme
+    - 2026–
+  - - Üye
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Kalite Komisyonu
+    - 2023–2025
+  - - Koordinatör
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Bilimsel Araştırma Projeleri Koordinasyon Birimi
+    - 2023–2024
+  - - Koordinatör Yardımcısı
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Bilimsel Araştırma Projeleri Koordinasyon Birimi
+    - 2019–2023
+  - - Üye
+    - Kütahya Dumlupınar Üniversitesi (Kütahya, Türkiye), Kalite Komisyonu, Araştırma-Geliştirme Alt Çalışma Grubu
+    - 2019–2025
+  egitim:
+  - - Doktora
+    - Kütahya Dumlupınar Üniversitesi, Jeoloji Mühendisliği
+    - 2013–2019
+    - Boşluklu Kaya Malzemelerinin Dayanım ve Deformasyon Özelliklerinin Deneysel ve Nümerik Yaklaşımlar Kullanılarak Araştırılması
+    - rof. Dr. Zeynal Abiddin Ergüler
+  - - Yüksek Lisans
+    - Kütahya Dumlupınar Üniversitesi, Jeoloji Mühendisliği
+    - 2010–2013
+    - Kütahya Yerleşim Alanı Zeminlerinin Fiziksel ve Mekanik Özelliklerinin Araştırılması
+    - rof. Dr. Zeynal Abiddin Ergüler
+  - - Lisans
+    - Kocaeli Üniversitesi, Jeoloji Mühendisliği
+    - 2004–2009
+    - ''
+    - ''
+  uluslararasi_ek:
+  - yazarlar: Celik I., Zengin E., Sensogut C.
+    yil: '2018'
+    baslik: Modeling and Production of Solid Model of South Panel, Tuncbilek Open Pit by 3D Printer
+    kaynak: International Journal of Economic and Environmental Geology
+    ayrinti: 9(1), 44-49
+  ulusal_yayinlar:
+  - yazarlar: Zengin E., Acar R.U., Öngen A.S.
+    yil: '2025'
+    baslik: Assessing Boundary Shifts at Gölcük Lake (Kütahya) with Google Earth Images
+    doi: 10.35414/akufemubid.1579340
+    kaynak: Afyon Kocatepe University Journal of Sciences and Engineering
+    ayrinti: 25(4), 946-955
+  - yazarlar: Acar R.U., Zengin E., Öngen A.S.
+    yil: '2025'
+    baslik: Machine learning-based temporal change detection of land use and land cover changes in the Tunçbilek open pit coal mine region using PlanetScope imagery
+    doi: 10.28948/ngumuh.1619090
+    kaynak: Niğde Ömer Halisdemir University Journal of Engineering Sciences
+    ayrinti: 14(3), 1001-1013
+  - yazarlar: Acar R.U., Zengin E.
+    yil: '2025'
+    baslik: Monitoring Wetland Transformations in Lake Eber Over A Decade Using Remote Sensing
+    kaynak: Akdeniz Engineering Journal
+    ayrinti: 3(1), 11-19
+  - yazarlar: Öngen A.S., Zengin E.
+    yil: '2025'
+    baslik: Spatial Assessment of Urban Heat Island (UHI) in Kütahya using Landsat-8 Satellite Data
+    doi: 10.28948/ngumuh.1527341
+    kaynak: Niğde Ömer Halisdemir University Journal of Engineering Sciences
+    ayrinti: 14(1), 122-131
+  - yazarlar: Acar R.U., Zengin E.
+    yil: '2023'
+    baslik: Performance Assessment of Landsat 8 and Sentinel-2 Satellite Images for the Production of Time Series Land Use/Land Cover (LULC) Maps
+    doi: 10.59313/jsr-a.1213548
+    kaynak: Journal of Scientific Reports-A
+    ayrinti: (53), 1-15
+  - yazarlar: Özok İ.H., Zengin E., Karakuş H., Erguler Z.A.
+    yil: '2018'
+    baslik: Hidrolik İletkenlik İle İnce Taneli Zeminlerin Fiziksel Özellikleri Arasındaki İlişkinin Araştırılması
+    kaynak: Dumlupınar Üniversitesi Fen Bilimleri Enstitüsü Dergisi
+    ayrinti: 40, 1-6
+  - yazarlar: Derman M., Adıgüzel Ö., Zengin E., Erguler Z.A.
+    yil: '2016'
+    baslik: Sabuncupınar-Kütahya Arasındaki Demiryollarında Balast Malzemesi Olarak Kullanılan Volkanik Kayacın Fiziksel, Mineralojik ve Aşınma Özellikleri Üzerinde Bozunma Süreçlerinin Etkisi
+    kaynak: Dumlupınar Üniversitesi Fen Bilimleri Enstitüsü Dergisi (Özel Sayı 2015)
+    ayrinti: 40, 183-188
   kitaplar:
-    - ["Zengin E.", "2023", "Örnek kitap bölümü başlığı", "Mühendislik Jeolojisinde Güncel Yaklaşımlar (Ed. Örnek C.)", "Örnek Yayınevi, s. 45-70"]
-  bildiriler:  # [kapsam, yazarlar, yıl, başlık, kongre, yer, tür]
-    - [Uluslararası, "Zengin E., Ündül Ö.", "2026", "Örnek bildiri başlığı: bağ modellerinin karşılaştırılması", "EUROCK 2026", "Üsküp, Kuzey Makedonya", "Sözlü"]
-    - [Uluslararası, "Zengin E.", "2026", "Örnek poster başlığı: kıyı su basması maruziyeti", "EUROCK 2026", "Üsküp, Kuzey Makedonya", "Poster"]
-    - [Ulusal, "Zengin E., Örnek D.", "2025", "Örnek ulusal bildiri başlığı", "76. Türkiye Jeoloji Kurultayı", "Ankara", "Sözlü"]
-    - [Ulusal, "Örnek E., Zengin E.", "2023", "Örnek ulusal bildiri başlığı 2", "İstanbul'un Jeolojisi Sempozyumu-6", "İstanbul", "Poster"]
-  tezler:  # [düzey, öğrenci, başlık, yıl, durum]
-    - [Doktora, Örnek Öğrenci 1, "Örnek doktora tezi başlığı", "2025–", Devam ediyor]
-    - [Yüksek Lisans, Örnek Öğrenci 2, "Örnek yüksek lisans tezi başlığı", "2024–", Devam ediyor]
-    - [Yüksek Lisans, Örnek Öğrenci 3, "Örnek tamamlanmış yüksek lisans tezi", "2023", Tamamlandı]
+  - yazarlar: Şahbaz O., Zengin E.
+    yil: '2025'
+    baslik: Madencilikte Risk Değerlendirmede Klasik ve Yenilikçi Yaklaşımlar
+    kaynak: Madencilik Sektöründeki Yenilikçi Gelişim Eğilimleri
+    ayrinti: Nobel Yayınevi, s. 262-280
+  - yazarlar: Erguler Z.A., Zengin E., Öngen A.S.
+    yil: '2014'
+    baslik: Höyüktepe ve Attepe arkeolojik yerleşim alanlarının jeolojik, jeomorfolojik ve jeoteknik özellikleri
+    kaynak: Kureyşler Barajı Kurtarma Kazıları 2014
+    ayrinti: Kütahya Müzesi Müdürlüğü, s. 11-36
+  bildiriler:
+  - yazarlar: Dinç Göğüş Ö., Ündül Ö., Zengin E., Korkut M., Doğu M.M.
+    yil: '2026'
+    baslik: 'Fractal Quantification of Crack Networks: Predicting Rock Damage in Thermally Exposed Rock Environments'
+    kaynak: EUROCK 2026 — Risk Management in Rock Engineering
+    kapsam: Uluslararası
+    ayrinti: Skopje, North Macedonia
+  - yazarlar: Zengin E., Ündül Ö., Dinç Göğüş Ö., Doğu M.M.
+    yil: '2026'
+    baslik: Laboratory-Scale Assessment of 2D and 3D Bonded-Particle Models
+    kaynak: EUROCK 2026 — Risk Management in Rock Engineering
+    kapsam: Uluslararası
+    ayrinti: Skopje, North Macedonia
+  - yazarlar: Zengin E., Ündül Ö., Dinç Göğüş Ö., Doğu M.M., Korkut M.
+    yil: '2026'
+    baslik: A Preliminary Assessment of Stone Selection for Istanbul's Cultural Heritage Buildings
+    kaynak: EUROCK 2026 — Risk Management in Rock Engineering
+    kapsam: Uluslararası
+    ayrinti: Skopje, North Macedonia
+  - yazarlar: Kılıç E., Ede M., Alan G.K., Doğu M.M., Mutlu B., Korkut M., Zengin E., Ündül Ö.
+    yil: '2026'
+    baslik: Evaluation of Active Slope Instabilities Between Büyükçekmece and Küçükçekmece Using Numerical Modelling and Remote Sensing Data
+    kaynak: 78th Geological Congress of Türkiye
+    kapsam: Ulusal
+  - yazarlar: Çevik T.B., Doğu M.M., Zengin E., Ündül Ö.
+    yil: '2026'
+    baslik: Detection of Drill Cores Using CNNs for Quality Metric (RQD and TCR) Calculation and Integration into 3D Engineering Software
+    kaynak: 78th Geological Congress of Türkiye
+    kapsam: Ulusal
+  - yazarlar: Doğu M.M., Nasery M.M., Ündül Ö., Zengin E.
+    yil: '2026'
+    baslik: 'Assessment of the Risky and Hazardous Conditions of Rockfalls in Clayey Limestone with Discontinuity Control Using Integrated Analysis Methods: The Birecik–Halfeti Motorway (Şanlıurfa, Türkiye)'
+    kaynak: European Geosciences Union General Assembly 2026
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Kılıç E., Doğu M.M., Mutlu B., Korkut M., Zengin E., Ündül Ö.
+    yil: '2026'
+    baslik: Integration of InSAR and Inclinometer Measurements for Evaluating Surface Deformation in an Active Landslide Area
+    kaynak: European Geosciences Union General Assembly 2026
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Ündül Ö., Doğu M.M., Korkut M.
+    yil: '2026'
+    baslik: Preliminary Landslide Hazard and Multi-Infrastructure Exposure Assessment along the Arifiye-Bozüyük Corridor in Western Türkiye
+    kaynak: European Geosciences Union General Assembly 2026
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Hiçdurmaz Z., Cardoso C., Baptista J.S.
+    yil: '2025'
+    baslik: Assessing Occupational Health and Safety in the Mining Sectors of Angola and Mozambique
+    kaynak: International Symposium on Occupational Safety and Hygiene (SHO 2025)
+    kapsam: Uluslararası
+    ayrinti: Porto, Portugal
+  - yazarlar: Cardoso C., Duarte J., Şahbaz O., Zengin E., Hiçdurmaz Z., Baptista J.S.
+    yil: '2025'
+    baslik: 'Enhancing Occupational Safety in Mining: Insights From The STRIM Project'
+    doi: 10.46793/SEMSIE25.049C
+    kaynak: '21st International Conference “Man and Working Environment” — Safety Engineering \& Management: Science, Industry, Education (SEMSIE 2025)'
+    kapsam: Uluslararası
+    ayrinti: Sokobanja, Serbia, s. 49-53
+  - yazarlar: Zengin E., Ündül Ö.
+    yil: '2025'
+    baslik: Exploring Dyke Geometry Effects on Tunnel Stability Using Particle Flow Code
+    doi: 10.5194/egusphere-egu25-7280
+    kaynak: European Geosciences Union General Assembly 2025
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Öngen A.S., Zengin E.
+    yil: '2024'
+    baslik: Analyzing Land Surface Temperature Variations in Türkiye (2014-2023) Using MODIS Data and Google Earth Engine
+    kaynak: Mediterranean Geosciences Union 4th Annual Meeting
+    kapsam: Uluslararası
+  - yazarlar: Doğan B., Erkül F., Şen F., Zengin E., Alaçam S., Çakıcı Alp N., Aydoğan Ö., Akçal A.N.
+    yil: '2023'
+    baslik: 06/02/2023 Tarihli, M 7.7 ve M 7.6 Kahramanmaraş Depremlerinin Yüzey Kırığı, Yanal Atım, Büyüklük İlişkisi ve 20/02/2023 Tarihli, M 6.3 Hatay Depremi ile Birlikte Aktif Fay–Tektonik Ortam Analizi
+    kaynak: Aktif Tektonik Araştırma Grubu 26. Çalıştayı
+    kapsam: Ulusal
+    ayrinti: İstanbul, Türkiye
+  - yazarlar: Dinç Göğüş Ö., Zengin E.
+    yil: '2023'
+    baslik: Effects of Layering on Mechanical Behaviors of Rocks Under Quasi-Static Loading
+    kaynak: 3rd International Congress of Engineering and Natural Sciences (ICENSS 2023)
+    kapsam: Uluslararası
+    ayrinti: Ankara, Türkiye
+  - yazarlar: Doğan B., Şen F., Zengin E., Alaçam S., Çakıcı Alp N.
+    yil: '2023'
+    baslik: Kahramanmaraş (Türkiye), 06/02/2023 Tarihli, M 7.7 ve M 7.6 Depremlerinin, Yüzey Kırıklarının ve Tektonik Kaynağı Fayların Geometrisi
+    kaynak: 75. Türkiye Jeoloji Kurultayı
+    kapsam: Ulusal
+    ayrinti: Ankara, Türkiye
+  - yazarlar: Zengin E.
+    yil: '2022'
+    baslik: 'Representative and Reliable Modeling for Rock Materials: 2D vs 3D'
+    doi: 10.5194/egusphere-egu22-3008
+    kaynak: European Geosciences Union General Assembly 2022
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Erguler Z.A.
+    yil: '2021'
+    baslik: Effect of Gap Geometries on the Crack Initiation Stress of Synthetic Rock Material
+    doi: 10.5194/egusphere-egu21-9409
+    kaynak: European Geosciences Union General Assembly 2021
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Kibici Y., Zengin E., Yanık G., Özkul C., Karakuş H., Demirbilek M., Aksoy İ., Acar R.U.
+    yil: '2017'
+    baslik: Emet (Kütahya) Yöresindeki Travertenlerin Fiziko-Mekanik Özellikleri ve Petrografik Özellikleri ile Karşılaştırılması
+    kaynak: Türkiye 9. Uluslararası Mermer ve Doğaltaş Kongresi ve Sergisi (MERSEM 2017)
+    kapsam: Uluslararası
+  - yazarlar: Kibici Y., Demirbilek M., Yanık G., Karakuş H., Aksoy İ., Zengin E., Acar R.U.
+    yil: '2017'
+    baslik: Yeniceköy, Sefaköy, Uyuzhamamı ve Hamamköy (Emet-Hisarcık/Kütahya-Türkiye) Yöresindeki Travertenlerin Mineralojik ve Petrografik Özellikleri
+    kaynak: Türkiye 9. Uluslararası Mermer ve Doğaltaş Kongresi ve Sergisi (MERSEM 2017)
+    kapsam: Uluslararası
+  - yazarlar: Kibici Y., Karakuş H., Yanık G., Özkul C., Demirbilek M., Aksoy İ., Zengin E., Doğan N.
+    yil: '2017'
+    baslik: Yeniceköy (Emet-Kütahya) Yöresindeki Traverten Sahasında Hidrotermal Alterasyon Oluşumunun Jeokimyasal Özellikleri
+    kaynak: Uluslararası Madencilik ve Çevre Sempozyumu (ISME 2017)
+    kapsam: Uluslararası
+  - yazarlar: Kibici Y., Özkul C., Yanık G., Demirbilek M., Karakuş H., Aksoy İ., Zengin E.
+    yil: '2017'
+    baslik: Emet-Hisarcık (Kütahya-Türkiye) Grabenindeki Travertenlerin Jeokimyasal Özellikleri
+    kaynak: Çukurova Üniversitesi 40. Yıl Jeoloji Sempozyumu
+    kapsam: Ulusal
+  - yazarlar: Celik I., Zengin E., Sensogut C.
+    yil: '2017'
+    baslik: Modelling and Production of Solid Model of South Panel, Tuncbilek Open Pit by 3D Printer
+    kaynak: International Conference on Mining and Fuel Industries (CMFI-2017)
+    kapsam: Uluslararası
+    ayrinti: Karachi, Pakistan
+  - yazarlar: Zengin E., Erguler Z.A.
+    yil: '2017'
+    baslik: Comparison of Crack Initiation, Propagation and Coalescence Behavior of Concrete and Rock Materials
+    kaynak: European Geosciences Union General Assembly 2017
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Erguler Z.A.
+    yil: '2017'
+    baslik: The Usability of Rock-Like Materials for Numerical Studies on Rocks
+    kaynak: European Geosciences Union General Assembly 2017
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Erguler Z.A., Karakuş H.
+    yil: '2017'
+    baslik: Hydraulic Conductivity Prediction of Fine-Grained Soils based on Grain Size Index
+    kaynak: European Geosciences Union General Assembly 2017
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Erguler Z.A., Karakuş H.
+    yil: '2015'
+    baslik: Hidrolik İletkenlik Değerlerinin Belirlenmesine Yönelik Önerilen Görgül Eşitliklere Genel Bakış ve Uygulanabilirliklerinin Araştırılması
+    kaynak: Uluslararası Katılımlı Doğu Anadolu Jeoloji Sempozyumu
+    kapsam: Ulusal
+    ayrinti: Van, Türkiye
+  - yazarlar: Zengin E., Erguler Z.A., Karakuş H.
+    yil: '2015'
+    baslik: The Comparison of Predicted and Measured Hydraulic Conductivities of Soils having Different Physical Properties
+    kaynak: European Geosciences Union General Assembly 2015
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Erguler Z.A.
+    yil: '2014'
+    baslik: Assessment of Liquefaction Susceptibility of Kutahya Soils Based on Recent Earthquakes in Turkey
+    kaynak: European Geosciences Union General Assembly 2014
+    kapsam: Uluslararası
+    ayrinti: Vienna, Austria
+  - yazarlar: Zengin E., Erguler Z.A., Ozburan M., Karakuş H.
+    yil: '2014'
+    baslik: Earthquake Hazard and Risk Assessment of Kutahya Settlement Area Founded on the Kutahya Fault Zone (KFZ)
+    kaynak: 9th Alexander von Humboldt Conference 2014
+    kapsam: Uluslararası
+    ayrinti: İstanbul, Türkiye
+  - yazarlar: Zengin E., Erguler Z.A.
+    yil: '2012'
+    baslik: Kütahya Zeminlerinin Fiziksel ve Mekanik Özelliklerinin Araştırılması
+    kaynak: 65. Türkiye Jeoloji Kurultayı
+    kapsam: Ulusal
+    ayrinti: Ankara, Türkiye
+  - yazarlar: Özkul C., Zengin E.
+    yil: '2012'
+    baslik: Kütahya Yerleşim Alanı Toprak Ağır Metal Derişiminin Belirlenmesi
+    kaynak: V. Ulusal Jeokimya Sempozyumu
+    kapsam: Ulusal
+    ayrinti: Denizli, Türkiye
+  projeler:
+  - yil: '2026'
+    baslik: Sedimanter Kaya Malzemelerinde Çatlak Başlangıcı Gerilmesinin Parçacık Tabanlı Sayısal Modellemesinde Bağ Modellerinin Karşılaştırmalı Analizi
+    kaynak: İstanbul Teknik Üniversitesi BAP
+    kod: FHD-2026-48522
+    rol: Yürütücü
+  - yil: '2025'
+    baslik: D-650 Karayolunun Arifiye-Bozüyük Kesimindeki Heyelan Tehlikesinin AHP ve CBS Tabanlı Yöntemlerle Değerlendirilmesi
+    kaynak: İstanbul Teknik Üniversitesi BAP
+    kod: MAB-2025-47218
+    rol: Yürütücü
+  - yil: '2025'
+    baslik: İstanbul Kilinin Makaslama Parametrelerine Katkı Malzemelerinin Etkisinin Araştırılması
+    kaynak: İstanbul Teknik Üniversitesi BAP
+    kod: FHD-2025-47837
+    rol: Yürütücü
+  - yil: '2024'
+    baslik: Türkiye'nin Ege ve Akdeniz Bölgelerindeki Orman Yangını Riskinin Uzaktan Algılama ve Coğrafi Bilgi Sistemleri Yöntemleri Kullanılarak Araştırılması
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2024-01
+    rol: Yürütücü
+  - yil: '2023'
+    baslik: Doğu Anadolu Fay Sistemi (DAFS) üzerinde 06/02/2023 tarihli 7.7 ve 7.6 büyüklüğündeki Kahramanmaraş depremlerini oluşturan faylanma geometrisinin, sahadaki yapısal verilerinin tespit edilmesi
+    kaynak: TÜBİTAK 1002-C Doğal Afetler Odaklı Saha Çalışması Acil Destek Programı
+    kod: ''
+    rol: Araştırmacı
+  - yil: '2021'
+    baslik: Kütahya İli Diri Faylarının Paleosismolojik ve Kinematik Özelliklerinin Tespitine Yönelik Yaklaşım Belirlemesi
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2021-31
+    rol: Araştırmacı
+  - yil: '2021'
+    baslik: Kaya Malzemelerinin Dayanım ve Deformasyon Özellikleri Üzerinde Yapısal Kusurların Etkisinin Nümerik Yöntemler Kullanılarak Araştırılması
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2021-30
+    rol: Yürütücü
+  - yil: '2020'
+    baslik: Farklı Bağ Modellerinin Sedimanter Kayaların Yenilme Davranışlarının Modellenmesinde Kullanılabilirliğinin Araştırılması
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2020-09
+    rol: Yürütücü
+  - yil: '2020'
+    baslik: Maden Atık Sahalarında (Pasa) Statik-Kinetik Yöntemler ve Benzetim Modeli ile Asit Maden Drenajı (AMD) Kestirimi
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2020-06
+    rol: Araştırmacı
+  - yil: '2020'
+    baslik: Türkiye Kömür İşletmeleri Ege Linyitleri İşletme Müdürlüğü Manisa İli Soma İlçesi Soma Bölgesi ve Deniş Bölgesi Açık Ocak İşletmelerine Ait Pasa Sahalarının Asit Üretim Potansiyelinin Belirlenmesine ve Çözüm Önerilerine Yönelik Ar-Ge Projesi
+    kaynak: Türkiye Kömür İşletmeleri Kurumu Genel Müdürlüğü
+    kod: ''
+    rol: Araştırmacı
+  - yil: '2019'
+    baslik: Türkiye Kömür İşletmeleri Çan Linyitleri İşletme Müdürlüğü Faaliyetleri Sonucu Oluşan Pasa Sahalarının Asit Üretim Potansiyelinin Belirlenmesine ve Çözüm Önerilerine Yönelik Ar-Ge Projesi
+    kaynak: Türkiye Kömür İşletmeleri Kurumu Genel Müdürlüğü
+    kod: ''
+    rol: Araştırmacı
+  - yil: '2018'
+    baslik: Türkiye Kömür İşletmeleri Garp Linyitleri İşletme Müdürlüğü Faaliyetleri Sonucu Oluşan Pasa Sahalarının Asit Üretim Potansiyelinin Belirlenmesine ve Çözüm Önerilerine Yönelik Ar-Ge Projesi
+    kaynak: Türkiye Kömür İşletmeleri Kurumu Genel Müdürlüğü
+    kod: ''
+    rol: Araştırmacı
+  - yil: '2016'
+    baslik: Dumlupınar Üniversitesi Evliya Çelebi Yerleşkesi ve Yakın Çevresinin Mikrotremor Ölçümleri ile Yerel Zemin Özelliklerinin Belirlenmesi
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2016-04
+    rol: Araştırmacı
+  - yil: '2015'
+    baslik: Kaya Kütlelerinin Dayanım ve Deformasyon Özelliklerinin Sentetik Kaya Kütlesi Yaklaşımı ile Modellenmesi
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2015-88
+    rol: Araştırmacı
+  - yil: '2012'
+    baslik: Emet (Kütahya) Travertenlerinin Mineralojik, Petrografik ve Jeokimyasal Özelliklerinin Araştırılması ve Fizikomekanik Özellikleri İle İlişkisi
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2012-10
+    rol: Araştırmacı
+  - yil: '2011'
+    baslik: Kütahya Yerleşim Alanı Toprak Ağır Metal Derişiminin Belirlenmesi
+    kaynak: Kütahya Dumlupınar Üniversitesi BAP
+    kod: 2011-11
+    rol: Araştırmacı
   ogrenciler:
-    devam: [Batuhan Aktemur, Elif Yaren Cürul, Hasan Basri Arıca, İbrahim Kaya, Nisanur Sevinç, Zehra Betül Akbal]
-    mezun: [Eda Karanfil, Kübra Beste Karaca]
+    devam:
+    - Batuhan Aktemur
+    - Elif Yaren Cürul
+    - Hasan Basri Arıca
+    - İbrahim Kaya
+    - Nisanur Sevinç
+    - Zehra Betül Akbal
+    mezun:
+    - Eda Karanfil
+    - Kübra Beste Karaca
   editorluk:
-    - [Editör, DSİ Teknik Bülteni, "2026–"]
-  hakemlik: [Bulletin of Engineering Geology and the Environment, Rock Mechanics and Rock Engineering, Engineering Geology]
+  - - Editör
+    - DSİ Teknik Bülteni
+    - 2026–
   oduller:
-    - ["2022", "Örnek ödül adı", "Örnek Kurum"]
+  - - 2021–2022
+    - TÜBİTAK 2219 – Yurt Dışı Doktora Sonrası Araştırma Burs Programı
+    - The University of British Columbia (Vancouver, Kanada)
