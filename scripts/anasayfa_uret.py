@@ -87,7 +87,8 @@ def projeler():
     for x in devam:
         yil = "–".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
         bilgi = " · ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or ""), yil] if v)
-        ekip = f' · {e(x["team"])}' if x.get("team") else ""
+        yur = [t.strip() for t in str(x.get("team") or "").split(",") if "Yürütücü" in t]
+        ekip = f' · {e(yur[0])}' if yur else ""
         p.append(f'<li style="margin:0 0 14px 0;padding:0 0 14px 0;border-bottom:1px solid #eee;line-height:1.55;">'
                  f'<span style="font-size:15px;"><strong>{e(x["title"])}</strong></span><br />'
                  f'<span style="font-size:13px;color:#555;">{bilgi}{ekip}</span> '
