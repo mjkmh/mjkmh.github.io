@@ -99,8 +99,35 @@ def projeler():
     return "".join(p)
 
 
+FORMAT_RENK = {"Tam metin": ("#dff3f1", "#00695c"), "Özet": ("#eeeeee", "#555555"),
+               "Sözlü": ("#f1e6fa", "#6a3d9a"), "Poster": ("#fce4ef", "#a2185b")}
+
+
+def cv_bildirileri(scopus):
+    """Kişisel CV verilerindeki (_data/cv.yml) Scopus dışı bildiriler; aynı başlık bir kez alınır."""
+    norm = lambda t: re.sub(r"[^a-z0-9]", "", str(t).lower())[:70]
+    gorulen = {norm(g.get("title")) for g in scopus}
+    uyeler = [u["ad"] for u in (yaml.safe_load((KOK / "scripts/scopus_ayarlar.yml").read_text(encoding="utf-8"))["uyeler"])]
+    cvler = yaml.safe_load((KOK / "_data/cv.yml").read_text(encoding="utf-8")) or []
+    out = []
+    for k in cvler:
+        for d in k.get("bildiriler") or []:
+            if norm(d["baslik"]) in gorulen:
+                continue
+            gorulen.add(norm(d["baslik"]))
+            yazarlar = [{"n": a.strip(), "m": a.strip() in uyeler} for a in d["yazarlar"].split(",") if a.strip()]
+            # "Acar R.U." gibi virgül içermeyen kısaltmalar korunur; "Dinç Göğüş Ö." üyeyle eşleşir
+            out.append({"title": d["baslik"], "year": int(d["yil"]), "date": str(d["yil"]),
+                        "source": d.get("kaynak", "") + (f", {d['ayrinti']}" if d.get("ayrinti") else ""),
+                        "authors": yazarlar, "doi": d.get("doi"),
+                        "_etiketler": [t for t in (d.get("metin"), d.get("sunum")) if t]})
+    return out
+
+
 def son_yayinlar(girdiler, n=5, bildiri=False):
     sec = [g for g in girdiler if (g.get("type") == "Bildiri") == bildiri]
+    if bildiri:
+        sec = sec + cv_bildirileri(sec)
     sirali = sorted(sec, key=lambda g: str(g.get("date") or g.get("year")), reverse=True)[:n]
     p = [baslik("Son Bildiriler" if bildiri else "Son Yayınlar", "/yayinlar", "Tüm yayınlar"), '<ul style="list-style:none;margin:0;padding:0;">']
     for g in sirali:
@@ -112,6 +139,8 @@ def son_yayinlar(girdiler, n=5, bildiri=False):
         q = re.search(r"Q[1-4]", g.get("quartile") or "")
         if q:
             s += " " + etiket(q.group(0) + (f" (%{g['top_percent']})" if g.get("top_percent") else ""), Q_RENK[q.group(0)])
+        for t in g.get("_etiketler") or []:
+            s += " " + etiket(t, FORMAT_RENK.get(t, ("#f0f0f0", "#666666")))
         if g.get("doi"):
             s += f' <a href="https://doi.org/{e(g["doi"])}" target="_blank" style="font-size:13px;">DOI</a>'
         p.append(s + "</li>")
