@@ -199,6 +199,10 @@
 
   /* Parça değişimleri (uzundan kısaya uygulanır) */
   var PARCA = [
+    ["(Yürütücü)", "(PI)"],
+    ["(Araştırmacı)", "(Researcher)"],
+    ["İTÜ BAP – Hızlı Destek (HIZDEP)", "ITU BAP – Rapid Support (HIZDEP)"],
+    ["İTÜ BAP – Araştırmaya Başlangıç", "ITU BAP – Research Initiation"],
     ["Dr. Öğr. Üyesi", "Asst. Prof. Dr."],
     ["Arş. Gör. Dr.", "Res. Asst. Dr."],
     ["Arş. Gör.", "Res. Asst."],
