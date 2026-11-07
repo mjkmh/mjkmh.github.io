@@ -32,6 +32,10 @@ jobs:
           SCOPUS_INSTTOKEN: ${{ secrets.SCOPUS_INSTTOKEN }}
         run: python scripts/scopus_guncelle.py --crossref ${{ inputs.deneme && '--deneme' || '' }}
 
+      - name: Ana sayfa içeriğini yeniden üret
+        if: ${{ !inputs.deneme }}
+        run: python scripts/anasayfa_uret.py
+
       - name: Değiştiyse kaydet
         run: |
           git add -N sitefinity

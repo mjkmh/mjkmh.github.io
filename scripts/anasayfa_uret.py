@@ -11,8 +11,6 @@ from scopus_guncelle import istatistik, etiket, TUR_RENK, Q_RENK, UYE  # noqa: E
 e = html.escape
 LACIVERT = "#17365d"
 GORSEL = "/images/librariesprovider187/default-album/anasayfa-kaya-sevi.jpg?sfvrsn=352c804_2"
-KISI_SAYISI = 12
-PROJE_SAYISI = 4
 
 
 def baslik(metin, link=None, link_yazi=None):
@@ -35,8 +33,12 @@ def giris():
 
 
 def rakamlar(say, toplam):
+    import yaml
+    KISI_SAYISI = len(yaml.safe_load((KOK / "_data/aktif_uyeler.yml").read_text(encoding="utf-8")) or [])
+    PROJE_SAYISI = sum(1 for x in yaml.safe_load((KOK / "_data/projeler.yml").read_text(encoding="utf-8")) or []
+                       if str(x.get("status", "")).startswith("Devam"))
     kutular = [(say["makale"], "Makale", "/yayinlar"), (say["ilk10"], "İlk %10’luk Dilimdeki Makale", "/yayinlar"),
-               (say["Q1"], "Q1 Makale", "/yayinlar"), (PROJE_SAYISI, "Proje", "/projeler"),
+               (say["Q1"], "Q1 Makale", "/yayinlar"), (PROJE_SAYISI, "Devam Eden Proje", "/projeler"),
                (KISI_SAYISI, "Araştırmacı", "/kisiler")]
     p = ['<table style="width:100%;border-collapse:separate;border-spacing:10px 0;margin:34px 0 0 0;border:0;"><tbody><tr>']
     for n, ad, link in kutular:

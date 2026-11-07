@@ -5,6 +5,7 @@
   var TAM = {
     'Emekli Öğretim Üyelerimiz': 'Retired Faculty',
     'Devam Ediyor': 'Ongoing',
+    'Devam Eden Proje': 'Ongoing Projects',
     'Devam Eden Projeler': 'Ongoing Projects',
     'Emekli Öğretim Üyesi': 'Retired Faculty Member',
     /* --- Hakkımızda --- */
