@@ -45,8 +45,8 @@ def kutular(say):
         for n, t in k) + '</div>'
 
 
-def yayin_li(g):
-    yz = ", ".join(f'<strong style="{UYE}">{e(a["n"])}</strong>' if a.get("m") else e(a["n"]) for a in g.get("authors") or [])
+def yayin_li(g, kendi=None):
+    yz = ", ".join(f'<strong style="{UYE}">{e(a["n"])}</strong>' if a.get("m") and (kendi is None or a["n"] == kendi) else e(a["n"]) for a in g.get("authors") or [])
     kaynak = e(g.get("source") or "") + (f", {e(g['source_detail'])}" if g.get("source_detail") else "")
     s = f'<li style="margin:0 0 10px 0;line-height:1.55;">{yz} ({g.get("year")}). {e(g.get("title") or "")}. <em>{kaynak}</em>.'
     if g.get("doi"):
@@ -85,7 +85,7 @@ def yillara_gore(yayinlar):
                 p.append("</ol>")
             yil = g.get("year")
             p.append(f'<p style="margin:14px 0 6px 0;font-weight:bold;color:#666;">{yil}</p><ol style="padding-left:22px;margin:0;">')
-        p.append(yayin_li(g))
+        p.append(yayin_li(g, k["yazar_adi"]))
     if yil is not None:
         p.append("</ol>")
     return "".join(p)
@@ -151,7 +151,7 @@ def sayfa(k, yayinlar, projeler, logolar):
         p.append(baslik("Yayınlar", n_ul + len(ulusal) + len(kitap)))
         if n_ul:
             p.append(alt(f"Uluslararası Hakemli Dergilerde Yayımlanan Makaleler ({n_ul})"))
-            p.append(liste(sirala([(str(g.get("year")) + str(g.get("date") or ""), yayin_li(g)) for g in sc_mak]
+            p.append(liste(sirala([(str(g.get("year")) + str(g.get("date") or ""), yayin_li(g, k["yazar_adi"])) for g in sc_mak]
                                   + [(str(d["yil"]), el(d)) for d in ek_mak])))
         if ulusal:
             p.append(alt(f"Ulusal Hakemli Dergilerde Yayımlanan Makaleler ({len(ulusal)})"))
@@ -169,7 +169,7 @@ def sayfa(k, yayinlar, projeler, logolar):
             ek = sc_bild if kap == "Uluslararası" else []
             if bu or ek:
                 p.append(alt(f"{kap} Bildiriler ({len(bu) + len(ek)})"))
-                p.append(liste(sirala([(str(g.get("year")), yayin_li(g)) for g in ek] + [(str(d["yil"]), el(d)) for d in bu])))
+                p.append(liste(sirala([(str(g.get("year")), yayin_li(g, k["yazar_adi"])) for g in ek] + [(str(d["yil"]), el(d)) for d in bu])))
     # 6. Projeler
     dur = {"Devam Ediyor": ("#e8eef8", "#17365d"), "Tamamlandı": ("#e3f2e6", "#2e6b3a")}
     def proje_li(x):
