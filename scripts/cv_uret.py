@@ -9,6 +9,7 @@ from scopus_guncelle import istatistik, etiket, TUR_RENK, Q_RENK, UYE  # noqa: E
 KOK = Path(__file__).resolve().parent.parent
 e = html.escape
 LAC = "#062a54"
+IND_RENK = {"TR Dizin": ("#fdecea", "#9b2c22"), "DOAJ": ("#fff3e0", "#8a4b00"), "ESCI": ("#e8eef8", "#17365d"), "SCI-E": ("#e3f2e6", "#2e6b3a")}
 LOGO = "/images/librariesprovider187/mjkmh-kisiler/logo-{}.png"
 LOGO_AD = {"ORCID": "orcid", "Scopus": "scopus", "Google Scholar": "scholar", "ResearchGate": "researchgate", "LinkedIn": "linkedin"}
 
@@ -128,6 +129,8 @@ def sayfa(k, yayinlar, projeler, logolar):
         t += (f', {e(d["ayrinti"])}' if d.get("ayrinti") else "") + "."
         if d.get("doi"):
             t += f' <a href="https://doi.org/{e(d["doi"])}" target="_blank">DOI</a>'
+        for ind in d.get("indeks") or []:
+            t += " " + etiket(ind, IND_RENK.get(ind, ("#eef2f7", "#4a5b70")))
         if tur_etiket:
             t += " " + etiket(tur_etiket, ("#eef2f7", "#4a5b70"))
         return li(t)

@@ -79,6 +79,8 @@
     baslik: Modeling and Production of Solid Model of South Panel, Tuncbilek Open Pit by 3D Printer
     kaynak: International Journal of Economic and Environmental Geology
     ayrinti: 9(1), 44-49
+    indeks:
+    - DOAJ
   ulusal_yayinlar:
   - yazarlar: Zengin E., Acar R.U., Öngen A.S.
     yil: '2025'
@@ -86,12 +88,17 @@
     doi: 10.35414/akufemubid.1579340
     kaynak: Afyon Kocatepe University Journal of Sciences and Engineering
     ayrinti: 25(4), 946-955
+    indeks:
+    - TR Dizin
+    - DOAJ
   - yazarlar: Acar R.U., Zengin E., Öngen A.S.
     yil: '2025'
     baslik: Machine learning-based temporal change detection of land use and land cover changes in the Tunçbilek open pit coal mine region using PlanetScope imagery
     doi: 10.28948/ngumuh.1619090
     kaynak: Niğde Ömer Halisdemir University Journal of Engineering Sciences
     ayrinti: 14(3), 1001-1013
+    indeks:
+    - TR Dizin
   - yazarlar: Acar R.U., Zengin E.
     yil: '2025'
     baslik: Monitoring Wetland Transformations in Lake Eber Over A Decade Using Remote Sensing
@@ -103,12 +110,16 @@
     doi: 10.28948/ngumuh.1527341
     kaynak: Niğde Ömer Halisdemir University Journal of Engineering Sciences
     ayrinti: 14(1), 122-131
+    indeks:
+    - TR Dizin
   - yazarlar: Acar R.U., Zengin E.
     yil: '2023'
     baslik: Performance Assessment of Landsat 8 and Sentinel-2 Satellite Images for the Production of Time Series Land Use/Land Cover (LULC) Maps
     doi: 10.59313/jsr-a.1213548
     kaynak: Journal of Scientific Reports-A
     ayrinti: (53), 1-15
+    indeks:
+    - TR Dizin
   - yazarlar: Özok İ.H., Zengin E., Karakuş H., Erguler Z.A.
     yil: '2018'
     baslik: Hidrolik İletkenlik İle İnce Taneli Zeminlerin Fiziksel Özellikleri Arasındaki İlişkinin Araştırılması
