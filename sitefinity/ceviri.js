@@ -203,6 +203,7 @@
     ["(Araştırmacı)", "(Researcher)"],
     ["İTÜ BAP – Hızlı Destek (HIZDEP)", "ITU BAP – Rapid Support (HIZDEP)"],
     ["İTÜ BAP – Araştırmaya Başlangıç", "ITU BAP – Research Initiation"],
+    ["İTÜ BAP – Hızlı Destek", "ITU BAP – Rapid Support"],
     ["Dr. Öğr. Üyesi", "Asst. Prof. Dr."],
     ["Arş. Gör. Dr.", "Res. Asst. Dr."],
     ["Arş. Gör.", "Res. Asst."],
