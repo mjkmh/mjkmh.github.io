@@ -63,49 +63,135 @@ def satirlar(liste):
         f'<td style="padding:6px 0;vertical-align:top;">{b}</td></tr>' for a, b in liste) + '</tbody></table>')
 
 
-def sayfa(k, yayinlar, projeler, logolar):
-    benim = [g for g in yayinlar if any(a.get("m") and a.get("n") == k["yazar_adi"] for a in g.get("authors") or [])]
-    p = [ust(k, logolar), kutular(istatistik(benim))]
-    if k.get("ozgecmis"):
-        p += [baslik("Özgeçmiş"), f'<p style="font-size:16px;line-height:1.7;text-align:justify;">{e(k["ozgecmis"])}</p>']
-    if k.get("uzmanlik"):
-        p += [baslik("Uzmanlık Alanları"), '<p>' + "".join(
-            f'<span style="display:inline-block;margin:0 6px 6px 0;padding:3px 12px;border-radius:14px;background:#eef2f7;color:{LAC};font-size:14px;">{e(u)}</span>'
-            for u in k["uzmanlik"]) + '</p>']
-    p += [baslik("Eğitim"), satirlar([(a, e(b)) for a, b in k["egitim"]])]
-    if k.get("gorevler"):
-        p += [baslik("Görevler ve Ödüller"), satirlar([(c, f"{e(a)}: {e(b)}") for a, b, c in k["gorevler"]])]
-    pr = [x for x in projeler if k["ad"] in str(x.get("team") or "")]
-    if pr:
-        p.append(baslik("Projeler", len(pr)))
-        for x in pr:
-            rol = re.search(re.escape(k["ad"]) + r"\s*\(([^)]+)\)", str(x["team"]))
-            tarih = " – ".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
-            p.append(f'<div style="border-left:4px solid {LAC};background:#fafafa;padding:10px 16px;margin:0 0 10px 0;">'
-                     f'<p style="margin:0 0 4px 0;font-size:13px;color:#666;">{e(x.get("funder") or "")}'
-                     f'{" · " + e(x["code"]) if x.get("code") else ""}{" · " + tarih if tarih else ""}'
-                     f'{" · " + e(rol.group(1)) if rol else ""} · {e(x.get("status") or "")}</p>'
-                     f'<p style="margin:0;font-size:15px;line-height:1.4;"><strong>{e(x["title"])}</strong></p></div>')
-    p.append(baslik("Yayınlar", len(benim)))
-    p.append('<p style="margin:-6px 0 14px 0;font-size:12px;color:#888;">Scopus’tan otomatik olarak alınmaktadır. '
-             'Q değerleri derginin güncel Scopus CiteScore dilimine göredir.</p>')
-    yil = None
-    for g in benim:
+def liste(items):
+    return '<ol style="padding-left:22px;margin:0;">' + "".join(items) + '</ol>'
+
+
+def li(t):
+    return f'<li style="margin:0 0 9px 0;line-height:1.55;">{t}</li>'
+
+
+def alt(t):
+    return f'<h4 style="margin:18px 0 8px 0;color:#444;font-size:16px;">{e(t)}</h4>'
+
+
+def yillara_gore(yayinlar):
+    p, yil = [], None
+    for g in yayinlar:
         if g.get("year") != yil:
             if yil is not None:
                 p.append("</ol>")
             yil = g.get("year")
-            p.append(f'<h4 style="margin:18px 0 8px 0;color:#444;">{yil}</h4><ol style="padding-left:22px;margin:0;">')
+            p.append(f'<p style="margin:14px 0 6px 0;font-weight:bold;color:#666;">{yil}</p><ol style="padding-left:22px;margin:0;">')
         p.append(yayin_li(g))
     if yil is not None:
         p.append("</ol>")
+    return "".join(p)
+
+
+def vurgula(yazarlar, k):
+    return e(yazarlar).replace(e(k["yazar_adi"]), f'<strong style="{UYE}">{e(k["yazar_adi"])}</strong>')
+
+
+def sayfa(k, yayinlar, projeler, logolar):
+    benim = [g for g in yayinlar if any(a.get("m") and a.get("n") == k["yazar_adi"] for a in g.get("authors") or [])]
+    p = []
+    if k.get("ornek"):
+        p.append('<div style="background:#fff8e1;border-left:4px solid #e0a800;padding:10px 14px;margin:0 0 22px 0;font-size:14px;color:#6b5300;">'
+                 '<strong>Örnek sayfa.</strong> Scopus yayınları ve projeler gerçek, diğer bölümlerdeki bilgiler yerleşimi göstermek için örnek olarak yazılmıştır.</div>')
+    p.append(ust(k, logolar))
+    # 1. Özgeçmiş ve uzmanlık
+    if k.get("ozgecmis"):
+        p += [baslik("Özgeçmiş"), f'<p style="font-size:16px;line-height:1.7;text-align:justify;margin:0 0 10px 0;">{e(k["ozgecmis"])}</p>']
+    if k.get("uzmanlik"):
+        p.append('<p style="margin:6px 0 0 0;">' + "".join(
+            f'<span style="display:inline-block;margin:0 6px 6px 0;padding:3px 12px;border-radius:14px;background:#eef2f7;color:{LAC};font-size:14px;">{e(u)}</span>'
+            for u in k["uzmanlik"]) + '</p>')
+    # 2. Eğitim
+    if k.get("egitim"):
+        rows = []
+        for d in k["egitim"]:
+            duzey, kurum, yil = d[0], d[1], d[2] if len(d) > 2 else ""
+            tez = d[3] if len(d) > 3 else ""
+            dan = d[4] if len(d) > 4 else ""
+            ek = (f'<br><span style="font-size:14px;color:#555;">Tez: {e(tez)}' + (f' · Danışman: {e(dan)}' if dan else "") + '</span>') if tez else ""
+            rows.append((duzey, f'<strong>{e(kurum)}</strong>{" (" + e(yil) + ")" if yil else ""}{ek}'))
+        p += [baslik("Eğitim"), satirlar(rows)]
+    # 3. Akademik ve idari geçmiş
+    if k.get("akademik"):
+        p += [baslik("Akademik Geçmiş"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["akademik"]])]
+    if k.get("idari"):
+        p += [baslik("İdari Görevler"), satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["idari"]])]
+    # 4. Yayınlar
+    uluslararasi = [g for g in benim if g.get("type") != "Bildiri"]
+    ulusal = k.get("ulusal_yayinlar") or []
+    kitap = k.get("kitaplar") or []
+    if uluslararasi or ulusal or kitap:
+        p.append(baslik("Yayınlar", len(uluslararasi) + len(ulusal) + len(kitap)))
+        if uluslararasi:
+            p.append(alt(f"Uluslararası Hakemli Dergilerde Yayımlanan Makaleler ({len(uluslararasi)})"))
+            p.append('<p style="margin:-4px 0 6px 0;font-size:12px;color:#888;">Scopus’tan otomatik olarak alınmaktadır. '
+                     'Q değerleri derginin güncel Scopus CiteScore dilimine göredir.</p>')
+            p.append(yillara_gore(uluslararasi))
+        if ulusal:
+            p.append(alt(f"Ulusal Hakemli Dergilerde Yayımlanan Makaleler ({len(ulusal)})"))
+            p.append(liste([li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(d)}</em>, {e(cs)}. '
+                              + etiket(ind, ("#eef2f7", "#4a5b70"))) for y, yil, t, d, cs, ind in ulusal]))
+        if kitap:
+            p.append(alt(f"Kitaplar ve Kitap Bölümleri ({len(kitap)})"))
+            p.append(liste([li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(d)}</em>, {e(yv)}.') for y, yil, t, d, yv in kitap]))
+    # 5. Bildiriler
+    bild = k.get("bildiriler") or []
+    sc_bild = [g for g in benim if g.get("type") == "Bildiri"]
+    if bild or sc_bild:
+        p.append(baslik("Bildiriler", len(bild) + len(sc_bild)))
+        for kap in ["Uluslararası", "Ulusal"]:
+            bu = [b for b in bild if b[0] == kap]
+            ek = sc_bild if kap == "Uluslararası" else []
+            if bu or ek:
+                p.append(alt(f"{kap} Bildiriler ({len(bu) + len(ek)})"))
+                p.append(liste([yayin_li(g) for g in ek] + [li(f'{vurgula(y, k)} ({e(yil)}). {e(t)}. <em>{e(kg)}</em>, {e(yer)}. '
+                                                             + etiket(tur, ("#f3eef7", "#5f4a70"))) for _, y, yil, t, kg, yer, tur in bu]))
+    # 6. Projeler
+    pr = [x for x in projeler if k["ad"] in str(x.get("team") or "")]
+    if pr:
+        def rol(x):
+            r = re.search(re.escape(k["ad"]) + r"\s*\(([^)]+)\)", str(x["team"]))
+            return r.group(1) if r else ""
+        pr.sort(key=lambda x: 0 if rol(x) == "Yürütücü" else 1)
+        p.append(baslik("Projeler", len(pr)))
+        for x in pr:
+            tarih = " – ".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
+            bilgi = " · ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or ""), tarih, e(rol(x)), e(x.get("status") or "")] if v)
+            p.append(f'<div style="border-left:4px solid {LAC};background:#fafafa;padding:10px 16px;margin:0 0 10px 0;">'
+                     f'<p style="margin:0 0 4px 0;font-size:13px;color:#666;">{bilgi}</p>'
+                     f'<p style="margin:0;font-size:15px;line-height:1.4;"><strong>{e(x["title"])}</strong></p></div>')
+    # 7. Tez danışmanlıkları
+    tz = k.get("tezler") or []
     og = k.get("ogrenciler") or {}
-    if k.get("tezler") or og:
-        p.append(baslik("Danışmanlık"))
-        if og.get("devam"):
-            p.append(f'<p style="margin:0 0 6px 0;"><strong>Devam eden lisans öğrencileri:</strong> {e(", ".join(og["devam"]))}</p>')
-        if og.get("mezun"):
-            p.append(f'<p style="margin:0 0 6px 0;"><strong>Mezun lisans öğrencileri:</strong> {e(", ".join(og["mezun"]))}</p>')
+    if tz or og:
+        p.append(baslik("Tez Danışmanlıkları"))
+        for duz in ["Doktora", "Yüksek Lisans"]:
+            bu = [t for t in tz if t[0] == duz]
+            if bu:
+                p.append(alt(f"{duz} ({len(bu)})"))
+                p.append(liste([li(f'{e(o)}, <em>{e(b)}</em> ({e(y)}) · {e(d)}') for _, o, b, y, d in bu]))
+        if og.get("devam") or og.get("mezun"):
+            p.append(alt("Lisans Bitirme Çalışmaları"))
+            if og.get("devam"):
+                p.append(f'<p style="margin:0 0 6px 0;">Devam eden: {e(", ".join(og["devam"]))}</p>')
+            if og.get("mezun"):
+                p.append(f'<p style="margin:0 0 6px 0;">Tamamlanan: {e(", ".join(og["mezun"]))}</p>')
+    # 8. Editörlük ve hakemlik
+    if k.get("editorluk") or k.get("hakemlik"):
+        p.append(baslik("Editörlük ve Hakemlik"))
+        if k.get("editorluk"):
+            p.append(satirlar([(c, f"<strong>{e(a)}</strong>, {e(b)}") for a, b, c in k["editorluk"]]))
+        if k.get("hakemlik"):
+            p.append(f'<p style="margin:10px 0 0 0;"><strong>Hakemlik yaptığı dergiler:</strong> {e(", ".join(k["hakemlik"]))}</p>')
+    # 9. Ödüller
+    if k.get("oduller"):
+        p += [baslik("Ödüller"), satirlar([(a, f"<strong>{e(b)}</strong>, {e(c)}") for a, b, c in k["oduller"]])]
     p.append('<p style="margin:34px 0 0 0;"><a href="/kisiler">← Kişiler</a></p>')
     return '<div style="padding:10px 0 40px 0;">' + "".join(p) + '</div>'
 

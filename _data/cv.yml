@@ -1,8 +1,10 @@
-# Araştırmacı CV sayfaları (scripts/cv_uret.py okur). Yayınlar _data/yayinlar.yml'den otomatik gelir.
+# Araştırmacı CV sayfaları (scripts/cv_uret.py okur). Scopus yayınları _data/yayinlar.yml'den otomatik gelir.
+# ornek: true olan kayıtlarda sayfanın üstüne "örnek içerik" uyarısı konur.
 - slug: enes-zengin
+  ornek: true
   ad: Enes Zengin
   unvan: Doç. Dr.
-  yazar_adi: Zengin E.          # yayinlar.yml'deki vurgulu ad
+  yazar_adi: Zengin E.
   eposta: eneszengin@itu.edu.tr
   foto: /images/librariesprovider187/mjkmh-kisiler/enes-zengin09831970845441cf9d74f22e75e3c769.png
   profiller:
@@ -11,17 +13,43 @@
     Google Scholar: https://scholar.google.com/citations?user=DhM4L_kAAAAJ
     ResearchGate: https://www.researchgate.net/profile/Enes-Zengin/
     LinkedIn: https://www.linkedin.com/in/eneszengin
-  ozgecmis: ""                  # hocalardan gelecek
-  uzmanlik: []
-  egitim:
-    - [Post Doktora, The University of British Columbia]
-    - [Doktora, Kütahya Dumlupınar Üniversitesi]
-    - [Doktora Sırası, University of Aberdeen]
-    - [Yüksek Lisans, Kütahya Dumlupınar Üniversitesi]
-    - [Lisans, Kocaeli Üniversitesi]
-  gorevler:
-    - [Editörlük, DSİ Teknik Bülteni, "2026–"]
-  tezler: []                    # [düzey, öğrenci, başlık, yıl, durum]
-  ogrenciler:                   # lisans bitirme / araştırma öğrencileri
+  ozgecmis: >-
+    Mühendislik jeolojisi ve kaya mekaniği alanlarında çalışmaktadır. Kayaçların dayanım ve deformasyon
+    davranışı, parçacık tabanlı sayısal modelleme ve CBS tabanlı tehlike değerlendirmesi başlıca araştırma
+    konularıdır. Lisans ve lisansüstü düzeyde mühendislik jeolojisi ve kaya mekaniği dersleri vermektedir.
+  uzmanlik: [Mühendislik jeolojisi, Kaya mekaniği, Parçacık tabanlı sayısal modelleme, CBS ve uzaktan algılama, Heyelan ve kaya düşmesi tehlikesi]
+  egitim:   # [düzey, kurum, yıl, tez başlığı, danışman]
+    - [Doktora, Kütahya Dumlupınar Üniversitesi, "2019", "Örnek doktora tezi başlığı", "Prof. Dr. Örnek Danışman"]
+    - [Yüksek Lisans, Kütahya Dumlupınar Üniversitesi, "2014", "Örnek yüksek lisans tezi başlığı", "Prof. Dr. Örnek Danışman"]
+    - [Lisans, Kocaeli Üniversitesi, "2011", "", ""]
+  akademik:  # [unvan/görev, kurum, yıllar]
+    - [Doçent, "İstanbul Teknik Üniversitesi, Jeoloji Mühendisliği Bölümü", "2024–"]
+    - [Doktor Öğretim Üyesi, "Örnek Üniversite, Jeoloji Mühendisliği Bölümü", "2020–2024"]
+    - [Doktora Sonrası Araştırmacı, "The University of British Columbia, Kanada", "2021–2022"]
+    - [Misafir Doktora Öğrencisi, "University of Aberdeen, Birleşik Krallık", "2017–2018"]
+    - [Araştırma Görevlisi, "Kütahya Dumlupınar Üniversitesi", "2012–2019"]
+  idari:
+    - [Bölüm Başkan Yardımcısı, "Örnek Üniversite, Jeoloji Mühendisliği Bölümü", "2022–2024"]
+    - [Erasmus Bölüm Koordinatörü, "Örnek Üniversite", "2021–2024"]
+  ulusal_yayinlar:  # [yazarlar, yıl, başlık, dergi, cilt-sayfa, indeks]
+    - ["Zengin E., Örnek A.", "2024", "Örnek ulusal makale başlığı: kaya şevlerinde duraylılık değerlendirmesi", "Jeoloji Mühendisliği Dergisi", "48(1), 1-20", "TR Dizin"]
+    - ["Örnek B., Zengin E.", "2021", "Örnek ulusal makale başlığı: ayrışmanın dayanım üzerindeki etkisi", "Mühendislik Bilimleri ve Tasarım Dergisi", "9(3), 800-815", "TR Dizin"]
+  kitaplar:
+    - ["Zengin E.", "2023", "Örnek kitap bölümü başlığı", "Mühendislik Jeolojisinde Güncel Yaklaşımlar (Ed. Örnek C.)", "Örnek Yayınevi, s. 45-70"]
+  bildiriler:  # [kapsam, yazarlar, yıl, başlık, kongre, yer, tür]
+    - [Uluslararası, "Zengin E., Ündül Ö.", "2026", "Örnek bildiri başlığı: bağ modellerinin karşılaştırılması", "EUROCK 2026", "Üsküp, Kuzey Makedonya", "Sözlü"]
+    - [Uluslararası, "Zengin E.", "2026", "Örnek poster başlığı: kıyı su basması maruziyeti", "EUROCK 2026", "Üsküp, Kuzey Makedonya", "Poster"]
+    - [Ulusal, "Zengin E., Örnek D.", "2025", "Örnek ulusal bildiri başlığı", "76. Türkiye Jeoloji Kurultayı", "Ankara", "Sözlü"]
+    - [Ulusal, "Örnek E., Zengin E.", "2023", "Örnek ulusal bildiri başlığı 2", "İstanbul'un Jeolojisi Sempozyumu-6", "İstanbul", "Poster"]
+  tezler:  # [düzey, öğrenci, başlık, yıl, durum]
+    - [Doktora, Örnek Öğrenci 1, "Örnek doktora tezi başlığı", "2025–", Devam ediyor]
+    - [Yüksek Lisans, Örnek Öğrenci 2, "Örnek yüksek lisans tezi başlığı", "2024–", Devam ediyor]
+    - [Yüksek Lisans, Örnek Öğrenci 3, "Örnek tamamlanmış yüksek lisans tezi", "2023", Tamamlandı]
+  ogrenciler:
     devam: [Batuhan Aktemur, Elif Yaren Cürul, Hasan Basri Arıca, İbrahim Kaya, Nisanur Sevinç, Zehra Betül Akbal]
     mezun: [Eda Karanfil, Kübra Beste Karaca]
+  editorluk:
+    - [Editör, DSİ Teknik Bülteni, "2026–"]
+  hakemlik: [Bulletin of Engineering Geology and the Environment, Rock Mechanics and Rock Engineering, Engineering Geology]
+  oduller:
+    - ["2022", "Örnek ödül adı", "Örnek Kurum"]
