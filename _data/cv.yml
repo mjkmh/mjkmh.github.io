@@ -387,15 +387,21 @@
     ayrinti: Denizli, Türkiye
     metin: Özet
     sunum: Sözlü
-  lisans_tezleri:   # dönem -> [öğrenci, konu]
+  lisans_tezleri:
     2026–2027:
-    - ["Elif Yaren Cürul, Zehra Betül Akbal", "İstanbul İli İçin Haber Tabanlı, Dinamik ve İnteraktif Kütle Hareketleri Envanter Sisteminin Tasarımı"]
-    - ["Batuhan Aktemur, Hasan Basri Arıca", "İstanbul İli İçin Katı Atık Düzenli Depolama Tesisi Yer Seçimine Yönelik CBS ve AHP Tabanlı Bir Karar Destek Sisteminin Tasarımı"]
-    - ["Elif Yaren Cürul", "İstanbul İlinde Kütle Hareketlerinin Meydana Geldiği Alanların Jeolojik Özelliklerinin İncelenmesi"]
-    - [İbrahim Kaya, ""]
-    - [Nisanur Sevinç, ""]
+    - - Elif Yaren Cürul, Zehra Betül Akbal
+      - İstanbul İli İçin Haber Tabanlı, Dinamik ve İnteraktif Kütle Hareketleri Envanter Sisteminin Tasarımı
+    - - Batuhan Aktemur, Hasan Basri Arıca
+      - İstanbul İli İçin Katı Atık Düzenli Depolama Tesisi Yer Seçimine Yönelik CBS ve AHP Tabanlı Bir Karar Destek Sisteminin Tasarımı
+    - - Elif Yaren Cürul
+      - İstanbul İlinde Kütle Hareketlerinin Meydana Geldiği Alanların Jeolojik Özelliklerinin İncelenmesi
+    - - İbrahim Kaya
+      - ''
+    - - Nisanur Sevinç
+      - ''
     2025–2026:
-    - ["Kübra Beste Karaca, Eda Karanfil", "Küçükçekmece Gölü (İstanbul) Güney Doğusundaki Bölgenin Üç Boyutlu Jeolojik Model Tasarımı ve Duraylılık Koşullarının Değerlendirilmesi"]
+    - - Kübra Beste Karaca, Eda Karanfil
+      - Küçükçekmece Gölü (İstanbul) Güney Doğusundaki Bölgenin Üç Boyutlu Jeolojik Model Tasarımı ve Duraylılık Koşullarının Değerlendirilmesi
   editorluk:
   - - Editör
     - DSİ Teknik Bülteni
@@ -547,3 +553,201 @@
     kaynak: Türkiye Kömür İşletmeleri Kurumu Genel Müdürlüğü, Kamu-Üniversite İşbirliği
     kod: ''
     rol: Araştırmacı
+- slug: irfan-yolcubal
+  ad: İrfan Yolcubal
+  unvan: Prof. Dr.
+  yazar_adi: Yolcubal İ.
+  eposta: yolcubal@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/irfan-yolcubal2ed5236d055f4d4b9f53b4ab745f37c9.png
+  profiller:
+    ORCID: https://orcid.org/0000-0003-0207-628X
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=6506402368
+    Google Scholar: https://scholar.google.com/citations?user=rmjJVIIAAAAJ
+    ResearchGate: https://www.researchgate.net/profile/Irfan-Yolcubal-2
+    LinkedIn: https://www.linkedin.com/in/irfan-yolcubal-49b20933/
+  egitim:
+  - - Doktora
+    - University of Arizona
+    - ''
+  - - Yüksek Lisans
+    - Purdue University
+    - ''
+  - - Lisans
+    - Karadeniz Teknik Üniversitesi (Türkiye)
+    - ''
+- slug: yilmaz-mahmutoglu
+  ad: Yılmaz Mahmutoğlu
+  unvan: Doç. Dr.
+  yazar_adi: Mahmutoğlu Y.
+  eposta: yilmazm@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/yilmaz-mahmutoglu.png
+  profiller:
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=55884063500
+    Google Scholar: https://scholar.google.com/citations?user=YsmJJbIAAAAJ
+    ResearchGate: https://www.researchgate.net/profile/Yilmaz-Mahmutoglu
+  egitim:
+  - - Doktora
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Yüksek Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+- slug: omer-undul
+  ad: Ömer Ündül
+  unvan: Doç. Dr.
+  yazar_adi: Ündül Ö.
+  eposta: undul@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/omer-undul.png
+  profiller:
+    ORCID: https://orcid.org/0000-0002-7048-9759
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=48462096700
+    Google Scholar: https://scholar.google.com/citations?user=LW9I5n8AAAAJ
+    ResearchGate: https://www.researchgate.net/profile/Oemer-Uenduel
+  egitim:
+  - - Post Doktora
+    - ETH Zürich
+    - ''
+  - - Doktora
+    - İstanbul Üniversitesi (Türkiye)
+    - ''
+  - - Yüksek Lisans
+    - İstanbul Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - İstanbul Üniversitesi (Türkiye)
+    - ''
+- slug: ozge-dinc-gogus
+  ad: Özge Dinç Göğüş
+  unvan: Doç. Dr.
+  yazar_adi: Dinç Göğüş Ö.
+  eposta: dincgogus@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/ozge-dinc-gogus.png
+  profiller:
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=57218117985
+    ResearchGate: https://www.researchgate.net/profile/Oezge-Dinc-Goegues
+    LinkedIn: https://www.linkedin.com/in/dr-ozge-dinc-gogus-751018229/
+  egitim:
+  - - Post Doktora
+    - Université de Lorraine
+    - ''
+  - - Doktora
+    - Çanakkale Onsekiz Mart Üniversitesi (Türkiye)
+    - ''
+  - - Yüksek Lisans
+    - Hacettepe Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - Hacettepe Üniversitesi (Türkiye)
+    - ''
+- slug: erkan-bozkurtoglu
+  ad: Erkan Bozkurtoğlu
+  unvan: Dr. Öğr. Üyesi
+  yazar_adi: Bozkurtoğlu E.
+  eposta: erkan@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/erkan-bozkurtoglu.png
+  profiller:
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=6507238281
+  egitim:
+  - - Doktora
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Yüksek Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - İstanbul Üniversitesi (Türkiye)
+    - ''
+- slug: kayhan-develi
+  ad: Kayhan Develi
+  unvan: Dr. Öğr. Üyesi
+  yazar_adi: Develi K.
+  eposta: kayhan@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/kayhan-develi.png
+  profiller:
+    ORCID: https://orcid.org/0000-0001-7489-3161
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=6508241951
+    Google Scholar: https://scholar.google.com/citations?user=n0siYiYAAAAJ
+  egitim:
+  - - Doktora
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Yüksek Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - İstanbul Üniversitesi (Türkiye)
+    - ''
+- slug: mehmet-korkut
+  ad: Mehmet Korkut
+  unvan: Arş. Gör. Dr.
+  yazar_adi: Korkut M.
+  eposta: korkutm@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/mehmet-korkut.png
+  profiller:
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=57211442038
+    Google Scholar: https://scholar.google.com/citations?user=lNwlJk8AAAAJ
+    ResearchGate: https://www.researchgate.net/profile/Mehmet-Korkut-2
+    LinkedIn: https://www.linkedin.com/in/mehmet-korkut-5b3a3357/
+  egitim:
+  - - Doktora
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Doktora Sırası
+    - KWR Water Research Institute
+    - ''
+  - - Yüksek Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - Akdeniz Üniversitesi (Türkiye)
+    - ''
+- slug: gokhan-sans
+  ad: Gökhan Şans
+  unvan: Arş. Gör.
+  yazar_adi: Şans G.
+  eposta: sansg@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/gokhan-sans.png
+  profiller:
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=15045539500
+    Google Scholar: https://scholar.google.com/citations?user=7O6IZDEAAAAJ
+    ResearchGate: https://www.researchgate.net/profile/Goekhan-Sans
+  egitim:
+  - - Yüksek Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+- slug: dilek-karapinar
+  ad: Dilek Karapınar
+  unvan: Arş. Gör.
+  yazar_adi: ''
+  eposta: dilekkarapinar@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/dilek-karapinar.png
+  profiller: {}
+  egitim:
+  - - Yüksek Lisans
+    - Hacettepe Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - Hacettepe Üniversitesi (Türkiye)
+    - ''
+- slug: mehmet-mert-dogu
+  ad: Mehmet Mert Doğu
+  unvan: Arş. Gör.
+  yazar_adi: Doğu M.M.
+  eposta: dogum18@itu.edu.tr
+  foto: /images/librariesprovider187/mjkmh-kisiler/mehmet-mert-dogu.png
+  profiller:
+    ORCID: https://orcid.org/0009-0008-3802-8144
+    Scopus: https://www.scopus.com/authid/detail.uri?authorId=60367036300
+  egitim:
+  - - Yüksek Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
+  - - Lisans
+    - İstanbul Teknik Üniversitesi (Türkiye)
+    - ''
