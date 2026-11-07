@@ -84,9 +84,9 @@ def alanlar():
 def projeler():
     import yaml
     P = yaml.safe_load((KOK / "_data/projeler.yml").read_text(encoding="utf-8")) or []
-    devam = [x for x in P if str(x.get("status", "")).startswith("Devam")]
-    p = [baslik("Devam Eden Projeler", "/projeler", "Tüm projeler"), '<ul style="list-style:none;margin:0;padding:0;">']
-    for x in devam:
+    son = sorted(P, key=lambda x: str(x.get("start") or "")[-4:], reverse=True)[:5]
+    p = [baslik("Son Projeler", "/projeler", "Tüm projeler"), '<ul style="list-style:none;margin:0;padding:0;">']
+    for x in son:
         yil = "–".join(dict.fromkeys(t[-4:] for t in [str(x.get("start") or ""), str(x.get("end") or "")] if t))
         bilgi = " · ".join(v for v in [e(x.get("funder") or ""), e(x.get("code") or ""), yil] if v)
         yur = [t.strip() for t in str(x.get("team") or "").split(",") if "Yürütücü" in t]
@@ -94,14 +94,15 @@ def projeler():
         p.append(f'<li style="margin:0 0 14px 0;padding:0 0 14px 0;border-bottom:1px solid #eee;line-height:1.55;">'
                  f'<span style="font-size:15px;"><strong>{e(x["title"])}</strong></span><br />'
                  f'<span style="font-size:13px;color:#555;">{bilgi}{ekip}</span> '
-                 + etiket("Devam Ediyor", ("#e3f0fb", "#1f5fa8")) + '</li>')
+                 + (etiket("Devam Ediyor", ("#e3f0fb", "#1f5fa8")) if str(x.get("status", "")).startswith("Devam") else "") + '</li>')
     p.append("</ul>")
     return "".join(p)
 
 
-def son_yayinlar(girdiler, n=5):
-    sirali = sorted(girdiler, key=lambda g: str(g.get("date") or g.get("year")), reverse=True)[:n]
-    p = [baslik("Son Yayınlar", "/yayinlar", "Tüm yayınlar"), '<ul style="list-style:none;margin:0;padding:0;">']
+def son_yayinlar(girdiler, n=5, bildiri=False):
+    sec = [g for g in girdiler if (g.get("type") == "Bildiri") == bildiri]
+    sirali = sorted(sec, key=lambda g: str(g.get("date") or g.get("year")), reverse=True)[:n]
+    p = [baslik("Son Bildiriler" if bildiri else "Son Yayınlar", "/yayinlar", "Tüm yayınlar"), '<ul style="list-style:none;margin:0;padding:0;">']
     for g in sirali:
         yz = ", ".join(f'<strong style="{UYE}">{e(a["n"])}</strong>' if a.get("m") else e(a["n"])
                        for a in g.get("authors") or [])
@@ -141,7 +142,7 @@ def haberler():
 
 def main():
     girdiler = yaml.safe_load((KOK / "_data/yayinlar.yml").read_text(encoding="utf-8"))
-    parcalar = [giris(), rakamlar(istatistik(girdiler), len(girdiler)), alanlar(), son_yayinlar(girdiler), projeler(), haberler()]
+    parcalar = [giris(), rakamlar(istatistik(girdiler), len(girdiler)), alanlar(), son_yayinlar(girdiler), son_yayinlar(girdiler, bildiri=True), projeler(), haberler()]
     yol = KOK / "sitefinity/anasayfa.html"
     yol.write_text("<div>" + "\n".join(parcalar) + "</div>", encoding="utf-8")
     print(yol)

@@ -5,6 +5,8 @@
   var TAM = {
     'Emekli Öğretim Üyelerimiz': 'Retired Faculty',
     'Devam Ediyor': 'Ongoing',
+    'Son Bildiriler': 'Recent Conference Papers',
+    'Son Projeler': 'Recent Projects',
     'Devam Eden Proje': 'Ongoing Projects',
     'Devam Eden Projeler': 'Ongoing Projects',
     'Emekli Öğretim Üyesi': 'Retired Faculty Member',
