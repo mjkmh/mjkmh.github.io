@@ -27,6 +27,7 @@ S = {
     "Koordinatör": "Coordinator", "Araştırma-Geliştirme Koordinatörü": "R&D Coordinator",
     # kurumlar
     "Jeoloji Mühendisliği Anabilim Dalı, Fen Bilimleri Enstitüsü": "Department of Geological Engineering, Graduate School of Natural and Applied Sciences",
+    "Jeoloji Mühendisliği Bölümü, Maden Fakültesi, İstanbul Teknik Üniversitesi": "Department of Geological Engineering, Faculty of Mines, Istanbul Technical University",
     "Jeoloji Mühendisliği Bölümü, Maden Fakültesi": "Department of Geological Engineering, Faculty of Mines",
     "Jeoloji Mühendisliği Bölümü, Mühendislik Fakültesi": "Department of Geological Engineering, Faculty of Engineering",
     "Şehir ve Bölge Planlama Bölümü, Mimarlık Fakültesi": "Department of City and Regional Planning, Faculty of Architecture",
@@ -44,6 +45,23 @@ S = {
     "DSİ Teknik Bülteni": "DSİ Technical Bulletin",
     "TÜBİTAK 2219 Yurt Dışı Doktora Sonrası Araştırma Burs Programı": "TÜBİTAK 2219 International Postdoctoral Research Fellowship Programme",
     "Erasmus Personel Hareketliliği": "Erasmus Staff Mobility",
+    # dergi, kongre ve kitap adları
+    "Dumlupınar Üniversitesi Fen Bilimleri Enstitüsü Dergisi": "Journal of the Institute of Science, Dumlupınar University",
+    "(Özel Sayı 2015)": "(Special Issue 2015)",
+    "Türkiye 9. Uluslararası Mermer ve Doğaltaş Kongresi ve Sergisi (MERSEM 2017)": "9th International Marble and Natural Stone Congress and Exhibition of Türkiye (MERSEM 2017)",
+    "Uluslararası Madencilik ve Çevre Sempozyumu (ISME 2017)": "International Symposium on Mining and Environment (ISME 2017)",
+    "75. Türkiye Jeoloji Kurultayı": "75th Geological Congress of Türkiye", "65. Türkiye Jeoloji Kurultayı": "65th Geological Congress of Türkiye",
+    "Çukurova Üniversitesi 40. Yıl Jeoloji Sempozyumu": "Çukurova University 40th Anniversary Geology Symposium",
+    "Uluslararası Katılımlı Doğu Anadolu Jeoloji Sempozyumu": "Eastern Anatolia Geology Symposium with International Participation",
+    "V. Ulusal Jeokimya Sempozyumu": "5th National Geochemistry Symposium",
+    "Aktif Tektonik Araştırma Grubu 26. Çalıştayı": "Active Tectonics Research Group – 26th Workshop",
+    "Madencilik Sektöründeki Yenilikçi Gelişim Eğilimleri": "Innovative Development Trends in the Mining Sector",
+    "Kureyşler Barajı Kurtarma Kazıları 2014": "Kureyşler Dam Rescue Excavations 2014",
+    "Kütahya Müzesi Müdürlüğü, s.": "Kütahya Museum Directorate, pp.", "Nobel Yayınevi, s.": "Nobel Publishing, pp.",
+    "İstanbul’un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi":
+        "Development of a Data-Driven Compatibility Index and Experimental Framework for Identifying Alternative Sources of Stones Used in Istanbul’s Cultural Heritage Buildings",
+    "İstanbul'un Kültürel Miras Yapılarında Kullanılan Taşlar İçin Alternatif Kaynakların Belirlenmesine Yönelik Veri Tabanlı Uyumluluk İndeksi ve Deneysel Sistematiğin Geliştirilmesi":
+        "Development of a Data-Driven Compatibility Index and Experimental Framework for Identifying Alternative Sources of Stones Used in Istanbul’s Cultural Heritage Buildings",
     # fon kaynakları
     "TÜBİTAK 1002-C Doğal Afetler Odaklı Saha Çalışması Acil Destek Programı": "TÜBİTAK 1002-C Emergency Support Programme for Natural Disaster Field Studies",
     "Kütahya Dumlupınar Üniversitesi BAP": "Kütahya Dumlupınar University BAP", "İstanbul Teknik Üniversitesi BAP": "Istanbul Technical University BAP",
@@ -51,7 +69,14 @@ S = {
 
 
 def cevir(h, ek):
+    import html as H
+    TB = json.loads((KOK / "sitefinity/tr_basliklar_en.json").read_text(encoding="utf-8"))
+    for tr, en in sorted(TB.items(), key=lambda x: -len(x[0])):
+        for v in {tr, H.escape(tr)}:
+            h = h.replace(v + ".", H.escape(en) + " (in Turkish).").replace(">" + v + "<", ">" + H.escape(en) + " (in Turkish)<")
+            h = h.replace("Tez: " + v, "Thesis: " + H.escape(en) + " (in Turkish)").replace(v, H.escape(en) + " (in Turkish)")
     tablo = {**ek, **S}
+    tablo.update({H.escape(a): H.escape(b) for a, b in list(tablo.items()) if H.escape(a) != a})
     for a in sorted(tablo, key=len, reverse=True):
         h = h.replace(a, tablo[a])
     h = h.replace('href="/kisiler"', 'href="/en/people"')
