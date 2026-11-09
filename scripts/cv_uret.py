@@ -39,15 +39,15 @@ def ust(k, logolar):
     ikon = "".join(f'<a href="{e(u)}" target="_blank" title="{e(ad)}" style="display:inline-block;margin:0 6px 0 0;">'
                    f'<img src="{logolar.get(ad, "")}" alt="{e(ad)}" width="24" height="24" style="width:24px;height:24px;" /></a>'
                    for ad, u in (k.get("profiller") or {}).items())
-    return (f'<table style="width:100%;border-collapse:collapse;border:0;"><tbody><tr>'
-            f'<td style="width:170px;vertical-align:top;padding:0 24px 0 0;">'
-            f'<img src="{e(k["foto"])}" alt="{e(k["ad"])}" width="160" height="160" style="width:160px;height:160px;display:block;" /></td>'
-            f'<td style="vertical-align:top;">'
+    return (f'<div>'
+            f'<div style="display:inline-block;vertical-align:top;margin:0 24px 14px 0;">'
+            f'<img src="{e(k["foto"])}" alt="{e(k["ad"])}" width="160" height="160" style="width:160px;height:160px;display:block;" /></div>'
+            f'<div style="display:inline-block;vertical-align:top;width:calc(100% - 190px);min-width:260px;">'
             f'<p style="margin:0;font-size:14px;color:#777;">{e(k["unvan"])}</p>'
             f'<p style="margin:0 0 8px 0;font-size:28px;font-weight:bold;color:{LAC};line-height:1.2;">{e(k["ad"])}</p>'
             f'<p style="margin:0 0 4px 0;font-size:14px;color:#555;">İTÜ Maden Fakültesi, Jeoloji Mühendisliği Bölümü</p>'
             f'<p style="margin:0 0 12px 0;font-size:14px;"><a href="mailto:{e(k["eposta"])}">{e(k["eposta"])}</a></p>'
-            f'<p style="margin:0;">{ikon}</p></td></tr></tbody></table>')
+            f'<p style="margin:0;">{ikon}</p></div></div>')
 
 
 def kutular(say):
@@ -116,7 +116,7 @@ def sayfa(k, yayinlar, projeler, logolar):
     p.append(ust(k, logolar))
     # 1. Özgeçmiş ve uzmanlık
     if k.get("ozgecmis"):
-        p += [baslik("Özgeçmiş"), f'<p style="font-size:16px;line-height:1.7;text-align:justify;margin:0 0 10px 0;">{e(k["ozgecmis"])}</p>']
+        p += [baslik("Özgeçmiş"), f'<p style="font-size:16px;line-height:1.7;text-align:left;margin:0 0 10px 0;">{e(k["ozgecmis"])}</p>']
     if k.get("uzmanlik"):
         p.append('<p style="margin:6px 0 0 0;">' + "".join(
             f'<span style="display:inline-block;margin:0 6px 6px 0;padding:3px 12px;border-radius:14px;background:#eef2f7;color:{LAC};font-size:14px;">{e(u)}</span>'

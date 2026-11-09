@@ -25,7 +25,7 @@ def giris():
 <td style="width:55%;vertical-align:middle;padding:0 28px 0 0;">
 <p style="margin:0 0 6px 0;font-size:13px;letter-spacing:1px;color:#777;">İTÜ MADEN FAKÜLTESİ · JEOLOJİ MÜHENDİSLİĞİ BÖLÜMÜ</p>
 <p style="margin:0 0 16px 0;font-size:30px;line-height:1.2;font-weight:bold;color:{LACIVERT};">Mühendislik Jeolojisi – Kaya Mekaniği – Hidrojeoloji Çalışma Grubu</p>
-<p style="margin:0 0 14px 0;font-size:16px;line-height:1.65;color:#333;text-align:justify;">Kökleri İTÜ’de yerbilimleri eğitiminin kurulduğu yıllara uzanan grubumuz, kaya ve zeminlerin mühendislik davranışı, şev ve heyelan tehlikesi, yeraltı suyu ve kültürel miras yapı taşları üzerine deneysel, sayısal ve saha tabanlı araştırmalar yürütmektedir.</p>
+<p style="margin:0 0 14px 0;font-size:16px;line-height:1.65;color:#333;text-align:left;">Kökleri İTÜ’de yerbilimleri eğitiminin kurulduğu yıllara uzanan grubumuz, kaya ve zeminlerin mühendislik davranışı, şev ve heyelan tehlikesi, yeraltı suyu ve kültürel miras yapı taşları üzerine deneysel, sayısal ve saha tabanlı araştırmalar yürütmektedir.</p>
 <p style="margin:0;"><a href="/hakkimizda" style="display:inline-block;padding:8px 18px;background:{LACIVERT};color:#fff;text-decoration:none;border-radius:4px;margin:0 8px 8px 0;">Dünden Bugüne MJKMH</a><a href="/kisiler" style="display:inline-block;padding:7px 17px;border:1px solid {LACIVERT};color:{LACIVERT};text-decoration:none;border-radius:4px;margin:0 0 8px 0;">Kişiler</a></p>
 </td>
 <td style="vertical-align:middle;padding:0;"><img src="{GORSEL}" alt="Kaya şevi" style="width:100%;height:auto;display:block;border-radius:6px;" /></td>
@@ -40,13 +40,14 @@ def rakamlar(say, toplam):
     kutular = [(say["makale"], "Makale", "/yayinlar"), (say["ilk10"], "İlk %10’luk Dilimdeki Makale", "/yayinlar"),
                (say["Q1"], "Q1 Makale", "/yayinlar"), (PROJE_SAYISI, "Devam Eden Proje", "/projeler"),
                (KISI_SAYISI, "Araştırmacı", "/kisiler")]
-    p = ['<table style="width:100%;border-collapse:separate;border-spacing:10px 0;margin:34px 0 0 0;border:0;"><tbody><tr>']
+    p = ['<div style="margin:34px 0 0 0;text-align:center;font-size:0;">']
     for n, ad, link in kutular:
-        p.append(f'<td style="width:20%;text-align:center;background:#f3f6fa;border-radius:8px;padding:16px 6px;">'
+        p.append(f'<div style="display:inline-block;vertical-align:top;box-sizing:border-box;width:18.4%;min-width:140px;margin:0 0.8% 10px 0.8%;'
+                 f'text-align:center;background:#f3f6fa;border-radius:8px;padding:16px 6px;font-size:16px;">'
                  f'<a href="{link}" style="text-decoration:none;color:{LACIVERT};">'
                  f'<span style="display:block;font-size:30px;font-weight:bold;line-height:1.1;">{n}</span>'
-                 f'<span style="display:block;font-size:13px;color:#555;margin-top:4px;">{e(ad)}</span></a></td>')
-    p.append('</tr></tbody></table>')
+                 f'<span style="display:block;font-size:13px;color:#555;margin-top:4px;">{e(ad)}</span></a></div>')
+    p.append('</div>')
     return "".join(p)
 
 
