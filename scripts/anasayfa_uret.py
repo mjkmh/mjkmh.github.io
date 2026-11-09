@@ -53,7 +53,7 @@ def rakamlar(say, toplam):
 
 IMG = "https://mjkmh.github.io/images/yayinlar/"
 ALANLAR = [
-    ("Mühendislik Jeolojisi", ("/images/librariesprovider187/default-album/alan-muhendislik-jeolojisi.jpg", "Wikimedia Commons, CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Landslide_on_Karakoram_Highway_in_Pakistan.jpg"), "Heyelan ve kaya düşmesi tehlikesi, CBS tabanlı tehlike haritalaması, zemin iyileştirme ve altyapı projelerinde jeolojik değerlendirme."),
+    ("Mühendislik Jeolojisi", ("/images/librariesprovider187/default-album/alan-muhendislik-jeolojisi.jpg?v=2", "Clemenspool, CC0", "https://commons.wikimedia.org/wiki/File:BergsturzBrienz.jpg"), "Heyelan ve kaya düşmesi tehlikesi, CBS tabanlı tehlike haritalaması, zemin iyileştirme ve altyapı projelerinde jeolojik değerlendirme."),
     ("Kaya Mekaniği", ("/images/librariesprovider187/default-album/alan-kaya-mekanigi.jpg", "Graeme Churchard, CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Jointed_turbidite_outcrop_at_Randa,_Mallorca.jpg"), "Kayaçların dayanım ve deformasyon davranışı, çatlak başlangıcı, parçacık tabanlı sayısal modelleme, tünel ve şev stabilitesi."),
     ("Hidrojeoloji", ("/images/librariesprovider187/default-album/alan-hidrojeoloji.jpg", "Günter Herrmann, CC BY-SA 3.0 de", "https://commons.wikimedia.org/wiki/File:Quelltopf-Grimmensee_Langenauer-Ried_Karstquelle_Schwaebische-Alb.jpg"), "Yeraltı suyu akımı ve kalitesi, kirletici taşınımı, akifer karakterizasyonu ve su–kaya etkileşimi."),
 ]
