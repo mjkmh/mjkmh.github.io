@@ -621,6 +621,13 @@
   - - Lisans
     - İstanbul Üniversitesi (Türkiye)
     - ''
+  projeler_kus:
+  - yil: '2026'
+    baslik: Düzensiz Basamaklı Terk Edilmiş Bir Taş Ocağında Güvenli Şev Tasarımı İçin Mühendislik Jeolojisi Araştırması
+    kaynak: İTÜ Teknoloji Transfer Ofisi
+    kod: İTÜ1773
+    rol: Yürütücü
+    durum: Devam Ediyor
 - slug: ozge-dinc-gogus
   ad: Özge Dinç Göğüş
   unvan: Doç. Dr.
@@ -706,6 +713,13 @@
   - - Lisans
     - Akdeniz Üniversitesi (Türkiye)
     - ''
+  projeler_kus:
+  - yil: '2026'
+    baslik: Düzensiz Basamaklı Terk Edilmiş Bir Taş Ocağında Güvenli Şev Tasarımı İçin Mühendislik Jeolojisi Araştırması
+    kaynak: İTÜ Teknoloji Transfer Ofisi
+    kod: İTÜ1773
+    rol: Araştırmacı
+    durum: Devam Ediyor
 - slug: gokhan-sans
   ad: Gökhan Şans
   unvan: Arş. Gör.
@@ -753,3 +767,10 @@
   - - Lisans
     - İstanbul Teknik Üniversitesi (Türkiye)
     - ''
+  projeler_kus:
+  - yil: '2026'
+    baslik: Düzensiz Basamaklı Terk Edilmiş Bir Taş Ocağında Güvenli Şev Tasarımı İçin Mühendislik Jeolojisi Araştırması
+    kaynak: İTÜ Teknoloji Transfer Ofisi
+    kod: İTÜ1773
+    rol: Araştırmacı
+    durum: Devam Ediyor
