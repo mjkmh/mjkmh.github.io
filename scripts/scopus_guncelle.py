@@ -264,19 +264,32 @@ def api_ile_topla(uyeler, kurum_suz=False):
                 bilgi = src.citescoreyearinfolist or []
                 if bilgi:
                     al = lambda o, a: o.get(a) if isinstance(o, dict) else getattr(o, a, None)
-                    son = sorted(bilgi, key=lambda x: int(al(x, "year")), reverse=True)[0]
-                    yuzde = []
-                    for r in al(son, "rank") or []:
-                        p = r.get("percentile") if isinstance(r, dict) else getattr(r, "percentile", None)
-                        if p is None and isinstance(r, (list, tuple)) and len(r) >= 3:
-                            p = r[2]
-                        if p is not None:
-                            yuzde.append(float(p))
-                    onbellek[issn] = max(yuzde) if yuzde else None
+                    yillik = {}
+                    for kayit in bilgi:
+                        yuzde = []
+                        for r in al(kayit, "rank") or []:
+                            p = r.get("percentile") if isinstance(r, dict) else getattr(r, "percentile", None)
+                            if p is None and isinstance(r, (list, tuple)) and len(r) >= 3:
+                                p = r[2]
+                            if p is not None:
+                                yuzde.append(float(p))
+                        if yuzde:
+                            yillik[int(al(kayit, "year"))] = max(yuzde)
+                    onbellek[issn] = yillik or None
             except Exception:
                 pass
             time.sleep(0.5)
-        k["yuzdelik"] = onbellek[issn]
+        # Kural: makalenin yayın yılındaki CiteScore, kategoriler arasında en yüksek yüzdelik.
+        # O yılın değeri henüz yoksa yayın yılından önceki en yakın yıl, o da yoksa en yakın yıl.
+        yillik = onbellek[issn]
+        k["yuzdelik"] = None
+        if yillik:
+            yy = str(k.get("cover_date") or "")[:4]
+            yy = int(yy) if yy.isdigit() else max(yillik)
+            once = [y for y in yillik if y <= yy]
+            sec = max(once) if once else min(yillik, key=lambda y: abs(y - yy))
+            k["yuzdelik"] = yillik[sec]
+            k["yuzdelik_yili"] = sec
     return tekil
 
 
