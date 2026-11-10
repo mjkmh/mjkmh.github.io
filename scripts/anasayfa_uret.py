@@ -174,7 +174,7 @@ def main():
     girdiler = yaml.safe_load((KOK / "_data/yayinlar.yml").read_text(encoding="utf-8"))
     parcalar = [giris(), rakamlar(istatistik(girdiler), len(girdiler)), alanlar(), son_yayinlar(girdiler), son_yayinlar(girdiler, bildiri=True), projeler(), haberler()]
     yol = KOK / "sitefinity/anasayfa.html"
-    yol.write_text("<div>" + "\n".join(parcalar) + "</div>", encoding="utf-8")
+    yol.write_text('<div style="max-width:1110px;margin:0 auto;padding:30px 15px;box-sizing:border-box;">' + "\n".join(parcalar) + "</div>", encoding="utf-8")
     print(yol)
 
 
