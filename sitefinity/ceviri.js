@@ -45,6 +45,8 @@
     /* --- Projeler --- */
     "Devam Eden Projeler": "Ongoing Projects",
     "Tamamlanan Projeler": "Completed Projects",
+    "TTO ve Sanayi / Kamu İşbirliği": "TTO and Industry / Public Sector Collaboration",
+    "Uluslararası": "International",
     "Devam ediyor": "Ongoing",
     "Tamamlandı": "Completed",
     "İTÜ BAP – Hızlı Destek": "ITU BAP – Rapid Support",
