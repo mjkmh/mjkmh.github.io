@@ -7,9 +7,7 @@ KOK = Path(__file__).resolve().parent.parent
 e = html.escape
 LACIVERT = "#17365d"
 LIB = "/images/librariesprovider187/default-album/"
-ORNEK = ('<div style="background:#fff8e1;border-left:4px solid #e0a800;padding:10px 14px;margin:0 0 22px 0;font-size:14px;color:#6b5300;">'
-         '<strong>Örnek içerik.</strong> Bu sayfa yerleşimi göstermek için hazırlanmıştır. Cihaz listesi, fotoğraflar ve '
-         'sorumlu bilgileri güncellenecektir.</div>')
+ORNEK = ""  # "Örnek içerik" uyarısı 09.11.2026'da kullanıcı isteğiyle kaldırıldı
 
 LABLAR = [
     {
