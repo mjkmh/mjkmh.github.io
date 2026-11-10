@@ -40,7 +40,7 @@ CONFIG = KOK / "_config.yml"
 CIKTI = KOK / "sitefinity"
 
 DISARIDA = []
-KORUNAN_ALANLAR = ["year", "date", "title", "authors", "image", "image_credit", "abstract"]
+KORUNAN_ALANLAR = ["year", "date", "title", "authors", "image", "image_credit", "abstract", "top_percent", "quartile"]
 
 
 # ---------------------------------------------------------------- yardımcılar
@@ -160,7 +160,7 @@ def crossref_yazarlar(k):
         if adlar:
             k["yazar_adlari"], k["yazar_idleri"] = adlar, []
         if bos(k.get("ozet")) and msg.get("abstract"):
-            k["ozet"] = re.sub(r"<[^>]+>", "", msg["abstract"]).strip()
+            k["ozet"] = re.sub(r"<[^>]+>", "", msg["abstract", "top_percent", "quartile"]).strip()
     except Exception as e:
         print(f"  yazar listesi tamamlanamadı {k.get('doi')}: {e}")
 
@@ -427,7 +427,7 @@ def girdileri_kur(tekil, ayar, mevcut, detayli_yillar):
                 elif alan == "abstract":
                     g[alan] = None if str(g["year"]) not in detayli_yillar else g[alan]
         elif str(g["year"]) not in detayli_yillar:
-            g["abstract"] = None
+            g["abstract", "top_percent", "quartile"] = None
         girdiler.append(g)
 
     # Elle eklenmiş ("manuel: true") kayıtları koru
