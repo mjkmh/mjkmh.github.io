@@ -71,8 +71,8 @@
   source: "Remote Sensing in Earth Systems Sciences"
   source_detail: "9(2), 36"
   type: Makale
-  quartile: "(Q1 - Scopus)"
-  top_percent: 18
+    quartile: "(Q2 - Scopus)"
+  top_percent: 28
   doi: "10.1007/s41976-026-00287-y"
   eid: "2-s2.0-105037637763"
   abstract: "Istanbul, situated in one of the world’s most seismically active regions, faces urgent challenges in disaster preparedness due to its dense urban environment and large population. Urban green spaces are vital for enhancing disaster resilience, serving as essential evacuation zones, emergency shelters, and relief hubs. This study highlights the critical importance of accessible green spaces on the Anatolian side of Istanbul, using advanced GIS tools to evaluate their accessibility, size, and distribution. The findings expose stark spatial disparities among neighborhoods: while 53% of residents are within a five-minute walk of green spaces, this number rises to only 84% at ten minutes and 90% at fifteen minutes, leaving approximately 9% of the population beyond a fifteen-minute walk—an urgent gap that must be addressed. These results compellingly demonstrate the need for targeted urban planning strategies to expand green spaces in underserved areas, integrating disaster resilience into the core of urban development."
@@ -286,7 +286,7 @@
   source_detail: "15(6), 2908"
   type: Makale
   quartile: "(Q1 - Scopus)"
-  top_percent: 18
+  top_percent: 28
   doi: "10.3390/app15062908"
   eid: "2-s2.0-105001132353"
 
@@ -777,7 +777,7 @@
   source_detail: "28(6), 2141-2157"
   type: Makale
   quartile: "(Q1 - Scopus)"
-  top_percent: 18
+  top_percent: 28
   doi: "10.1007/s10040-020-02183-1"
   eid: "2-s2.0-85085869717"
 
@@ -1329,7 +1329,7 @@
   source_detail: "23(1), 1540005"
   type: Makale
   quartile: "(Q1 - Scopus)"
-  top_percent: 18
+  top_percent: 28
   doi: "10.1142/S0218348X15400058"
   eid: "2-s2.0-84928628003"
 
@@ -1945,7 +1945,7 @@
   source_detail: "16(3), 363-379"
   type: Makale
   quartile: "(Q1 - Scopus)"
-  top_percent: 18
+  top_percent: 28
   eid: "2-s2.0-34548125474"
 
 - year: 2007
@@ -2117,7 +2117,7 @@
   source_detail: "14(3), 281-309"
   type: Makale
   quartile: "(Q1 - Scopus)"
-  top_percent: 18
+  top_percent: 28
   eid: "2-s2.0-29844446008"
 
 - year: 2005
@@ -2150,7 +2150,7 @@
   source_detail: "23(8), 1888-1892"
   type: Makale
   quartile: "(Q1 - Scopus)"
-  top_percent: 18
+  top_percent: 28
   doi: "10.1897/03-379"
   eid: "2-s2.0-3442875841"
 
